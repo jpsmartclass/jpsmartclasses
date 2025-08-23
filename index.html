@@ -1,110 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JP Smart Classes — Free Demo Class</title>
-  <meta name="description" content="Book a free demo class for JP Smart Classes. K–12 live + recorded learning, AI progress reports, and Olympiad foundation—similar to Extramarks experience." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>JP Smart Classes | K–12 Coaching & Digital Learning</title>
+  <meta name="description" content="K–12 coaching with live + recorded classes, 2D/3D digital content, worksheets, and AI progress reports. Book a FREE demo now!" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='16' fill='%230b5fff'/%3E%3Ctext x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-size='64' font-family='Arial' fill='white'%3EJP%3C/text%3E%3C/svg%3E" />
+  <meta property="og:title" content="JP Smart Classes – Grow Smart, Go Far" />
+  <meta property="og:description" content="Live + recorded classes · Animated content · Worksheets · 24×7 Doubt Help · AI Progress Reports" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/0b5fff/ffffff&text=JP+Smart+Classes" />
   <style>
-    :root{--brand:#ff7a1a;--dark:#0b1020;--ink:#121826}
+    :root{
+      --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --text:#e2e8f0; --brand:#0b5fff; --brand-2:#22d3ee; --ring: 0 0 0 3px rgba(34,211,238,.35);
+    }
+    *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif}
-    .glass{background:rgba(255,255,255,.08);backdrop-filter:blur(10px)}
-    .gradient{background: radial-gradient(80rem 40rem at 10% -10%, rgba(255,122,26,.25), transparent 60%),
-                         radial-gradient(80rem 40rem at 90% 10%, rgba(29,78,216,.22), transparent 60%),
-                         linear-gradient(180deg, #0b1020 0%, #0b1226 100%)}
-    .shadow-xl-smooth{box-shadow:0 10px 25px -10px rgba(0,0,0,.25),0 8px 14px -6px rgba(0,0,0,.12)}
-    .card{border:1px solid rgba(255,255,255,.08)}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial; color:var(--text); background:radial-gradient(1200px 800px at 80% -20%, rgba(34,211,238,.08), transparent 60%),linear-gradient(180deg,#060b18, #0b1220 40%);}    
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.1) blur(8px); background:rgba(6,11,24,.65); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .logo{display:flex; gap:12px; align-items:center}
+    .logo-badge{width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,var(--brand),#3b82f6); display:grid; place-items:center; font-weight:700}
+    .logo-img{width:36px;height:36px;border-radius:10px;display:block} 
+    .nav a{opacity:.9}
+    .nav-links{display:flex; gap:18px; align-items:center}
+    .btn{display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.12); padding:10px 16px; border-radius:12px; background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 6px 20px rgba(0,0,0,.35); transition:.25s}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.5)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#2563eb); border-color:transparent}
+
+    /* Hero */
+    .hero{padding:72px 0 40px; position:relative; overflow:clip}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center}
+    .eyebrow{letter-spacing:.12em; text-transform:uppercase; color:var(--brand-2); font-size:.85rem}
+    h1{font-size:clamp(2rem,4.6vw,3.2rem); line-height:1.15; margin:.35rem 0}
+    .lead{font-size:1.15rem; color:var(--muted)}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:20px}
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px}
+    .kpi{background:#0c162d; border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:14px; text-align:center}
+    .kpi strong{font-size:1.25rem}
+    .hero-visual{position:relative}
+    .blob{position:absolute; inset:auto -100px -80px auto; width:420px; height:420px; background:radial-gradient(circle at 30% 30%, rgba(11,95,255,.35), transparent 60%), radial-gradient(circle at 70% 70%, rgba(34,211,238,.35), transparent 60%); filter:blur(40px); opacity:.8}
+    .device{aspect-ratio:16/10; border-radius:22px; border:1px solid rgba(255,255,255,.12); overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,.55)}
+    .device img{width:100%; height:100%; object-fit:cover}
+
+    /* Sections */
+    section{padding:64px 0}
+    h2{font-size:clamp(1.6rem,3.6vw,2.2rem); margin:0 0 10px}
+    p.section-lead{color:var(--muted); margin:0 0 24px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px}
+    .card h3{margin:6px 0 6px; font-size:1.15rem}
+
+    /* Courses */
+    .course{display:flex; gap:14px; align-items:flex-start}
+    .badge{font-size:.76rem; padding:.2rem .6rem; border-radius:999px; border:1px solid rgba(255,255,255,.18); color:#d1fae5; background:rgba(16,185,129,.15)}
+
+    /* Pricing */
+    .price-wrap{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .price{padding:20px; border-radius:16px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02))}
+    .price.featured{outline: var(--ring); transform:translateY(-4px)}
+    .price .tag{font-size:.8rem; color:#a7f3d0}
+    .price .amount{font-size:2rem; font-weight:800}
+
+    /* Testimonials */
+    .testi{display:flex; gap:12px; align-items:flex-start}
+    .avatar{width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#67e8f9,#60a5fa)}
+
+    /* FAQ */
+    details{border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:14px 16px; background:rgba(255,255,255,.03)}
+    details+details{margin-top:10px}
+    summary{cursor:pointer; font-weight:600}
+
+    /* CTA/Footer */
+    .cta{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between; background:linear-gradient(90deg,rgba(11,95,255,.25), rgba(34,211,238,.25)); border:1px solid rgba(255,255,255,.18); padding:20px; border-radius:16px}
+    footer{padding:28px 0 60px; color:var(--muted)}
+
+    /* Utilities */
+    .muted{color:var(--muted)}
+    .icon{width:22px; height:22px}
+    .list{display:grid; gap:10px; padding-left:18px}
+    .list li{list-style: "✓  ";}
+    .hide-mobile{display:block}
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid-3, .price-wrap{grid-template-columns:1fr}
+      .hide-mobile{display:none}
+    }
+
+    /* Float WhatsApp */
+    .wa{position:fixed; right:16px; bottom:16px; z-index:60}
+    .wa a{display:grid; place-items:center; width:58px; height:58px; border-radius:50%; background:#22c55e; box-shadow:0 16px 40px rgba(34,197,94,.45); border:2px solid #eaffef}
+    .wa svg{width:30px; height:30px; fill:white}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"EducationalOrganization",
+    "name":"JP Smart Classes",
+    "url":"https://jpsmartclasses.com/",
+    "logo":"https://dummyimage.com/256x256/0b5fff/ffffff&text=JP",
+    "sameAs":["https://www.facebook.com/", "https://www.instagram.com/"],
+    "address":{"@type":"PostalAddress","addressCountry":"IN","addressRegion":"MP","addressLocality":"Gwalior","streetAddress":"Hno. 143 Shiv Sadan","postalCode":"474003"},
+    "foundingDate":"2024",
+    "description":"K–12 coaching with live + recorded classes and animated digital content.",
+    "telephone":"+91 74659 17995",
+    "email":"jpsmartclasses@gmail.com"
+  }
+  </script>
 </head>
-<body class="bg-[#0b1020] text-white">
+<body>
+  <!-- Floating WhatsApp -->
+  <div class="wa"><a href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20I%20want%20a%20FREE%20demo" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163A11.867 11.867 0 0 1 0 11.993C0 5.373 5.373 0 11.993 0 18.614 0 24 5.373 24 11.993c0 6.62-5.386 11.993-12.007 11.993a12 12 0 0 1-5.65-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.35 1.593 5.448.003 9.886-4.429 9.889-9.878.003-5.457-4.415-9.89-9.872-9.893-5.45-.003-9.89 4.428-9.893 9.878-.002 2.356.768 4.548 2.063 6.348l-.546 2.003 2.009-.551zm11.387-5.464c-.073-.123-.268-.196-.56-.344-.292-.147-1.725-.85-1.99-.947-.266-.098-.46-.147-.654.147-.195.294-.75.947-.92 1.142-.17.196-.34.22-.632.073-.292-.147-1.233-.454-2.35-1.45-.868-.774-1.454-1.73-1.626-2.023-.17-.294-.018-.453.13-.6.134-.133.296-.346.443-.52.147-.171.195-.293.293-.487.098-.196.049-.367-.024-.514-.073-.147-.654-1.583-.897-2.168-.236-.567-.478-.49-.654-.498l-.56-.01c-.196 0-.514.073-.782.367-.268.294-1.027 1.003-1.027 2.449 0 1.446 1.052 2.843 1.197 3.04.147.196 2.07 3.166 5.02 4.435.702.303 1.25.484 1.677.62.704.224 1.345.192 1.852.116.565-.084 1.725-.703 1.97-1.38.243-.678.243-1.259.171-1.38z"/></svg>
+  </a></div>
+
   <!-- Header -->
-  <header class="fixed inset-x-0 top-0 z-50 bg-[#0b1020]/70 backdrop-blur border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3 group">
-        <img src="logo.jpeg" alt="JP Smart Classes Logo" class="h-10 w-auto rounded"/>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#home">
+        <img class="logo-img" alt="JP Smart Classes logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='16' fill='%230b5fff'/%3E%3Ctext x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-size='64' font-family='Arial' fill='white'%3EJP%3C/text%3E%3C/svg%3E"/>
         <div>
-          <p class="font-bold leading-none">JP Smart Classes</p>
-          <p class="text-xs text-white/60 leading-none mt-0.5">Grow Smart, Go Far</p>
+          <strong>JP Smart Classes</strong><br>
+          <span class="muted" style="font-size:.85rem">Grow Smart, Go Far</span>
         </div>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#features" class="hover:text-[var(--brand)]">Features</a>
-        <a href="#grades" class="hover:text-[var(--brand)]">Classes</a>
-        <a href="#curriculum" class="hover:text-[var(--brand)]">Curriculum</a>
-        <a href="#pricing" class="hover:text-[var(--brand)]">Plans</a>
-        <a href="#faq" class="hover:text-[var(--brand)]">FAQ</a>
+      <nav class="nav-links hide-mobile">
+        <a href="#features">Features</a>
+        <a href="#courses">Courses</a>
+        <a href="#pricing">Fees</a>
+        <a href="#demo">Free Demo</a>
+        <a href="#contact">Contact</a>
+        <a class="btn primary" href="#demo">Book FREE Demo</a>
       </nav>
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20I%20want%20a%20free%20demo" class="hidden sm:inline-flex items-center gap-2 text-sm px-3 py-2 rounded-xl border border-white/15 hover:border-white/25">WhatsApp</a>
-        <a href="#demo" class="inline-flex items-center gap-2 text-sm font-semibold bg-[var(--brand)] hover:brightness-110 px-4 py-2 rounded-xl shadow-xl-smooth">Book Free Demo</a>
-      </div>
     </div>
   </header>
 
-  <!-- Hero with Logo -->
-  <section id="home" class="gradient pt-28 pb-16 text-center">
-    <div class="max-w-4xl mx-auto px-4">
-      <img src="logo.jpeg" alt="JP Smart Classes Logo" class="mx-auto h-24 w-auto mb-6"/>
-      <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight">Your child’s <span class="text-[var(--brand)]">all‑in‑one</span> learning app—free demo today</h1>
-      <p class="mt-4 text-white/70 text-lg">High‑quality animated lessons, expert teachers, worksheets, and Olympiad foundation—an experience inspired by platforms like Extramarks, tailored for JP Smart Classes.</p>
-      <p class="mt-2 text-white/80 font-semibold">Associated with leading CBSE & State Board schools</p>
-      <div class="mt-4 text-white/70">
-        <p class="font-semibold">Our Partner Schools:</p>
-        <ul class="mt-2 space-y-1">
-          <li>• Real Public School</li>
-          <li>• RJD Public School</li>
-          <li>• Sunrise Academy</li>
-          <li>• Green Valley School</li>
-          <li>• Bright Future Academy</li>
-        </ul>
-      </div>
-      <div class="mt-6 flex flex-wrap justify-center gap-3">
-        <a href="#demo" class="inline-flex items-center gap-2 bg-[var(--brand)] px-5 py-3 rounded-2xl font-semibold shadow-xl-smooth">Book Free Demo</a>
-        <a href="#features" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/15 hover:border-white/25">See Features</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Demo Form Section -->
-  <section id="demo" class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl sm:text-4xl font-extrabold mb-6 text-center">Book Your Free Demo Class</h2>
-      <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header&embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-10 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6 items-center">
-      <div class="flex items-center gap-3">
-        <img src="logo.jpeg" alt="JP Smart Classes Logo" class="h-12 w-auto rounded"/>
-        <div>
-          <p class="font-semibold">JP Smart Classes</p>
-          <p class="text-white/60 text-sm mt-1">Grow Smart, Go Far</p>
-          <p class="text-white/60 text-sm">© <span id="y"></span> All rights reserved.</p>
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">K–12 Coaching • Online + Offline</div>
+        <h1>Top-rated classes with animated content & 24×7 doubt help.</h1>
+        <p class="lead">Live + Recorded classes • 2D/3D digital content • Worksheets • AI Progress Reports • Olympiad & NTSE Foundation. First week <strong>FREE</strong>.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#demo">Book FREE Demo</a>
+          <a class="btn" href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20share%20the%20demo%20details" target="_blank">Chat on WhatsApp</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><strong>30+ hrs</strong><div class="muted">Monthly learning</div></div>
+          <div class="kpi"><strong>1000+</strong><div class="muted">Practice Qs</div></div>
+          <div class="kpi"><strong>1-to-1</strong><div class="muted">Doubt support</div></div>
         </div>
       </div>
-      <div class="text-sm text-white/70">
-        <p>Support: <a class="underline" href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a></p>
-        <p>WhatsApp: <a class="underline" href="https://wa.me/917465917995">+91 74659 17995</a></p>
-        <p>Address: Hno. 143, Shiv Sadan, Gwalior 474003</p>
+      <div class="hero-visual">
+        <div class="hero-card device">
+          <img src="https://images.unsplash.com/photo-1584759543679-0c9f4a1d78ef?q=80&w=1600&auto=format&fit=crop" alt="Students learning online" />
+        </div>
+        <div class="blob" aria-hidden="true"></div>
       </div>
-      <div class="md:justify-self-end">
-        <a href="#demo" class="inline-flex items-center gap-2 text-sm font-semibold bg-[var(--brand)] px-4 py-2 rounded-xl">Book Free Demo</a>
+    </div>
+  </main>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <h2>Why choose JP Smart Classes?</h2>
+      <p class="section-lead">Everything students need to succeed — designed for busy parents and ambitious learners.</p>
+      <div class="grid-3">
+        <div class="card"><h3>🎥 Live + Recorded</h3><p class="muted">Daily live classes with recordings, so no child misses a lesson.</p></div>
+        <div class="card"><h3>📚 Animated Content</h3><p class="muted">2D/3D visuals that make difficult topics simple and fun.</p></div>
+        <div class="card"><h3>📝 Worksheets</h3><p class="muted">Chapter-wise practice sheets and assignments with solutions.</p></div>
+        <div class="card"><h3>❓ 24×7 Doubts</h3><p class="muted">Ask anytime on WhatsApp/portal; mentors reply quickly.</p></div>
+        <div class="card"><h3>📊 AI Progress</h3><p class="muted">Track attendance, scores, weak topics, and improvements.</p></div>
+        <div class="card"><h3>🎯 Olympiad</h3><p class="muted">Foundation for Olympiad & NTSE with weekly tests.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section id="courses">
+    <div class="container">
+      <h2>Courses we offer</h2>
+      <p class="section-lead">KG to 12th • CBSE • State Boards • English & Hindi medium</p>
+      <div class="grid-3">
+        <div class="card course">
+          <div><span class="badge">Primary (KG–5)</span>
+            <h3>Foundational Skills</h3>
+            <ul class="list">
+              <li>Phonics, Numeracy, Story-based learning</li>
+              <li>Fun activities & revision games</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card course">
+          <div><span class="badge">Middle (6–8)</span>
+            <h3>Concept Mastery</h3>
+            <ul class="list">
+              <li>Maths, Science, English, SST</li>
+              <li>Olympiad starter kit</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card course">
+          <div><span class="badge">Secondary (9–10)</span>
+            <h3>Board Excellence</h3>
+            <ul class="list">
+              <li>NCERT focus + test series</li>
+              <li>Doubt clinics every weekend</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card course">
+          <div><span class="badge">Senior (11–12)</span>
+            <h3>Streams</h3>
+            <ul class="list">
+              <li>PCM/PCB/Commerce + CUET prep (optional)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card course">
+          <div><span class="badge">Extras</span>
+            <h3>Future Skills</h3>
+            <ul class="list">
+              <li>STEM, Coding basics, Robotics (optional)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card course">
+          <div><span class="badge">Support</span>
+            <h3>Remedial & Bridge</h3>
+            <ul class="list">
+              <li>Weak topic boosters • Parent counseling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <h2>Simple & flexible fees</h2>
+      <p class="section-lead">First week FREE. Scholarships available for meritorious students.</p>
+      <div class="price-wrap">
+        <div class="price">
+          <div class="tag">Starter</div>
+          <div class="amount">₹599/mo</div>
+          <p class="muted">Single Subject • Recorded backup • Doubt help</p>
+          <a class="btn" href="#demo">Choose Starter</a>
+        </div>
+        <div class="price featured">
+          <div class="tag">Most Popular</div>
+          <div class="amount">₹1499/mo</div>
+          <p class="muted">2–3 Subjects • Live + Recorded • Worksheets • Tests</p>
+          <a class="btn primary" href="#demo">Choose Standard</a>
+        </div>
+        <div class="price">
+          <div class="tag">Premium</div>
+          <div class="amount">₹2499/mo</div>
+          <p class="muted">All Subjects • AI reports • Weekly counseling</p>
+          <a class="btn" href="#demo">Choose Premium</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Form -->
+  <section id="demo">
+    <div class="container">
+      <h2>Book your FREE Demo (1 Week)</h2>
+      <p class="section-lead">Fill the quick form. Our counselor will call you within 30 minutes.</p>
+      <div class="card" style="padding:0; overflow:hidden">
+        <!-- Google Form embed link -->
+        <iframe title="Demo Registration" src="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?embedded=true" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+      <p class="muted" style="margin-top:10px">Need help? WhatsApp us at <a href="https://wa.me/917465917995" target="_blank">+91 74659 17995</a>.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="reviews">
+    <div class="container">
+      <h2>Parents & Students love us</h2>
+      <div class="grid-3">
+        <div class="card testi"><div class="avatar"></div><div><strong>Ritu Sharma (Parent)</strong><p class="muted">“Animated videos + worksheets = superb clarity. My son’s grades improved in 6 weeks.”</p></div></div>
+        <div class="card testi"><div class="avatar"></div><div><strong>Aarav (Class 9)</strong><p class="muted">“Doubt support is fast. I get solutions even late night. Test series helped a lot.”</p></div></div>
+        <div class="card testi"><div class="avatar"></div><div><strong>Mohit (Class 6)</strong><p class="muted">“Classes are fun! I love the science animations and quizzes.”</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2>FAQs</h2>
+      <details><summary>Is the first week really free?</summary><p class="muted">Yes. Attend all sessions for 7 days. If you like it, continue; if not, no problem.</p></details>
+      <details><summary>Are classes online or offline?</summary><p class="muted">Both options available. Choose what suits you. Recordings are provided for online classes.</p></details>
+      <details><summary>Which boards & mediums?</summary><p class="muted">CBSE and State boards • English & Hindi mediums.</p></details>
+      <details><summary>How do I pay fees?</summary><p class="muted">UPI/Netbanking monthly. Scholarships/discounts available for meritorious students.</p></details>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact us</h2>
+      <div class="card">
+        <p><strong>JP Smart Classes</strong><br>
+          Hno. 143 Shiv Sadan, Gwalior 474003 • India<br>
+          Phone/WhatsApp: <a href="https://wa.me/917465917995" target="_blank">+91 74659 17995</a><br>
+          Email: <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a>
+        </p>
+        <p class="muted">Timings: Mon–Sat, 9:00 AM – 7:00 PM</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container cta">
+    <h3 style="margin:0">Start your child’s learning journey today.</h3>
+    <a class="btn primary" href="#demo">Get FREE Demo</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      © <span id="yr"></span> JP Smart Classes • All rights reserved • <a href="#" class="muted">Privacy</a>
     </div>
   </footer>
 
   <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
