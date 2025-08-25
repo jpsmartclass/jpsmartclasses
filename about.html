@@ -23,7 +23,7 @@
     header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.8);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.12)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{display:flex;align-items:center;gap:12px;color:#fff}
-    .brand-logo{height:40px;width:40px;border-radius:8px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:700}
+    .brand-logo-img{height:40px;width:auto;border-radius:8px;object-fit:contain}
     .nav a{color:#fff;opacity:.9;margin-left:18px}
     .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--brand);color:#fff;font-weight:600;box-shadow:0 6px 20px rgba(11,95,255,.25)}
     .btn-outline{background:transparent;border:2px solid #fff}
@@ -76,7 +76,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="./index.html">
-        <div class="brand-logo">JP</div>
+        <img src="logo.jpeg" alt="JP Smart Classes Logo" class="brand-logo-img" />
         <div>
           <div style="font-weight:800;line-height:1">JP Smart Classes</div>
           <div class="tiny">Grow Smart, Go Far</div>
@@ -186,7 +186,7 @@
     <div class="container foot-grid">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <div class="brand-logo">JP</div>
+          <img src="logo.jpeg" alt="JP Smart Classes Logo" class="brand-logo-img" />
           <div>
             <div style="font-weight:800;color:#fff">JP Smart Classes</div>
             <div class="tiny">Grow Smart, Go Far</div>
