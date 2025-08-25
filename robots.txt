@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jpsmartclass.github.io/jpsmartclasses/sitemap.xml
