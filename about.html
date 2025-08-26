@@ -3,201 +3,224 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us | JP Smart Classes</title>
-  <meta name="description" content="Learn about JP Smart Classes — our mission, teaching approach, and why parents and students across India trust us for K–12 online learning with live + recorded classes and 2D/3D animated content." />
-  <meta name="keywords" content="JP Smart Classes, About, Online Coaching India, K-12, CBSE, State Board, Live Classes, 3D Animated Content" />
-  <link rel="canonical" href="https://jpsmartclass.github.io/jpsmartclasses/about.html" />
-  <meta property="og:title" content="About JP Smart Classes" />
-  <meta property="og:description" content="Our mission, values, and learning model for K–12 students across India." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jpsmartclass.github.io/jpsmartclasses/about.html" />
-  <meta property="og:site_name" content="JP Smart Classes" />
+  <title>JP Smart Classes | K–12 Coaching & Digital Learning</title>
+  <meta name="description" content="K–12 coaching with live + recorded classes, premium digital content, worksheets, AI progress reports, and doubt-solving. Book a FREE demo now!" />
+  <link rel="icon" href="logo.jpeg" />
   <style>
-    :root { --brand:#0b5fff; --dark:#0b1020; --muted:#677489; --bg:#f7f9fc; --ok:#27AE60; --accent:#FFD93B; }
+    :root{
+      --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28);
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:#0B1020;background:var(--bg)}
-    a{color:var(--brand);text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.8);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.12)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:12px;color:#fff}
-    .brand-logo-img{height:40px;width:auto;border-radius:8px;object-fit:contain}
-    .nav a{color:#fff;opacity:.9;margin-left:18px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--brand);color:#fff;font-weight:600;box-shadow:0 6px 20px rgba(11,95,255,.25)}
-    .btn-outline{background:transparent;border:2px solid #fff}
-    .hero{padding:72px 0;background:linear-gradient(180deg, #0b1020 0%, #0b1020 60%, #0e1530 100%);color:#fff}
-    .hero h1{font-size:40px;line-height:1.2;margin:0 0 12px}
-    .hero p{color:#ccd3e0;max-width:760px}
-    .grid{display:grid;gap:18px}
-    @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}}
-    .card{background:#fff;border:1px solid #e6ebf2;border-radius:18px;padding:22px;box-shadow:0 6px 24px rgba(13,18,30,.04)}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef3ff;color:#2146d5;font-weight:600;font-size:12px}
-    .lead{font-size:18px;color:#243046}
-    .list{padding-left:18px}
-    .list li{margin:8px 0}
-    footer{margin-top:48px;background:#0b1020;color:#c9d3e7}
-    footer a{color:#fff}
-    .foot-grid{display:grid;gap:18px;padding:28px 0}
-    @media(min-width:768px){.foot-grid{grid-template-columns:2fr 1fr 1fr}}
-    .tiny{font-size:13px;color:#7f8aa3}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;background:#ebfff2;color:#187a3e;border-radius:999px;font-weight:600;font-size:12px}
-    .section{padding:36px 0}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020 0%,#0b1020 40%,#0f172a 100%);color:#e7eaf3;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin-inline:auto;padding:0 16px}
+
+    /* header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{height:40px;width:40px;border-radius:8px}
+    .brand .title{line-height:1}
+    .brand b{display:block}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:#fff;opacity:.9;padding:8px 10px;border-radius:10px}
+    nav a:hover{background:rgba(255,255,255,.06)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent}
+    .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
+    .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
+
+    /* hero */
+    .hero{padding:56px 0 40px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+    .eyebrow{display:inline-block;padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted);font-size:12px;margin-bottom:12px}
+    h1{font-size:40px;line-height:1.1;margin:0 0 12px}
+    .sub{color:var(--muted);font-size:16px;margin:0 0 18px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    .hero-card{background:linear-gradient(180deg,#0e1430, #0b1020);border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:18px}
+    .points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+    .chip{background:#0d142b;border:1px solid rgba(255,255,255,.08);padding:10px;border-radius:12px;font-size:14px}
+
+    /* sections */
+    section{padding:48px 0}
+    h2{font-size:28px;margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 6px}
+
+    /* contact/footer */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      nav ul{flex-wrap:wrap}
+    }
+    @media (max-width: 640px){
+      h1{font-size:32px}
+      .cards{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "JP Smart Classes",
-    "url": "https://jpsmartclass.github.io/jpsmartclasses/",
-    "logo": "https://jpsmartclass.github.io/jpsmartclasses/logo.jpeg",
-    "sameAs": ["https://jpsmartclass.github.io/jpsmartclasses/"],
-    "address": {"@type": "PostalAddress","streetAddress": "Hno. 143 Shiv Sadan","addressLocality": "Gwalior","postalCode": "474003","addressCountry": "IN"},
-    "contactPoint": {"@type": "ContactPoint","telephone": "+91-74659-17995","contactType": "customer service","areaServed": "IN","availableLanguage": ["en", "hi"]}
-  }
-  </script>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="container nav">
-      <a class="brand" href="./index.html">
-        <img src="logo.jpeg" alt="JP Smart Classes Logo" class="brand-logo-img" />
-        <div>
-          <div style="font-weight:800;line-height:1">JP Smart Classes</div>
-          <div class="tiny">Grow Smart, Go Far</div>
-        </div>
+      <a class="brand" href="./">
+        <img src="logo.jpeg" alt="JP Smart Classes Logo" />
+        <span class="title"><b>JP Smart Classes</b><span style="display:block;color:#a0aec0;font-size:12px">Grow Smart, Go Far</span></span>
       </a>
       <nav>
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
-        <!-- NEW: Courses link -->
-        <a href="./courses.html">Courses</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" class="btn btn-outline" target="_blank" rel="noopener">Book Free Demo</a>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <!-- keep Courses only as a link to the new page -->
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book FREE Demo</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">K–12 • CBSE & State Boards • Live + Recorded</span>
+        <h1>Premium Online Coaching for KG–12 with <span style="background:linear-gradient(90deg,var(--brand),#7aa9ff);-webkit-background-clip:text;background-clip:text;color:transparent">AI-powered progress</span></h1>
+        <p class="sub">Live classes, 2D/3D digital content, worksheets, doubt solving, and detailed AI progress reports — all in one place.</p>
+        <div class="actions">
+          <a class="btn primary" href="#demo">🎯 Book a FREE Demo</a>
+          <a class="btn whatsapp" href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20I%20want%20a%20free%20demo" target="_blank" rel="noopener">WhatsApp Now</a>
+          <a class="btn" href="courses.html">Explore Courses</a>
+        </div>
+        <div class="points">
+          <div class="chip">⏱️ One-week free access</div>
+          <div class="chip">🏆 Olympiad & NTSE foundation</div>
+          <div class="chip">📊 Parent progress dashboard</div>
+          <div class="chip">🌐 Anywhere, anytime learning</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <b>What you get</b>
+        <div class="points" style="margin-top:10px">
+          <div class="chip">🎥 Live + Recorded Classes</div>
+          <div class="chip">🎓 Expert-curated Curriculum</div>
+          <div class="chip">📚 2D & 3D Animated Content</div>
+          <div class="chip">📝 Worksheets & Assignments</div>
+          <div class="chip">❓ 24×7 Doubt Solving</div>
+          <div class="chip">📊 AI Progress Reports</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about">
     <div class="container">
-      <span class="badge">About Us</span>
-      <h1>Helping K–12 learners master concepts with live + recorded classes and 2D/3D animated content</h1>
-      <p class="lead">At JP Smart Classes, we blend expert-led teaching with rich digital content, AI-based progress tracking, and 24×7 doubt support — so every child can learn at their own pace, in English or Hindi, from anywhere in India.</p>
-      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book a FREE Demo</a>
-        <a class="btn" style="background:var(--ok)" href="./index.html#features">See Features</a>
-        <!-- NEW: Explore Courses button -->
-        <a class="btn" style="background:var(--accent);color:#1a1a1a" href="./courses.html">Explore Courses</a>
+      <h2>About JP Smart Classes</h2>
+      <p class="muted">We deliver a premium online learning experience for K–12 students across India. Our hybrid approach blends live teaching, interactive digital content, and data-driven feedback so every child learns at the right pace.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <h2>Why Parents Love Us</h2>
+      <div class="cards">
+        <div class="card"><h3>Live + Recorded</h3><p class="muted">Attend live classes or watch recordings anytime to revise.</p></div>
+        <div class="card"><h3>Premium Content</h3><p class="muted">Engaging 2D/3D animated modules from leading providers.</p></div>
+        <div class="card"><h3>AI Reports</h3><p class="muted">Track accuracy, speed, and improvement with clear dashboards.</p></div>
+        <div class="card"><h3>Doubt Solving</h3><p class="muted">Ask doubts 24×7; get quick resolutions.</p></div>
+        <div class="card"><h3>Worksheets</h3><p class="muted">Printable and online practice aligned to your board.</p></div>
+        <div class="card"><h3>Olympiad Prep</h3><p class="muted">Foundation for Olympiad & NTSE from early grades.</p></div>
       </div>
     </div>
   </section>
 
-  <main class="container">
-    <section class="section">
-      <div class="grid grid-3">
+  <!-- Demo (Form) -->
+  <section id="demo">
+    <div class="container">
+      <h2>Book a FREE Demo</h2>
+      <p class="muted">Fill the short form and our team will call you within 24 hours.</p>
+      <div class="contact-grid">
         <div class="card">
-          <h3>Our Mission</h3>
-          <p>To make high-quality K–12 education accessible and engaging for every student, using world-class digital content and a caring human touch.</p>
-        </div>
-        <div class="card">
-          <h3>Our Promise</h3>
-          <p>Clear concepts, consistent practice, and measurable progress — supported by worksheets, quizzes, and timely feedback.</p>
-        </div>
-        <div class="card">
-          <h3>Our Learners</h3>
-          <p>CBSE & State Board students from Class 1 to 12 across India, learning in English or Hindi through phone, tablet, or PC.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Why Parents Choose Us</h3>
-          <ul class="list">
-            <li>Live + recorded classes with concept-first explanations</li>
-            <li>2D/3D animated content that makes topics memorable</li>
-            <li>Worksheets, assignments, and chapter-wise practice</li>
-            <li>24×7 doubt solving and mentor support</li>
-            <li>AI progress reports and personalized study plans</li>
-            <li>Olympiad & NTSE foundation (optional add-on)</li>
-          </ul>
+          <h3>Quick Form</h3>
+          <iframe title="Demo Form" src="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
         <div class="card">
-          <h3>How Learning Works Here</h3>
-          <ol class="list">
-            <li><strong>Diagnose:</strong> We understand the student’s current level.</li>
-            <li><strong>Explain:</strong> Visual-rich lessons with real-life examples.</li>
-            <li><strong>Practice:</strong> Worksheets, quizzes, and revision plans.</li>
-            <li><strong>Track:</strong> Dashboards + AI-based insights for parents.</li>
-            <li><strong>Support:</strong> Mentor connects and doubt-clearing help.</li>
-          </ol>
-          <span class="pill" style="margin-top:8px">Free 1-week demo available</span>
+          <h3>Prefer WhatsApp?</h3>
+          <p class="muted">Message us “Demo” and we’ll share the link + class schedule.</p>
+          <a class="btn whatsapp" style="margin-top:6px" href="https://wa.me/917465917995?text=Demo" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <div style="height:14px"></div>
+          <h3>Need fees?</h3>
+          <p class="muted">Fees vary by batch size and class. Share your child’s class to get an exact quote.</p>
+          <a class="btn" href="#faq">See FAQ</a>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card">
-        <h3>Our Story</h3>
-        <p>JP Smart Classes started with a simple belief: every child deserves a joyful learning experience that builds confidence and curiosity. We bring together passionate educators and best-in-class digital content to deliver a premium yet affordable K–12 program.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="grid grid-3">
-        <div class="card">
-          <h4>Languages</h4>
-          <p>English and Hindi</p>
-        </div>
-        <div class="card">
-          <h4>Boards</h4>
-          <p>CBSE + State Boards</p>
-        </div>
-        <div class="card">
-          <h4>Modes</h4>
-          <p>Live classes, recorded lessons, self-paced learning</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="card">
-        <h3>Contact Us</h3>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/917465917995" target="_blank" rel="noopener">+91 74659 17995</a><br/>
-        <strong>Email:</strong> <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a><br/>
-        <strong>Address:</strong> Hno. 143, Shiv Sadan, Gwalior – 474003, India</p>
-        <p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book Your Free Demo</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container foot-grid">
-      <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <img src="logo.jpeg" alt="JP Smart Classes Logo" class="brand-logo-img" />
-          <div>
-            <div style="font-weight:800;color:#fff">JP Smart Classes</div>
-            <div class="tiny">Grow Smart, Go Far</div>
-          </div>
-        </div>
-        <div class="tiny">© <span id="y"></span> JP Smart Classes. All rights reserved.</div>
-      </div>
-      <div>
-        <div style="font-weight:700;margin-bottom:8px">Quick Links</div>
-        <div class="tiny"><a href="./index.html">Home</a></div>
-        <div class="tiny"><a href="./about.html">About</a></div>
-        <!-- NEW: Courses in footer -->
-        <div class="tiny"><a href="./courses.html">Courses</a></div>
-        <div class="tiny"><a href="#contact">Contact</a></div>
-      </div>
-      <div>
-        <div style="font-weight:700;margin-bottom:8px">Legal</div>
-        <div class="tiny"><a href="./robots.txt" target="_blank" rel="noopener">robots.txt</a></div>
-        <div class="tiny"><a href="./sitemap.xml" target="_blank" rel="noopener">sitemap.xml</a></div>
       </div>
     </div>
-    <div style="text-align:center;padding:10px 0;border-top:1px solid rgba(255,255,255,.08)" class="tiny">Built with ♥ for learners across India</div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="card">
+        <h3>What digital content do you use?</h3>
+        <p class="muted">We use premium, white-labeled digital content from leading providers, combined with our live expert sessions, worksheets, and AI-based progress reports.</p>
+      </div>
+      <div class="card">
+        <h3>Do you have offline branches?</h3>
+        <p class="muted">We are an online-first institute. Occasional city workshops/events may be announced on WhatsApp.</p>
+      </div>
+      <div class="card">
+        <h3>How are fees decided?</h3>
+        <p class="muted">Fees depend on class (grade) and batch size (1:1, 10–15, 15–25, 30–40, 50–60+). Share your preference and we’ll send the exact plan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Address</h3>
+          <p class="muted">Hno. 143, Shiv Sadan, Gwalior – 474003</p>
+          <h3>Call / Email</h3>
+          <p class="muted">📞 <a href="tel:+917465917995">+91 74659 17995</a><br/>✉️ <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <h3>Associated Boards</h3>
+          <p class="muted">We align to CBSE & major State Boards. School partnerships may vary by city and availability.</p>
+          <h3>Parents’ Note</h3>
+          <p class="muted">Weekly updates, attendance, and AI progress summaries are shared on WhatsApp/email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <span>© <span id="y"></span> JP Smart Classes</span>
+      <span class="muted">Made with ❤️ for learners across India</span>
+    </div>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <!-- Redirect old #courses anchors to the new page -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    if (location.hash && location.hash.toLowerCase().includes('course')) {
+      location.href = 'courses.html';
+    }
+  </script>
 </body>
 </html>
