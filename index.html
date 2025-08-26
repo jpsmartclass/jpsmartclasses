@@ -4,137 +4,87 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JP Smart Classes | K–12 Coaching & Digital Learning</title>
-  <meta name="description" content="K–12 coaching with live + recorded classes, 2D/3D digital content, worksheets, and AI progress reports. Book a FREE demo now!" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='16' fill='%230b5fff'/%3E%3Ctext x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-size='64' font-family='Arial' fill='white'%3EJP%3C/text%3E%3C/svg%3E" />
-  <meta property="og:title" content="JP Smart Classes – Grow Smart, Go Far" />
-  <meta property="og:description" content="Live + recorded classes · Animated content · Worksheets · 24×7 Doubt Help · AI Progress Reports" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/0b5fff/ffffff&text=JP+Smart+Classes" />
+  <meta name="description" content="K–12 coaching with live + recorded classes, premium digital content, worksheets, AI progress reports, and doubt-solving. Book a FREE demo now!" />
+  <link rel="icon" href="logo.jpeg" />
   <style>
     :root{
-      --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --text:#e2e8f0; --brand:#0b5fff; --brand-2:#22d3ee; --ring: 0 0 0 3px rgba(34,211,238,.35);
+      --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28);
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial; color:var(--text); background:radial-gradient(1200px 800px at 80% -20%, rgba(34,211,238,.08), transparent 60%),linear-gradient(180deg,#060b18, #0b1220 40%);}    
-    a{color:inherit; text-decoration:none}
-    .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.1) blur(8px); background:rgba(6,11,24,.65); border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-    .logo{display:flex; gap:12px; align-items:center}
-    .logo-badge{width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,var(--brand),#3b82f6); display:grid; place-items:center; font-weight:700}
-    .logo-img{width:36px;height:36px;border-radius:10px;display:block} 
-    .nav a{opacity:.9}
-    .nav-links{display:flex; gap:18px; align-items:center}
-    .btn{display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.12); padding:10px 16px; border-radius:12px; background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); box-shadow:0 6px 20px rgba(0,0,0,.35); transition:.25s}
-    .btn:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.5)}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),#2563eb); border-color:transparent}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020 0%,#0b1020 40%,#0f172a 100%);color:#e7eaf3;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin-inline:auto;padding:0 16px}
 
-    /* Hero */
-    .hero{padding:72px 0 40px; position:relative; overflow:clip}
-    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center}
-    .eyebrow{letter-spacing:.12em; text-transform:uppercase; color:var(--brand-2); font-size:.85rem}
-    h1{font-size:clamp(2rem,4.6vw,3.2rem); line-height:1.15; margin:.35rem 0}
-    .lead{font-size:1.15rem; color:var(--muted)}
-    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:20px}
-    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px}
-    .kpi{background:#0c162d; border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:14px; text-align:center}
-    .kpi strong{font-size:1.25rem}
-    .hero-visual{position:relative}
-    .blob{position:absolute; inset:auto -100px -80px auto; width:420px; height:420px; background:radial-gradient(circle at 30% 30%, rgba(11,95,255,.35), transparent 60%), radial-gradient(circle at 70% 70%, rgba(34,211,238,.35), transparent 60%); filter:blur(40px); opacity:.8}
-    .device{aspect-ratio:16/10; border-radius:22px; border:1px solid rgba(255,255,255,.12); overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,.55)}
-    .device img{width:100%; height:100%; object-fit:cover}
+    /* header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{height:40px;width:40px;border-radius:8px}
+    .brand .title{line-height:1}
+    .brand b{display:block}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:#fff;opacity:.9;padding:8px 10px;border-radius:10px}
+    nav a:hover{background:rgba(255,255,255,.06)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent}
+    .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
+    .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
 
-    /* Sections */
-    section{padding:64px 0}
-    h2{font-size:clamp(1.6rem,3.6vw,2.2rem); margin:0 0 10px}
-    p.section-lead{color:var(--muted); margin:0 0 24px}
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px}
-    .card h3{margin:6px 0 6px; font-size:1.15rem}
+    /* hero */
+    .hero{padding:56px 0 40px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+    .eyebrow{display:inline-block;padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted);font-size:12px;margin-bottom:12px}
+    h1{font-size:40px;line-height:1.1;margin:0 0 12px}
+    .sub{color:var(--muted);font-size:16px;margin:0 0 18px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    .hero-card{background:linear-gradient(180deg,#0e1430,#0b1020);border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:18px}
+    .points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+    .chip{background:#0d142b;border:1px solid rgba(255,255,255,.08);padding:10px;border-radius:12px;font-size:14px}
 
-    /* Courses */
-    .course{display:flex; gap:14px; align-items:flex-start}
-    .badge{font-size:.76rem; padding:.2rem .6rem; border-radius:999px; border:1px solid rgba(255,255,255,.18); color:#d1fae5; background:rgba(16,185,129,.15)}
-
-    /* Pricing */
-    .price-wrap{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-    .price{padding:20px; border-radius:16px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02))}
-    .price.featured{outline: var(--ring); transform:translateY(-4px)}
-    .price .tag{font-size:.8rem; color:#a7f3d0}
-    .price .amount{font-size:2rem; font-weight:800}
-
-    /* Testimonials */
-    .testi{display:flex; gap:12px; align-items:flex-start}
-    .avatar{width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#67e8f9,#60a5fa)}
-
-    /* FAQ */
-    details{border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:14px 16px; background:rgba(255,255,255,.03)}
-    details+details{margin-top:10px}
-    summary{cursor:pointer; font-weight:600}
-
-    /* CTA/Footer */
-    .cta{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between; background:linear-gradient(90deg,rgba(11,95,255,.25), rgba(34,211,238,.25)); border:1px solid rgba(255,255,255,.18); padding:20px; border-radius:16px}
-    footer{padding:28px 0 60px; color:var(--muted)}
-
-    /* Utilities */
+    /* sections */
+    section{padding:48px 0}
+    h2{font-size:28px;margin:0 0 8px}
     .muted{color:var(--muted)}
-    .icon{width:22px; height:22px}
-    .list{display:grid; gap:10px; padding-left:18px}
-    .list li{list-style: "✓  ";}
-    .hide-mobile{display:block}
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr}
-      .grid-3, .price-wrap{grid-template-columns:1fr}
-      .hide-mobile{display:none}
-    }
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 6px}
 
-    /* Float WhatsApp */
-    .wa{position:fixed; right:16px; bottom:16px; z-index:60}
-    .wa a{display:grid; place-items:center; width:58px; height:58px; border-radius:50%; background:#22c55e; box-shadow:0 16px 40px rgba(34,197,94,.45); border:2px solid #eaffef}
-    .wa svg{width:30px; height:30px; fill:white}
+    /* contact/footer */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      nav ul{flex-wrap:wrap}
+    }
+    @media (max-width: 640px){
+      h1{font-size:32px}
+      .cards{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"EducationalOrganization",
-    "name":"JP Smart Classes",
-    "url":"https://jpsmartclasses.com/",
-    "logo":"https://dummyimage.com/256x256/0b5fff/ffffff&text=JP",
-    "sameAs":["https://www.facebook.com/", "https://www.instagram.com/"],
-    "address":{"@type":"PostalAddress","addressCountry":"IN","addressRegion":"MP","addressLocality":"Gwalior","streetAddress":"Hno. 143 Shiv Sadan","postalCode":"474003"},
-    "foundingDate":"2024",
-    "description":"K–12 coaching with live + recorded classes and animated digital content.",
-    "telephone":"+91 74659 17995",
-    "email":"jpsmartclasses@gmail.com"
-  }
-  </script>
 </head>
 <body>
-  <!-- Floating WhatsApp -->
-  <div class="wa"><a href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20I%20want%20a%20FREE%20demo" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163A11.867 11.867 0 0 1 0 11.993C0 5.373 5.373 0 11.993 0 18.614 0 24 5.373 24 11.993c0 6.62-5.386 11.993-12.007 11.993a12 12 0 0 1-5.65-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.35 1.593 5.448.003 9.886-4.429 9.889-9.878.003-5.457-4.415-9.89-9.872-9.893-5.45-.003-9.89 4.428-9.893 9.878-.002 2.356.768 4.548 2.063 6.348l-.546 2.003 2.009-.551zm11.387-5.464c-.073-.123-.268-.196-.56-.344-.292-.147-1.725-.85-1.99-.947-.266-.098-.46-.147-.654.147-.195.294-.75.947-.92 1.142-.17.196-.34.22-.632.073-.292-.147-1.233-.454-2.35-1.45-.868-.774-1.454-1.73-1.626-2.023-.17-.294-.018-.453.13-.6.134-.133.296-.346.443-.52.147-.171.195-.293.293-.487.098-.196.049-.367-.024-.514-.073-.147-.654-1.583-.897-2.168-.236-.567-.478-.49-.654-.498l-.56-.01c-.196 0-.514.073-.782.367-.268.294-1.027 1.003-1.027 2.449 0 1.446 1.052 2.843 1.197 3.04.147.196 2.07 3.166 5.02 4.435.702.303 1.25.484 1.677.62.704.224 1.345.192 1.852.116.565-.084 1.725-.703 1.97-1.38.243-.678.243-1.259.171-1.38z"/></svg>
-  </a></div>
-
   <!-- Header -->
   <header>
     <div class="container nav">
-      <a class="logo" href="#home">
-        <img class="logo-img" alt="JP Smart Classes logo" src="logo.jpeg"/>
-        <div>
-          <strong>JP Smart Classes</strong><br>
-          <span class="muted" style="font-size:.85rem">Grow Smart, Go Far</span>
-        </div>
+      <a class="brand" href="./">
+        <img src="logo.jpeg" alt="JP Smart Classes Logo" />
+        <span class="title"><b>JP Smart Classes</b><span style="display:block;color:#a0aec0;font-size:12px">Grow Smart, Go Far</span></span>
       </a>
-      <nav class="nav-links hide-mobile">
-          <a href="./about.html">About</a>
-        <a href="#features">Features</a>
-        <a href="#courses">Courses</a>
-        <a href="#pricing">Fees</a>
-        <a href="#demo">Free Demo</a>
-        <a href="#contact">Contact</a>
-        <a class="btn primary" href="#demo">Book FREE Demo</a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <!-- Courses only as a link to the new page -->
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="#fees">Fees</a></li>
+          <li><a href="#demo">Free Demo</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book FREE Demo</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -143,268 +93,87 @@
   <main id="home" class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">K–12 Coaching • Online + Offline</div>
-        <h1>Top-rated classes with animated content & 24×7 doubt help.</h1>
-        <p class="lead">Live + Recorded classes • 2D/3D digital content • Worksheets • AI Progress Reports • Olympiad & NTSE Foundation. First week <strong>FREE</strong>.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#demo">Book FREE Demo</a>
-          <a class="btn" href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20share%20the%20demo%20details" target="_blank">Chat on WhatsApp</a>
+        <span class="eyebrow">K–12 • CBSE & State Boards • Live + Recorded</span>
+        <h1>Premium Online Coaching for KG–12 with <span style="background:linear-gradient(90deg,var(--brand),#7aa9ff);-webkit-background-clip:text;background-clip:text;color:transparent">AI-powered progress</span></h1>
+        <p class="sub">Live classes, 2D/3D digital content, worksheets, doubt solving, and detailed AI progress reports — all in one place.</p>
+        <div class="actions">
+          <a class="btn primary" href="#demo">🎯 Book a FREE Demo</a>
+          <a class="btn whatsapp" href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20I%20want%20a%20free%20demo" target="_blank" rel="noopener">WhatsApp Now</a>
+          <a class="btn" href="courses.html">Explore Courses</a>
         </div>
-        <div class="kpis">
-          <div class="kpi"><strong>30+ hrs</strong><div class="muted">Monthly learning</div></div>
-          <div class="kpi"><strong>1000+</strong><div class="muted">Practice Qs</div></div>
-          <div class="kpi"><strong>1-to-1</strong><div class="muted">Doubt support</div></div>
+        <div class="points">
+          <div class="chip">⏱️ One-week free access</div>
+          <div class="chip">🏆 Olympiad & NTSE foundation</div>
+          <div class="chip">📊 Parent progress dashboard</div>
+          <div class="chip">🌐 Anywhere, anytime learning</div>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-card device">
-          <img src="pics.png?v=2" alt="Students learning online" loading="lazy" />
+      <div class="hero-card">
+        <b>What you get</b>
+        <div class="points" style="margin-top:10px">
+          <div class="chip">🎥 Live + Recorded Classes</div>
+          <div class="chip">🎓 Expert-curated Curriculum</div>
+          <div class="chip">📚 2D & 3D Animated Content</div>
+          <div class="chip">📝 Worksheets & Assignments</div>
+          <div class="chip">❓ 24×7 Doubt Solving</div>
+          <div class="chip">📊 AI Progress Reports</div>
         </div>
-        <div class="blob" aria-hidden="true"></div>
       </div>
     </div>
   </main>
 
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About JP Smart Classes</h2>
+      <p class="muted">We deliver a premium online learning experience for K–12 students across India. Our hybrid approach blends live teaching, interactive digital content, and data-driven feedback so every child learns at the right pace.</p>
+    </div>
+  </section>
+
   <!-- Features -->
   <section id="features">
     <div class="container">
-      <h2>Why choose JP Smart Classes?</h2>
-      <p class="section-lead">Everything students need to succeed — designed for busy parents and ambitious learners.</p>
-      <div class="grid-3">
-        <div class="card"><h3>🎥 Live + Recorded</h3><p class="muted">Daily live classes with recordings, so no child misses a lesson.</p></div>
-        <div class="card"><h3>📚 Animated Content</h3><p class="muted">2D/3D visuals that make difficult topics simple and fun.</p></div>
-        <div class="card"><h3>📝 Worksheets</h3><p class="muted">Chapter-wise practice sheets and assignments with solutions.</p></div>
-        <div class="card"><h3>❓ 24×7 Doubts</h3><p class="muted">Ask anytime on WhatsApp/portal; mentors reply quickly.</p></div>
-        <div class="card"><h3>📊 AI Progress</h3><p class="muted">Track attendance, scores, weak topics, and improvements.</p></div>
-        <div class="card"><h3>🎯 Olympiad</h3><p class="muted">Foundation for Olympiad & NTSE with weekly tests.</p></div>
-      </div>
-    </div>
-  </section>
-</section>   <!-- Features ka end -->
-
-<!-- ===== Gallery Section ===== -->
-<section id="gallery" style="padding:70px 0; background:#f9fbff;">
-  <div class="container">
-    <h2 style="text-align:center; margin-bottom:40px; font-size:32px; font-weight:700; color:#0b1020;">
-      Our Learning Gallery
-    </h2>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:25px;">
-      
-      <!-- Gallery Item 1 -->
-      <div style="border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.12); transition:transform 0.3s;">
-        <img src="pics.png" alt="Classroom Demo" style="width:100%; display:block; transition:transform 0.4s;">
-      </div>
-      
-      <!-- Gallery Item 2 -->
-      <div style="border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.12); transition:transform 0.3s;">
-        <img src="logo.jpeg" alt="Digital Content" style="width:100%; display:block; transition:transform 0.4s;">
-      </div>
-      
-      <!-- Gallery Video -->
-      <div style="border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.12);">
-        <!-- Gallery Video -->
-<div style="border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.12);">
-  <video width="100%" height="220" controls preload="metadata" poster="logo.jpeg">
-    <source src="JP SMART CLASSES (1).mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Small hover effect -->
-<style>
-  #gallery div:hover img {
-    transform: scale(1.08);
-  }
-</style>
-
-<section id="courses">   <!-- Courses ka start -->
-
-  <!-- Courses -->
-  <section id="courses">
-    <div class="container">
-      <h2>Courses we offer</h2>
-      <p class="section-lead">KG to 12th • CBSE • State Boards • English & Hindi medium</p>
-      <div class="grid-3">
-        <div class="card course">
-          <div><span class="badge">Primary (KG–5)</span>
-            <h3>Foundational Skills</h3>
-            <ul class="list">
-              <li>Phonics, Numeracy, Story-based learning</li>
-              <li>Fun activities & revision games</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card course">
-          <div><span class="badge">Middle (6–8)</span>
-            <h3>Concept Mastery</h3>
-            <ul class="list">
-              <li>Maths, Science, English, SST</li>
-              <li>Olympiad starter kit</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card course">
-          <div><span class="badge">Secondary (9–10)</span>
-            <h3>Board Excellence</h3>
-            <ul class="list">
-              <li>NCERT focus + test series</li>
-              <li>Doubt clinics every weekend</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card course">
-          <div><span class="badge">Senior (11–12)</span>
-            <h3>Streams</h3>
-            <ul class="list">
-              <li>PCM/PCB/Commerce + CUET prep (optional)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card course">
-          <div><span class="badge">Extras</span>
-            <h3>Future Skills</h3>
-            <ul class="list">
-              <li>STEM, Coding basics, Robotics (optional)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card course">
-          <div><span class="badge">Support</span>
-            <h3>Remedial & Bridge</h3>
-            <ul class="list">
-              <li>Weak topic boosters • Parent counseling</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- ===== Courses Section (KG–12) ===== -->
-<section id="courses" style="padding:60px 0;">
-  <div class="container">
-    <h2 style="text-align:center;margin-bottom:16px;">Courses (KG – Class 12)</h2>
-    <p class="section-lead" style="text-align:center;margin-bottom:28px;">
-      Live + recorded classes, 2D/3D visuals, worksheets, quizzes & 24×7 doubt help.
-    </p>
-
-    <!-- Row 1: KG–5 + 6–8 -->
-    <div class="grid-2">
-      <!-- KG – Class 5 -->
-      <div class="card course">
-        <span class="badge">KG – Class 5 • Early Learning</span>
-        <h3>English • Hindi • Maths</h3>
-        <ul class="list">
-          <li>Reading & writing practice</li>
-          <li>Animated lessons (2D/3D)</li>
-          <li>Worksheets & fun quizzes</li>
-        </ul>
-        <p><a class="btn" href="#demo">Book Free Demo</a></p>
-      </div>
-
-      <!-- Class 6 – 8 -->
-      <div class="card course">
-        <span class="badge">Class 6 – 8 • Foundation</span>
-        <h3>Maths & Science</h3>
-        <ul class="list">
-          <li>Concept-first visual lessons</li>
-          <li>Weekly worksheets & tests</li>
-          <li>Bridge classes for weak topics</li>
-        </ul>
-        <p><a class="btn" href="#demo">Try a Class</a></p>
-      </div>
-    </div>
-
-    <!-- Row 2: 9–10 + 11–12 -->
-    <div class="grid-2" style="margin-top:18px;">
-      <!-- Class 9 – 10 -->
-      <div class="card course">
-        <span class="badge">Class 9 – 10 • CBSE/State</span>
-        <h3>All Subjects</h3>
-        <ul class="list">
-          <li>Maths, Science, English, SST, Hindi</li>
-          <li>Chapter-wise notes & assignments</li>
-          <li>Revision + test series</li>
-        </ul>
-        <p><a class="btn" href="#pricing">See Fees</a></p>
-      </div>
-
-      <!-- Class 11 – 12 -->
-      <div class="card course">
-        <span class="badge">Class 11 – 12 • Science/Commerce</span>
-        <h3>Boards + Foundation</h3>
-        <ul class="list">
-          <li>PCM / PCB / Commerce subjects</li>
-          <li>Doubt clinics & targeted practice</li>
-          <li>Career guidance & progress reports</li>
-        </ul>
-        <p><a class="btn" href="#demo">Book Free Demo</a></p>
-      </div>
-    </div>
-
-    <!-- Optional add-ons -->
-    <div class="grid-3" style="margin-top:18px;">
-      <div class="card"><h3>Olympiad / NTSE</h3><p class="muted">Weekly practice + mock tests</p></div>
-      <div class="card"><h3>Spoken English</h3><p class="muted">Fluency, vocabulary, confidence</p></div>
-      <div class="card"><h3>Remedial / Bridge</h3><p class="muted">Weak topic boosters + parent updates</p></div>
-    </div>
-  </div>
-</section>
-
-  <!-- Pricing -->
-  <section id="pricing">
-    <div class="container">
-      <h2>Simple & flexible fees</h2>
-      <p class="section-lead">First week FREE. Scholarships available for meritorious students.</p>
-      <div class="price-wrap">
-        <div class="price">
-          <div class="tag">Starter</div>
-          <div class="amount">₹599/mo</div>
-          <p class="muted">Single Subject • Recorded backup • Doubt help</p>
-          <a class="btn" href="#demo">Choose Starter</a>
-        </div>
-        <div class="price featured">
-          <div class="tag">Most Popular</div>
-          <div class="amount">₹1499/mo</div>
-          <p class="muted">2–3 Subjects • Live + Recorded • Worksheets • Tests</p>
-          <a class="btn primary" href="#demo">Choose Standard</a>
-        </div>
-        <div class="price">
-          <div class="tag">Premium</div>
-          <div class="amount">₹2499/mo</div>
-          <p class="muted">All Subjects • AI reports • Weekly counseling</p>
-          <a class="btn" href="#demo">Choose Premium</a>
-        </div>
+      <h2>Why Parents Love Us</h2>
+      <div class="cards">
+        <div class="card"><h3>Live + Recorded</h3><p class="muted">Attend live classes or watch recordings anytime to revise.</p></div>
+        <div class="card"><h3>Premium Content</h3><p class="muted">Engaging 2D/3D animated modules from leading providers.</p></div>
+        <div class="card"><h3>AI Reports</h3><p class="muted">Track accuracy, speed, and improvement with clear dashboards.</p></div>
+        <div class="card"><h3>Doubt Solving</h3><p class="muted">Ask doubts 24×7; get quick resolutions.</p></div>
+        <div class="card"><h3>Worksheets</h3><p class="muted">Printable and online practice aligned to your board.</p></div>
+        <div class="card"><h3>Olympiad Prep</h3><p class="muted">Foundation for Olympiad & NTSE from early grades.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Demo Form -->
+  <!-- Demo -->
   <section id="demo">
     <div class="container">
-      <h2>Book your FREE Demo (1 Week)</h2>
-      <p class="section-lead">Fill the quick form. Our counselor will call you within 30 minutes.</p>
-      <div class="card" style="padding:0; overflow:hidden">
-        <!-- Google Form embed link -->
-        <iframe title="Demo Registration" src="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?embedded=true" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <h2>Book a FREE Demo</h2>
+      <p class="muted">Fill the short form and our team will call you within 24 hours.</p>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Quick Form</h3>
+          <iframe title="Demo Form" src="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        <div class="card">
+          <h3>Prefer WhatsApp?</h3>
+          <p class="muted">Message us “Demo” and we’ll share the link + class schedule.</p>
+          <a class="btn whatsapp" style="margin-top:6px" href="https://wa.me/917465917995?text=Demo" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
       </div>
-      <p class="muted" style="margin-top:10px">Need help? WhatsApp us at <a href="https://wa.me/917465917995" target="_blank">+91 74659 17995</a>.</p>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section id="reviews">
+  <!-- Fees -->
+  <section id="fees">
     <div class="container">
-      <h2>Parents & Students love us</h2>
-      <div class="grid-3">
-        <div class="card testi"><div class="avatar"></div><div><strong>Ritu Sharma (Parent)</strong><p class="muted">“Animated videos + worksheets = superb clarity. My son’s grades improved in 6 weeks.”</p></div></div>
-        <div class="card testi"><div class="avatar"></div><div><strong>Aarav (Class 9)</strong><p class="muted">“Doubt support is fast. I get solutions even late night. Test series helped a lot.”</p></div></div>
-        <div class="card testi"><div class="avatar"></div><div><strong>Mohit (Class 6)</strong><p class="muted">“Classes are fun! I love the science animations and quizzes.”</p></div></div>
+      <h2>Fees</h2>
+      <div class="card">
+        <p class="muted">Fees depend on class (grade) and batch size (1:1, 10–15, 15–25, 30–40, 50–60+). Share your child’s class on WhatsApp and we’ll send the exact plan.</p>
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/917465917995?text=Please%20share%20fees%20for%20Class%20__" target="_blank" rel="noopener">WhatsApp Us</a>
+          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book FREE Demo</a>
+        </div>
       </div>
     </div>
   </section>
@@ -412,48 +181,55 @@
   <!-- FAQ -->
   <section id="faq">
     <div class="container">
-      <h2>FAQs</h2>
-      <details><summary>Is the first week really free?</summary><p class="muted">Yes. Attend all sessions for 7 days. If you like it, continue; if not, no problem.</p></details>
-      <details><summary>Are classes online or offline?</summary><p class="muted">Both options available. Choose what suits you. Recordings are provided for online classes.</p></details>
-      <details><summary>Which boards & mediums?</summary><p class="muted">CBSE and State boards • English & Hindi mediums.</p></details>
-      <details><summary>How do I pay fees?</summary><p class="muted">UPI/Netbanking monthly. Scholarships/discounts available for meritorious students.</p></details>
+      <h2>Frequently Asked Questions</h2>
+      <div class="card">
+        <h3>What digital content do you use?</h3>
+        <p class="muted">We use premium, white-labeled digital content from leading providers, combined with our live expert sessions, worksheets, and AI-based progress reports.</p>
+      </div>
+      <div class="card">
+        <h3>Do you have offline branches?</h3>
+        <p class="muted">We are an online-first institute. Occasional city workshops/events may be announced on WhatsApp.</p>
+      </div>
+      <div class="card">
+        <h3>How are fees decided?</h3>
+        <p class="muted">Fees depend on class (grade) and batch size. Share your preference and we’ll send the exact plan.</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
     <div class="container">
-      <h2>Contact us</h2>
-      <div class="card">
-        <p><strong>JP Smart Classes</strong><br>
-          Hno. 143 Shiv Sadan, Gwalior 474003 • India<br>
-          Phone/WhatsApp: <a href="https://wa.me/917465917995" target="_blank">+91 74659 17995</a><br>
-          Email: <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a>
-        </p>
-        <p class="muted">Timings: Mon–Sat, 9:00 AM – 7:00 PM</p>
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Address</h3>
+          <p class="muted">Hno. 143, Shiv Sadan, Gwalior – 474003</p>
+          <h3>Call / Email</h3>
+          <p class="muted">📞 <a href="tel:+917465917995">+91 74659 17995</a><br/>✉️ <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <h3>Parents’ Note</h3>
+          <p class="muted">Weekly updates, attendance, and AI progress summaries are shared on WhatsApp/email.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="container cta">
-    <h3 style="margin:0">Start your child’s learning journey today.</h3>
-    <a class="btn primary" href="#demo">Get FREE Demo</a>
-  </div>
-
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      © <span id="yr"></span> JP Smart Classes • All rights reserved • <a href="#" class="muted">Privacy</a>
+    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <span>© <span id="y"></span> JP Smart Classes</span>
+      <span class="muted">Made with ❤️ for learners across India</span>
     </div>
   </footer>
 
+  <!-- Redirect old #courses anchors to the new page -->
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
+    if (location.hash && location.hash.toLowerCase().includes('course')) {
+      location.href = 'courses.html';
+    }
   </script>
 </body>
 </html>
-
-
-
-
-
-
