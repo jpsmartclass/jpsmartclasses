@@ -13,9 +13,7 @@
   <meta property="og:url" content="https://jpsmartclass.github.io/jpsmartclasses/about.html" />
   <meta property="og:site_name" content="JP Smart Classes" />
   <style>
-    :root {
-      --brand:#0b5fff; --dark:#0b1020; --muted:#677489; --bg:#f7f9fc; --ok:#27AE60; --accent:#FFD93B;
-    }
+    :root { --brand:#0b5fff; --dark:#0b1020; --muted:#677489; --bg:#f7f9fc; --ok:#27AE60; --accent:#FFD93B; }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:#0B1020;background:var(--bg)}
     a{color:var(--brand);text-decoration:none}
@@ -52,23 +50,9 @@
     "name": "JP Smart Classes",
     "url": "https://jpsmartclass.github.io/jpsmartclasses/",
     "logo": "https://jpsmartclass.github.io/jpsmartclasses/logo.jpeg",
-    "sameAs": [
-      "https://jpsmartclass.github.io/jpsmartclasses/"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Hno. 143 Shiv Sadan",
-      "addressLocality": "Gwalior",
-      "postalCode": "474003",
-      "addressCountry": "IN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-74659-17995",
-      "contactType": "customer service",
-      "areaServed": "IN",
-      "availableLanguage": ["en", "hi"]
-    }
+    "sameAs": ["https://jpsmartclass.github.io/jpsmartclasses/"],
+    "address": {"@type": "PostalAddress","streetAddress": "Hno. 143 Shiv Sadan","addressLocality": "Gwalior","postalCode": "474003","addressCountry": "IN"},
+    "contactPoint": {"@type": "ContactPoint","telephone": "+91-74659-17995","contactType": "customer service","areaServed": "IN","availableLanguage": ["en", "hi"]}
   }
   </script>
 </head>
@@ -85,6 +69,8 @@
       <nav>
         <a href="./index.html">Home</a>
         <a href="./about.html">About</a>
+        <!-- NEW: Courses link -->
+        <a href="./courses.html">Courses</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" class="btn btn-outline" target="_blank" rel="noopener">Book Free Demo</a>
       </nav>
     </div>
@@ -98,6 +84,8 @@
       <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book a FREE Demo</a>
         <a class="btn" style="background:var(--ok)" href="./index.html#features">See Features</a>
+        <!-- NEW: Explore Courses button -->
+        <a class="btn" style="background:var(--accent);color:#1a1a1a" href="./courses.html">Explore Courses</a>
       </div>
     </div>
   </section>
@@ -107,7 +95,7 @@
       <div class="grid grid-3">
         <div class="card">
           <h3>Our Mission</h3>
-          <p>To make high-quality K–12 education accessible and engaging for every student, using world‑class digital content and a caring human touch.</p>
+          <p>To make high-quality K–12 education accessible and engaging for every student, using world-class digital content and a caring human touch.</p>
         </div>
         <div class="card">
           <h3>Our Promise</h3>
@@ -125,24 +113,24 @@
         <div class="card">
           <h3>Why Parents Choose Us</h3>
           <ul class="list">
-            <li>Live + recorded classes with concept‑first explanations</li>
+            <li>Live + recorded classes with concept-first explanations</li>
             <li>2D/3D animated content that makes topics memorable</li>
-            <li>Worksheets, assignments, and chapter‑wise practice</li>
+            <li>Worksheets, assignments, and chapter-wise practice</li>
             <li>24×7 doubt solving and mentor support</li>
             <li>AI progress reports and personalized study plans</li>
-            <li>Olympiad & NTSE foundation (optional add‑on)</li>
+            <li>Olympiad & NTSE foundation (optional add-on)</li>
           </ul>
         </div>
         <div class="card">
           <h3>How Learning Works Here</h3>
           <ol class="list">
             <li><strong>Diagnose:</strong> We understand the student’s current level.</li>
-            <li><strong>Explain:</strong> Visual‑rich lessons with real‑life examples.</li>
+            <li><strong>Explain:</strong> Visual-rich lessons with real-life examples.</li>
             <li><strong>Practice:</strong> Worksheets, quizzes, and revision plans.</li>
-            <li><strong>Track:</strong> Dashboards + AI‑based insights for parents.</li>
-            <li><strong>Support:</strong> Mentor connects and doubt‑clearing help.</li>
+            <li><strong>Track:</strong> Dashboards + AI-based insights for parents.</li>
+            <li><strong>Support:</strong> Mentor connects and doubt-clearing help.</li>
           </ol>
-          <span class="pill" style="margin-top:8px">Free 1‑week demo available</span>
+          <span class="pill" style="margin-top:8px">Free 1-week demo available</span>
         </div>
       </div>
     </section>
@@ -150,7 +138,7 @@
     <section class="section">
       <div class="card">
         <h3>Our Story</h3>
-        <p>JP Smart Classes started with a simple belief: every child deserves a joyful learning experience that builds confidence and curiosity. We bring together passionate educators and best‑in‑class digital content to deliver a premium yet affordable K–12 program.</p>
+        <p>JP Smart Classes started with a simple belief: every child deserves a joyful learning experience that builds confidence and curiosity. We bring together passionate educators and best-in-class digital content to deliver a premium yet affordable K–12 program.</p>
       </div>
     </section>
 
@@ -166,7 +154,7 @@
         </div>
         <div class="card">
           <h4>Modes</h4>
-          <p>Live classes, recorded lessons, self‑paced learning</p>
+          <p>Live classes, recorded lessons, self-paced learning</p>
         </div>
       </div>
     </section>
@@ -198,6 +186,8 @@
         <div style="font-weight:700;margin-bottom:8px">Quick Links</div>
         <div class="tiny"><a href="./index.html">Home</a></div>
         <div class="tiny"><a href="./about.html">About</a></div>
+        <!-- NEW: Courses in footer -->
+        <div class="tiny"><a href="./courses.html">Courses</a></div>
         <div class="tiny"><a href="#contact">Contact</a></div>
       </div>
       <div>
