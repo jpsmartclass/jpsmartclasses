@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Courses | JP Smart Classes</title>
+  <meta name="description" content="Courses we offer from KG to Class 12 — live + recorded classes, 2D/3D content, worksheets, AI progress, doubt solving, Olympiad foundation." />
+  <link rel="icon" href="logo.jpeg" />
+  <style>
+    :root{ --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28) }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020 0%,#0b1020 40%,#0f172a 100%);color:#e7eaf3;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin-inline:auto;padding:0 16px}
+
+    /* header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{height:40px;width:40px;border-radius:8px}
+    .brand .title{line-height:1}
+    .brand b{display:block}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:#fff;opacity:.9;padding:8px 10px;border-radius:10px}
+    nav a:hover{background:rgba(255,255,255,.06)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent}
+    .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
+    .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
+
+    /* hero */
+    .hero{padding:48px 0 24px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero h1{font-size:40px;margin:0 0 8px}
+    .sub{color:var(--muted);margin:0}
+
+    section{padding:36px 0}
+    h2{font-size:28px;margin:0 0 8px}
+    .muted{color:var(--muted)}
+
+    /* cards */
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 6px}
+    .tag{display:inline-block;padding:4px 8px;border:1px solid rgba(255,255,255,.15);border-radius:999px;font-size:12px;color:var(--muted);margin-bottom:6px}
+
+    /* full-width rows */
+    .course-row{background:linear-gradient(180deg,#121933,#0f152f);border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:18px;display:grid;grid-template-columns:1.2fr;gap:16px}
+    .row-badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#0f2a24;color:#c6f7e2;border:1px solid rgba(166,243,208,.25);font-size:12px;margin-bottom:8px}
+    .row-title{font-size:22px;font-weight:800;margin:6px 0}
+    .row-points{list-style:none;padding:0;margin:0}
+    .row-points li{margin:8px 0;color:#cfd7ee}
+
+    /* mini */
+    .mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width: 900px){
+      .cards{grid-template-columns:1fr 1fr}
+      .mini{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .cards,.mini{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="./">
+        <img src="logo.jpeg" alt="JP Smart Classes Logo" />
+        <span class="title"><b>JP Smart Classes</b><span style="display:block;color:#a0aec0;font-size:12px">Grow Smart, Go Far</span></span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="./#about">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="./#faq">FAQ</a></li>
+          <li><a href="./#contact">Contact</a></li>
+          <li><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book FREE Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero">
+    <div class="container">
+      <h1>Courses We Offer</h1>
+      <p class="sub">KG to 12th • CBSE • State Boards • English & Hindi medium</p>
+      <!-- SINGLE Demo CTA only here -->
+      <div style="margin-top:14px">
+        <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book Free Demo</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Top category cards (like homepage style) -->
+  <section>
+    <div class="container">
+      <div class="cards">
+        <div class="card"><span class="tag">KG–2</span><h3>Early Learners</h3><p class="muted">Phonics, numbers, EVS, activity‑based learning.</p><a class="btn" href="#contact">Get details</a></div>
+        <div class="card"><span class="tag">Classes 3–5</span><h3>Foundation</h3><p class="muted">Concept clarity across all subjects.</p><a class="btn" href="#contact">Get details</a></div>
+        <div class="card"><span class="tag">Classes 6–8</span><h3>Middle School</h3><p class="muted">NCERT‑aligned lessons with quizzes & worksheets.</p><a class="btn" href="#contact">Get details</a></div>
+        <div class="card"><span class="tag">Classes 9–10</span><h3>Board Prep</h3><p class="muted">Live problem‑solving + weekly tests and feedback.</p><a class="btn" href="#contact">Get details</a></div>
+        <div class="card"><span class="tag">Class 11–12</span><h3>Senior – All Subjects</h3><p class="muted">All Subjects with targeted practice.</p><a class="btn" href="#contact">Get details</a></div>
+        <div class="card"><span class="tag">Class 11–12</span><h3>Senior – All Subjects</h3><p class="muted">All Subjects.</p><a class="btn" href="#contact">Get details</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-width rows (CTAs removed from each row) -->
+  <section>
+    <div class="container">
+      <h2 style="text-align:center">All Programs include</h2>
+      <p class="muted" style="text-align:center">Live + recorded classes • 2D/3D visuals • Worksheets • Quizzes • 24×7 doubts • AI progress</p>
+
+      <div class="course-row" style="margin-top:16px">
+        <div>
+          <span class="row-badge">KG – Class 5 • Early Learning</span>
+          <div class="row-title">All Subjects</div>
+          <ul class="row-points">
+            <li>Reading & writing practice</li>
+            <li>Animated lessons (2D/3D)</li>
+            <li>Worksheets & fun quizzes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-row" style="margin-top:16px">
+        <div>
+          <span class="row-badge">Class 6 – 8 • Foundation</span>
+          <div class="row-title">All Subjects</div>
+          <ul class="row-points">
+            <li>Concept‑first visual lessons</li>
+            <li>Weekly worksheets & tests</li>
+            <li>Bridge classes for weak topics</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-row" style="margin-top:16px">
+        <div>
+          <span class="row-badge">Class 9 – 10 • CBSE/State</span>
+          <div class="row-title">All Subjects</div>
+          <ul class="row-points">
+            <li>All Subjects</li>
+            <li>Chapter‑wise notes & assignments</li>
+            <li>Revision + test series</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-row" style="margin-top:16px">
+        <div>
+          <span class="row-badge">Class 11 – 12</span>
+          <div class="row-title">All Subjects</div>
+          <ul class="row-points">
+            <li>All Subjects</li>
+            <li>Doubt clinics & targeted practice</li>
+            <li>Career guidance & progress reports</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mini">
+        <div class="card" style="min-height:120px"><h3>Olympiad / NTSE</h3><p class="muted">Weekly practice + mock tests</p></div>
+        <div class="card" style="min-height:120px"><h3>Spoken English</h3><p class="muted">Fluency, vocabulary, confidence</p></div>
+        <div class="card" style="min-height:120px"><h3>Remedial / Bridge</h3><p class="muted">Weak topic boosters + parent updates</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fees (only WhatsApp CTA kept) -->
+  <section id="fees">
+    <div class="container">
+      <div class="card">
+        <h2>Fees</h2>
+        <p class="muted">Fees depend on class (grade) and batch size (1:1, 10–15, 15–25, 30–40, 50–60+). Share your child’s class on WhatsApp and we’ll send the exact plan.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+          <a class="btn whatsapp" href="https://wa.me/917465917995?text=Please%20share%20fees%20for%20Class%20__" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <span>© <span id="y"></span> JP Smart Classes</span>
+      <span class="muted">Made with ❤️ for learners across India</span>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
