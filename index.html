@@ -63,6 +63,11 @@
       h1{font-size:32px}
       .cards{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:1fr}
+        @media (max-width:820px){
+    .brand-text{display:none !important;}
+    header nav{display:none !important;}
+    header nav.show{display:flex !important; flex-direction:column;}
+    #menuBtn{display:inline-block !important;}
     }
   </style>
 </head>
@@ -233,14 +238,38 @@
   </footer>
 
   <!-- Redirect old #courses anchors to the new page -->
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+ <script>
+  (function () {
+    // Footer year
+    var y = document.getElementById('y');
+    if (y) y.textContent = new Date().getFullYear();
+
+    // Old #courses anchors redirect (keep existing behavior)
     if (location.hash && location.hash.toLowerCase().includes('course')) {
       location.href = 'courses.html';
+      return; // redirect ho raha hai to niche ka code run na kare
     }
-  </script>
+
+    // Mobile menu toggle
+    var menuBtn = document.getElementById('menuBtn');
+    var navMenu = document.getElementById('navMenu');
+    if (!menuBtn || !navMenu) return;
+
+    menuBtn.addEventListener('click', function () {
+      navMenu.classList.toggle('show');
+    });
+
+    // Resize par state sync (desktop = always visible)
+    var mq = window.matchMedia('(min-width:769px)');
+    function sync(){ mq.matches ? navMenu.classList.add('show') : navMenu.classList.remove('show'); }
+    if (mq.addEventListener) mq.addEventListener('change', sync); else mq.addListener(sync);
+    sync();
+  })();
+</script>
+
 </body>
 </html>
+
 
 
 
