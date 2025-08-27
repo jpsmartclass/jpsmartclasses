@@ -74,6 +74,30 @@
       .hero h1{font-size:44px}
       .foot-grid{grid-template-columns:2fr 1fr 1fr}
     }
+    .brand-logo-img{ height:40px; width:auto; border-radius:8px; object-fit:contain }
+@media (max-width:768px){ .brand-logo-img{ height:36px } }
+
+/* brand text ko mobile pe hide karke overlap hatao */
+.brand-text{ display:block }
+@media (max-width:768px){ .brand-text{ display:none } }
+
+/* responsive navbar */
+.menu-btn{
+  display:inline-block;background:transparent;border:2px solid #fff;color:#fff;
+  font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer
+}
+@media (max-width:768px){
+  header nav{
+    display:none;flex-direction:column;background:rgba(11,16,32,.95);
+    position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px;z-index:60
+  }
+  header nav.show{display:flex}
+  header nav a{margin:10px 0}
+}
+@media (min-width:769px){
+  .menu-btn{display:none}
+  header nav{display:flex !important;position:static;background:transparent;width:auto;padding:0}
+}
   </style>
 
   <!-- Schema -->
