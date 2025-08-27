@@ -15,11 +15,13 @@
   <style>
     :root { --brand:#0b5fff; --dark:#0b1020; --muted:#677489; --bg:#f7f9fc; --ok:#27AE60; --accent:#FFD93B; }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:#0B1020;background:var(--bg)}
+    html,body{margin:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:#0B1020;background:var(--bg);line-height:1.6;-webkit-text-size-adjust:100%}
+    img,video,svg,canvas{max-width:100%;height:auto;display:block}
     a{color:var(--brand);text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.8);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.12)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
     .brand{display:flex;align-items:center;gap:12px;color:#fff}
     .brand-logo-img{height:40px;width:auto;border-radius:8px;object-fit:contain}
     .nav a{color:#fff;opacity:.9;margin-left:18px}
@@ -29,7 +31,8 @@
     .hero h1{font-size:40px;line-height:1.2;margin:0 0 12px}
     .hero p{color:#ccd3e0;max-width:760px}
     .grid{display:grid;gap:18px}
-    @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}}
+    .grid-3{grid-template-columns:1fr}
+    .grid-2{grid-template-columns:1fr}
     .card{background:#fff;border:1px solid #e6ebf2;border-radius:18px;padding:22px;box-shadow:0 6px 24px rgba(13,18,30,.04)}
     .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef3ff;color:#2146d5;font-weight:600;font-size:12px}
     .lead{font-size:18px;color:#243046}
@@ -38,11 +41,42 @@
     footer{margin-top:48px;background:#0b1020;color:#c9d3e7}
     footer a{color:#fff}
     .foot-grid{display:grid;gap:18px;padding:28px 0}
-    @media(min-width:768px){.foot-grid{grid-template-columns:2fr 1fr 1fr}}
     .tiny{font-size:13px;color:#7f8aa3}
     .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;background:#ebfff2;color:#187a3e;border-radius:999px;font-weight:600;font-size:12px}
     .section{padding:36px 0}
+
+    /* --- Mobile menu button --- */
+    .menu-btn{
+      display:inline-block;background:transparent;border:2px solid #fff;color:#fff;
+      font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer
+    }
+
+    /* --- Collapsible nav for mobile --- */
+    @media(max-width:768px){
+      header nav{
+        display:none;flex-direction:column;background:rgba(11,16,32,.95);
+        position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px
+      }
+      header nav.show{display:flex}
+      header nav a{margin:10px 0}
+    }
+
+    /* --- Desktop nav --- */
+    @media(min-width:769px){
+      .menu-btn{display:none}
+      header nav{display:flex !important;position:static;background:transparent;width:auto;padding:0}
+    }
+
+    /* --- Larger screens layout --- */
+    @media(min-width:768px){
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-2{grid-template-columns:repeat(2,1fr)}
+      .hero h1{font-size:44px}
+      .foot-grid{grid-template-columns:2fr 1fr 1fr}
+    }
   </style>
+
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -66,7 +100,12 @@
           <div class="tiny">Grow Smart, Go Far</div>
         </div>
       </a>
-      <nav>
+
+      <!-- Mobile menu button -->
+      <button class="menu-btn" id="menuBtn">☰ Menu</button>
+
+      <!-- Nav (collapsible on mobile) -->
+      <nav id="navMenu">
         <a href="./index.html">Home</a>
         <a href="./about.html">About</a>
         <a href="./courses.html">Courses</a>
@@ -94,7 +133,7 @@
       <div class="grid grid-3">
         <div class="card">
           <h3>Our Mission</h3>
-          <p>To make high-quality K–12 education accessible and engaging for every student, using world‑class digital content and a caring human touch.</p>
+          <p>To make high-quality K–12 education accessible and engaging for every student, using world-class digital content and a caring human touch.</p>
         </div>
         <div class="card">
           <h3>Our Promise</h3>
@@ -112,24 +151,24 @@
         <div class="card">
           <h3>Why Parents Choose Us</h3>
           <ul class="list">
-            <li>Live + recorded classes with concept‑first explanations</li>
+            <li>Live + recorded classes with concept-first explanations</li>
             <li>2D/3D animated content that makes topics memorable</li>
-            <li>Worksheets, assignments, and chapter‑wise practice</li>
+            <li>Worksheets, assignments, and chapter-wise practice</li>
             <li>24×7 doubt solving and mentor support</li>
             <li>AI progress reports and personalized study plans</li>
-            <li>Olympiad & NTSE foundation (optional add‑on)</li>
+            <li>Olympiad & NTSE foundation (optional add-on)</li>
           </ul>
         </div>
         <div class="card">
           <h3>How Learning Works Here</h3>
           <ol class="list">
             <li><strong>Diagnose:</strong> We understand the student’s current level.</li>
-            <li><strong>Explain:</strong> Visual‑rich lessons with real‑life examples.</li>
+            <li><strong>Explain:</strong> Visual-rich lessons with real-life examples.</li>
             <li><strong>Practice:</strong> Worksheets, quizzes, and revision plans.</li>
-            <li><strong>Track:</strong> Dashboards + AI‑based insights for parents.</li>
-            <li><strong>Support:</strong> Mentor connects and doubt‑clearing help.</li>
+            <li><strong>Track:</strong> Dashboards + AI-based insights for parents.</li>
+            <li><strong>Support:</strong> Mentor connects and doubt-clearing help.</li>
           </ol>
-          <span class="pill" style="margin-top:8px">Free 1‑week demo available</span>
+          <span class="pill" style="margin-top:8px">Free 1-week demo available</span>
         </div>
       </div>
     </section>
@@ -137,7 +176,7 @@
     <section class="section">
       <div class="card">
         <h3>Our Story</h3>
-        <p>JP Smart Classes started with a simple belief: every child deserves a joyful learning experience that builds confidence and curiosity. We bring together passionate educators and best‑in‑class digital content to deliver a premium yet affordable K–12 program.</p>
+        <p>JP Smart Classes started with a simple belief: every child deserves a joyful learning experience that builds confidence and curiosity. We bring together passionate educators and best-in-class digital content to deliver a premium yet affordable K–12 program.</p>
       </div>
     </section>
 
@@ -153,7 +192,7 @@
         </div>
         <div class="card">
           <h4>Modes</h4>
-          <p>Live classes, recorded lessons, self‑paced learning</p>
+          <p>Live classes, recorded lessons, self-paced learning</p>
         </div>
       </div>
     </section>
@@ -196,6 +235,20 @@
     </div>
     <div style="text-align:center;padding:10px 0;border-top:1px solid rgba(255,255,255,.08)" class="tiny">Built with ♥ for learners across India</div>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (menuBtn && navMenu){
+      menuBtn.addEventListener('click', () => navMenu.classList.toggle('show'));
+      // Ensure correct state on resize
+      const mq = window.matchMedia('(min-width:769px)');
+      const sync = () => { if(mq.matches){ navMenu.classList.add('show'); } else { navMenu.classList.remove('show'); } };
+      mq.addEventListener ? mq.addEventListener('change', sync) : mq.addListener(sync);
+      sync();
+    }
+  </script>
 </body>
 </html>
