@@ -4,170 +4,174 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pay Fees | JP Smart Classes</title>
-  <meta name="description" content="Secure fee payment for JP Smart Classes. Pay via UPI (QR or app), Razorpay, or Stripe Payment Link." />
+  <meta name="description" content="Pay JP Smart Classes fees securely via Razorpay or by scanning the UPI QR code." />
   <link rel="icon" href="logo.png" />
+
   <style>
     :root{ --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28) }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020 0%,#0b1020 40%,#0f172a 100%);color:#e7eaf3;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020 0%,#0b1020 40%,#0f172a 100%);color:#e7eaf3;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;scroll-behavior:smooth}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{max-width:1100px;margin-inline:auto;padding:0 16px}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:center}
-    .brand img{height:40px;width:40px;border-radius:8px}
-    .brand .title{line-height:1}
-    .brand b{display:block}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{color:#fff;opacity:.9;padding:8px 10px;border-radius:10px}
+
+    /* ---------- Header / Navbar ---------- */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between;position:relative}
+    .brand{display:flex;gap:10px;align-items:center;color:#fff}
+    .brand-logo-img{height:40px;width:auto;border-radius:8px;object-fit:contain}
+    @media (max-width:768px){ .brand-logo-img{height:36px} }
+
+    nav a{color:#fff;opacity:.95;padding:8px 10px;border-radius:10px}
     nav a:hover{background:rgba(255,255,255,.06)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent;cursor:pointer}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent;cursor:pointer}
     .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
     .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
-    .btn.gray{background:#1a223e;border-color:#2a345c}
-    .hero{padding:48px 0 16px;border-bottom:1px solid rgba(255,255,255,.06)}
-    h1{font-size:36px;margin:0}
-    .sub{color:var(--muted)}
-    section{padding:30px 0}
-    h2{font-size:24px;margin:0 0 10px}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+    .btn.light{background:transparent;border:2px solid #fff;color:#fff}
+
+    .menu-btn{display:inline-block;background:transparent;border:2px solid #fff;color:#fff;font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer}
+
+    /* Mobile menu */
+    @media (max-width:768px){
+      .brand-text{display:block}
+      .brand-text .tiny{display:none}
+      header nav{
+        display:none;flex-direction:column;background:rgba(11,16,32,.98);
+        position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px;z-index:60
+      }
+      header nav.show{display:flex}
+      header nav a{margin:10px 0}
+    }
+    @media (min-width:769px){
+      .menu-btn{display:none}
+      header nav{display:flex !important;position:static;background:transparent;width:auto;padding:0}
+    }
+
+    /* ---------- Page ---------- */
+    .hero{padding:48px 0 24px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero h1{font-size:40px;margin:0 0 8px}
+    .sub{color:var(--muted);margin:0}
+
+    section{padding:36px 0}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
     .muted{color:var(--muted)}
-    .field{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
-    input[type="number"],input[type="text"]{background:#0f1733;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#fff;padding:10px 12px;outline:none}
-    label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
-    .hint{font-size:12px;color:#9fb0d6;margin-top:8px}
-    .qr{background:linear-gradient(180deg,#121933,#0f152f);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;text-align:center}
-    .qr img{margin-inline:auto;border-radius:12px}
-    .row{display:flex;gap:10px;flex-wrap:wrap}
-    footer{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;color:var(--muted);margin-top:10px}
-    @media(max-width: 900px){.grid{grid-template-columns:1fr}}
+
+    .qr-wrap{background:#0e152d;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px}
+    .qr-img{max-width:420px;margin:0 auto;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.35)}
+
+    .list{margin:0;padding-left:18px;color:#cfd7ee}
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:var(--muted)}
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="container nav">
-      <a class="brand" href="./">
-        <img src="logo.png" alt="JP Smart Classes Logo" />
-        <span class="title"><b>JP Smart Classes</b><span style="display:block;color:#a0aec0;font-size:12px">Grow Smart, Go Far</span></span>
+      <a class="brand" href="./index.html">
+        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" loading="eager" decoding="async" />
+        <div class="brand-text">
+          <div style="font-weight:800;line-height:1">JP Smart Classes</div>
+          <div class="tiny">Grow Smart, Go Far</div>
+        </div>
       </a>
-      <nav>
-        <ul>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+
+      <button class="menu-btn" id="menuBtn">☰ Menu</button>
+
+      <nav id="navMenu">
+        <a href="./index.html#home">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./courses.html">Courses</a>
+        <a href="./payments.html">Pay</a>
+        <a class="btn light" href="https://rzp.io/rzp/sgh72H1" target="_blank" rel="noopener">Pay via Razorpay</a>
       </nav>
     </div>
   </header>
 
+  <!-- Hero -->
   <main class="hero">
     <div class="container">
-      <h1>Pay Fees</h1>
-      <p class="sub">Choose a method below. For help, WhatsApp us anytime.</p>
-      <div class="row" style="margin-top:12px">
-        <a class="btn whatsapp" href="https://wa.me/917465917995?text=I%20need%20help%20with%20payment" target="_blank" rel="noopener">Need help? Chat on WhatsApp</a>
-      </div>
+      <h1>Pay Fees Securely</h1>
+      <p class="sub">Use Razorpay link or scan the UPI QR to pay from any app (GPay / PhonePe / Paytm).</p>
     </div>
   </main>
 
+  <!-- Payment Options -->
   <section>
     <div class="container grid">
-      <!-- UPI METHOD -->
+
+      <!-- Left: QR -->
       <div class="card">
-        <h2>UPI (GPay/PhonePe/Paytm)</h2>
-        <p class="muted">Pay easily using our UPI ID or scan QR. After paying, please WhatsApp the screenshot.</p>
-        <div class="field">
-          <div style="flex:1 1 220px">
-            <label>Enter Amount (INR)</label>
-            <input id="amt" type="number" min="1" step="1" placeholder="e.g., 500" />
-          </div>
-          <div style="flex:1 1 260px">
-            <label>Student Name (for note)</label>
-            <input id="name" type="text" placeholder="Your child’s name" />
-          </div>
+        <h2 style="margin-top:0">Scan & Pay (UPI QR)</h2>
+        <p class="muted">Open any UPI app and scan this QR. Add your <b>Student Name & Class</b> in notes.</p>
+        <div class="qr-wrap" style="margin-top:12px">
+          <!-- Upload your file as 'razorpay-qr.jpg' (or change the src) -->
+          <img src="razorpay-qr.jpg" alt="Razorpay UPI QR – JP Smart Classes" class="qr-img">
         </div>
-        <div class="row">
-          <button class="btn primary" onclick="payUPI()">Pay via UPI App</button>
-          <a class="btn gray" href="#" id="upiLinkPreview" target="_blank" rel="noopener">Preview UPI Link</a>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
+          <a class="btn primary" href="https://rzp.io/rzp/sgh72H1" target="_blank" rel="noopener">Pay via Razorpay</a>
+          <!-- Optional: WhatsApp after payment -->
+          <a class="btn whatsapp" href="https://wa.me/917465917995?text=Hello%20JP%20Smart%20Classes%2C%20I%20have%20paid%20the%20fees.%20Name%3A%20_____%2C%20Class%3A%20_____%2C%20Transaction%20ID%3A%20_____" target="_blank" rel="noopener">Send Payment Details on WhatsApp</a>
         </div>
-        <div class="hint">UPI ID: <b id="upiIdTxt">YOUR_UPI_ID@bank</b> (replace in code) • Currency: INR</div>
       </div>
 
-      <div class="qr card">
-        <h2>Scan & Pay (UPI QR)</h2>
-        <p class="muted">Upload a file called <code>upi-qr.png</code> in your repo and it will show here.</p>
-        <img src="upi-qr.png" alt="UPI QR Code for JP Smart Classes" width="220" height="220" onerror="this.style.opacity=0.35;this.nextElementSibling.style.display='block'"/>
-        <div class="hint" style="display:none">QR image not found yet. Add <code>upi-qr.png</code> to your repository root.</div>
+      <!-- Right: Details / Notes -->
+      <div class="card">
+        <h2 style="margin-top:0">Payment Details</h2>
+        <ul class="list">
+          <li>Recommended: click <b>Pay via Razorpay</b> for cards, UPI, wallets, NetBanking.</li>
+          <li>If using QR, ensure receiver shows <b>Manav Prajapati</b> / JP Smart Classes.</li>
+          <li>In payment <b>notes</b>, mention Student Name, Class, and Phone Number.</li>
+          <li>After payment, share the receipt on WhatsApp for quick confirmation.</li>
+        </ul>
+
+        <div class="card" style="margin-top:16px">
+          <h3 style="margin-top:0">Need Help?</h3>
+          <p class="muted" style="margin:6px 0 0">Call/WhatsApp: <a href="tel:+917465917995">+91 74659 17995</a> • <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a></p>
+        </div>
       </div>
+
     </div>
   </section>
 
+  <!-- FAQ (optional) -->
   <section>
-    <div class="container grid">
-      <!-- RAZORPAY METHOD (optional) -->
+    <div class="container">
       <div class="card">
-        <h2>Pay with Razorpay</h2>
-        <p class="muted">Create a <em>Payment Button</em> in the Razorpay Dashboard and paste its ID below.</p>
-        <form>
-          <!-- Replace pl_xxxxxxxxxxxxx with your Payment Button ID -->
-          <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_xxxxxxxxxxxxx" async> </script>
-        </form>
-        <div class="hint">Works for Cards, UPI, NetBanking. After you replace the ID, a blue Razorpay button will appear.</div>
-      </div>
-
-      <!-- STRIPE METHOD (optional) -->
-      <div class="card">
-        <h2>Stripe Payment Link</h2>
-        <p class="muted">If you use Stripe, paste your hosted Payment Link URL into the button below.</p>
-        <a class="btn primary" href="https://buy.stripe.com/your_payment_link" target="_blank" rel="noopener">Pay via Stripe</a>
-        <div class="hint">Replace the URL with your Stripe Payment Link. You can create one in the Stripe Dashboard.</div>
+        <h2 style="margin-top:0">FAQs</h2>
+        <p class="muted">Q: Razorpay link काम नहीं कर रहा? — A: पेज refresh करें या अलग ब्राउज़र/UPI ऐप ट्राय करें।  
+        Q: गलत amount हो गया? — A: तुरंत WhatsApp पर receipt भेजकर बताएं, हम resolve करेंगे।</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="container card">
-      <h2>After Payment</h2>
-      <p class="muted">Share payment details (student name, class, amount, and transaction ID) on WhatsApp so we can activate/extend access.</p>
-      <a class="btn whatsapp" href="https://wa.me/917465917995?text=Payment%20done%20-%20Student:%20__%2C%20Class:%20__%2C%20Amount:%20__%2C%20Txn:%20__" target="_blank" rel="noopener">Send Payment Screenshot</a>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <span>© <span id="y"></span> JP Smart Classes</span>
-      <span class="muted">Made with ❤️ for learners across India</span>
+      <span class="muted">Secure payments powered by Razorpay</span>
     </div>
   </footer>
 
+  <!-- JS: year + mobile menu toggle -->
   <script>
-    // Replace with your UPI ID
-    const UPI_ID = 'YOUR_UPI_ID@bank';
-    const UPI_NAME = 'JP Smart Classes';
-    const UPI_NOTE = 'JP Smart Classes Fees';
-    document.getElementById('upiIdTxt').textContent = UPI_ID;
+    (function () {
+      var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 
-    function buildUPILink(amount, name){
-      const pa = encodeURIComponent(UPI_ID);
-      const pn = encodeURIComponent(UPI_NAME);
-      const am = amount ? encodeURIComponent(String(amount)) : '';
-      const tn = encodeURIComponent((name? name + ' - ' : '') + UPI_NOTE);
-      const base = `upi://pay?pa=${pa}&pn=${pn}&cu=INR&tn=${tn}`;
-      return am ? `${base}&am=${am}` : base;
-    }
-
-    function payUPI(){
-      const amount = Number(document.getElementById('amt').value || 0);
-      const name = document.getElementById('name').value.trim();
-      const link = buildUPILink(amount, name);
-      const a = document.createElement('a');
-      a.href = link;
-      a.target = '_blank';
-      document.body.appendChild(a); a.click(); a.remove();
-      document.getElementById('upiLinkPreview').href = link;
-    }
+      var menuBtn=document.getElementById('menuBtn');
+      var navMenu=document.getElementById('navMenu');
+      if(menuBtn && navMenu){
+        menuBtn.addEventListener('click', function(){ navMenu.classList.toggle('show'); });
+        var mq=window.matchMedia('(min-width:769px)');
+        function sync(){ mq.matches ? navMenu.classList.add('show') : navMenu.classList.remove('show'); }
+        if(mq.addEventListener) mq.addEventListener('change',sync); else mq.addListener(sync);
+        sync();
+      }
+    })();
   </script>
 </body>
 </html>
