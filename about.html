@@ -115,6 +115,19 @@
   }
   </script>
 </head>
+  <!-- Naina (Ringg.ai) -->
+<script>
+  function loadAgentsCdn(e,t){let n=document.createElement("link");n.rel="stylesheet",n.type="text/css",n.href=`https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${e}/dist/style.css`;var a=document.createElement("script");a.type="text/javascript",a.readyState?a.onreadystatechange=function(){"loaded"!==a.readyState&&"complete"!==a.readyState||(a.onreadystatechange=null,t())}:a.onload=function(){t()},a.src=`https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${e}/dist/dv-agent.es.js`,document.getElementsByTagName("head")[0].appendChild(n),document.getElementsByTagName("head")[0].appendChild(a)}
+</script>
+<script>
+  loadAgentsCdn("1.0.3", function () {
+    loadAgent({
+      agentId: "7a84fdb6-98ef-4b51-a018-d9874419473c",
+      xApiKey: "ba62abca-aa5c-40af-8caf-499ba1e0ec2e",
+      variables: {"callee_name":"CALLEE_NAME"},
+    });
+  });
+</script>
 <body>
 
   <!-- Header -->
