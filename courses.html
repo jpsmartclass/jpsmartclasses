@@ -95,6 +95,12 @@
     @media (max-width: 640px){
       .cards,.mini{grid-template-columns:1fr}
       .hero h1{font-size:32px}
+      /* 👇 Fix faded Ringg AI text on courses.html */
+.ringg_ai-prose p,
+.ringg_ai-prose-sm p,
+.ringg_ai-text-sm p {
+  color: #fff !important;   /* white text (good for dark background) */
+  opacity: 1 !important;    /* make it solid */
     }
   </style>
 </head>
