@@ -69,6 +69,14 @@
     header nav.show{display:flex !important; flex-direction:column;}
     #menuBtn{display:inline-block !important;}
     }
+    
+    /* 👇 My fix for Ringg AI faded text */
+    .ringg_ai-prose p,
+    .ringg_ai-prose-sm p,
+    .ringg_ai-text-sm p {
+      color: #fff !important;   /* white text */
+      opacity: 1 !important;    /* fully visible */
+    }
   </style>
 </head>
 <body>
@@ -269,6 +277,7 @@
 
 </body>
 </html>
+
 
 
 
