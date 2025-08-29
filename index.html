@@ -100,37 +100,31 @@
       .foot-grid{grid-template-columns:2fr 1fr 1fr}
     }
   </style>
-<!-- Ringg widget contrast fix -->
-<style id="ringg-contrast-fix">
-  /* Make chat text full-contrast on dark theme */
-  .ringg_ai-prose p,
-  .ringg_ai-prose-sm p,
-  .ringg_ai-text-sm p,
-  .ringg_ai-message,
-  .ringg_ai-message * {
-    color: #ffffff !important;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-  /* Bubbles */
-  .ringg_ai-bubble--bot, .ringg_ai-bubble.bot {
-    background: #0f172a !important;
-    color: #ffffff !important;
-  }
-  .ringg_ai-bubble--user, .ringg_ai-bubble.user {
-    background: #1f2937 !important;
-    color: #ffffff !important;
-  }
-  /* Header / status / timestamps */
-  .ringg_ai-header, .ringg_ai-status, .ringg_ai-timestamp {
-    color: #e5e7eb !important;
-    opacity: 1 !important;
-  }
-  /* Links + input */
-  .ringg_ai-prose a, .ringg_ai-message a { color: #60a5fa !important; }
-  .ringg_ai-input, .ringg_ai-input * { color: #ffffff !important; }
-  .ringg_ai-input::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }
-</style>
+
+  <!-- Ringg widget contrast fix -->
+  <style id="ringg-contrast-fix">
+    /* Make chat text full-contrast on dark theme */
+    .ringg_ai-root, .ringg_ai-root * { opacity: 1 !important; } /* kill any parent opacity */
+    .ringg_ai-prose p,
+    .ringg_ai-prose-sm p,
+    .ringg_ai-text-sm p,
+    .ringg_ai-message,
+    .ringg_ai-message * {
+      color:#ffffff !important;
+      opacity:1 !important;
+      filter:none !important;
+    }
+    /* Bubbles */
+    .ringg_ai-bubble--bot, .ringg_ai-bubble.bot { background:#0f172a !important; color:#ffffff !important; }
+    .ringg_ai-bubble--user, .ringg_ai-bubble.user { background:#1f2937 !important; color:#ffffff !important; }
+    /* Header / status / timestamps */
+    .ringg_ai-header, .ringg_ai-status, .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
+    /* Links + input */
+    .ringg_ai-prose a, .ringg_ai-message a { color:#60a5fa !important; }
+    .ringg_ai-input, .ringg_ai-input * { color:#ffffff !important; }
+    .ringg_ai-input::placeholder { color:#cbd5e1 !important; opacity:1 !important; }
+  </style>
+
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
@@ -151,7 +145,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="./index.html">
-        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80"/>
+        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" />
         <div class="brand-text">
           <div style="font-weight:800;line-height:1">JP Smart Classes</div>
           <div class="tiny">Grow Smart, Go Far</div>
@@ -213,7 +207,7 @@
     <div class="container foot-grid">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80"/>
+          <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" />
           <div>
             <div style="font-weight:800;color:#fff">JP Smart Classes</div>
             <div class="tiny">Grow Smart, Go Far</div>
@@ -276,11 +270,28 @@
       loadAgent({
         agentId: "7a84fdb6-98ef-4b51-a018-d9874419473c",
         xApiKey: "ba62abca-aa5c-40af-8caf-499ba1e0ec2e",
-        variables: {"callee_name":"CALLEE_NAME"}
+        variables: {"callee_name":"CALLEE_NAME"},
+        // Optional UI hints; safe if ignored
+        ui: {
+          theme: "dark",
+          highContrast: true
+        }
       });
     });
   </script>
 
+  <!-- Enforce contrast on dynamic updates (in case widget mutates styles) -->
+  <script>
+    (function enforceRinggContrast(){
+      const apply = () => {
+        document.querySelectorAll('.ringg_ai-root,[class*="ringg_ai"]').forEach(el => {
+          el.style.opacity = '1';
+        });
+      };
+      new MutationObserver(apply).observe(document.body, { subtree:true, childList:true, attributes:true });
+      apply();
+    })();
+  </script>
+
 </body>
 </html>
-
