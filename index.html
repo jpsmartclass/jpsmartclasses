@@ -100,29 +100,6 @@
       .foot-grid{grid-template-columns:2fr 1fr 1fr}
     }
   </style>
-
-  <!-- Ringg widget contrast fix -->
-  <style id="ringg-contrast-fix">
-    /* Make chat text full-contrast on dark theme */
-    .ringg_ai-root, .ringg_ai-root * { opacity: 1 !important; } /* kill any parent opacity */
-    .ringg_ai-prose p,
-    .ringg_ai-prose-sm p,
-    .ringg_ai-text-sm p,
-    .ringg_ai-message,
-    .ringg_ai-message * {
-      color:#ffffff !important;
-      opacity:1 !important;
-      filter:none !important;
-    }
-    /* Bubbles */
-    .ringg_ai-bubble--bot, .ringg_ai-bubble.bot { background:#0f172a !important; color:#ffffff !important; }
-    .ringg_ai-bubble--user, .ringg_ai-bubble.user { background:#1f2937 !important; color:#ffffff !important; }
-    /* Header / status / timestamps */
-    .ringg_ai-header, .ringg_ai-status, .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
-    /* Links + input */
-    .ringg_ai-prose a, .ringg_ai-message a { color:#60a5fa !important; }
-    .ringg_ai-input, .ringg_ai-input * { color:#ffffff !important; }
-    .ringg_ai-input::placeholder { color:#cbd5e1 !important; opacity:1 !important; }
   </style>
 
   <!-- Schema.org -->
@@ -292,6 +269,42 @@
       apply();
     })();
   </script>
+<!-- Final Ringg contrast override (KEEP THIS LAST) -->
+<style id="ringg-contrast-fix">
+  .ringg_ai-root,
+  .ringg_ai-root *,
+  .ringg_ai-root *::before,
+  .ringg_ai-root *::after {
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+  .ringg_ai-prose,
+  .ringg_ai-prose *,
+  .ringg_ai-prose-sm,
+  .ringg_ai-prose-sm *,
+  .ringg_ai-text-sm,
+  .ringg_ai-message,
+  .ringg_ai-message * { color: #ffffff !important; }
+  [class*="ringg_ai-bubble"],
+  [class*="ringg_ai-message"],
+  [class*="ringg_ai-content"] { background: #0f172a !important; }
+  .ringg_ai-header, .ringg_ai-status, .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
+  .ringg_ai-input, .ringg_ai-input *, input[class*="ringg_ai"], textarea[class*="ringg_ai"] { color:#ffffff !important; }
+  .ringg_ai-input::placeholder,
+  input[class*="ringg_ai"]::placeholder,
+  textarea[class*="ringg_ai"]::placeholder { color:#cbd5e1 !important; opacity:1 !important; }
+</style>
 
+<!-- Keep our style last even if widget injects more -->
+<script>
+  (function keepRinggFixLast(){
+    const id='ringg-contrast-fix';
+    const moveLast=()=>{ const s=document.getElementById(id); if(s&&s.parentNode){ s.parentNode.appendChild(s); } };
+    new MutationObserver(moveLast).observe(document.documentElement,{childList:true,subtree:true});
+    moveLast();
+  })();
+</script>
 </body>
 </html>
+
