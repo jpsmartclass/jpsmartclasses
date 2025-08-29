@@ -100,7 +100,6 @@
       .foot-grid{grid-template-columns:2fr 1fr 1fr}
     }
   </style>
-  </style>
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -122,7 +121,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="./index.html">
-        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" />
+        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80"/>
         <div class="brand-text">
           <div style="font-weight:800;line-height:1">JP Smart Classes</div>
           <div class="tiny">Grow Smart, Go Far</div>
@@ -184,7 +183,7 @@
     <div class="container foot-grid">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" />
+          <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80"/>
           <div>
             <div style="font-weight:800;color:#fff">JP Smart Classes</div>
             <div class="tiny">Grow Smart, Go Far</div>
@@ -247,64 +246,10 @@
       loadAgent({
         agentId: "7a84fdb6-98ef-4b51-a018-d9874419473c",
         xApiKey: "ba62abca-aa5c-40af-8caf-499ba1e0ec2e",
-        variables: {"callee_name":"CALLEE_NAME"},
-        // Optional UI hints; safe if ignored
-        ui: {
-          theme: "dark",
-          highContrast: true
-        }
+        variables: {"callee_name":"CALLEE_NAME"}
       });
     });
   </script>
 
-  <!-- Enforce contrast on dynamic updates (in case widget mutates styles) -->
-  <script>
-    (function enforceRinggContrast(){
-      const apply = () => {
-        document.querySelectorAll('.ringg_ai-root,[class*="ringg_ai"]').forEach(el => {
-          el.style.opacity = '1';
-        });
-      };
-      new MutationObserver(apply).observe(document.body, { subtree:true, childList:true, attributes:true });
-      apply();
-    })();
-  </script>
-<!-- Final Ringg contrast override (KEEP THIS LAST) -->
-<style id="ringg-contrast-fix">
-  .ringg_ai-root,
-  .ringg_ai-root *,
-  .ringg_ai-root *::before,
-  .ringg_ai-root *::after {
-    opacity: 1 !important;
-    filter: none !important;
-    mix-blend-mode: normal !important;
-  }
-  .ringg_ai-prose,
-  .ringg_ai-prose *,
-  .ringg_ai-prose-sm,
-  .ringg_ai-prose-sm *,
-  .ringg_ai-text-sm,
-  .ringg_ai-message,
-  .ringg_ai-message * { color: #ffffff !important; }
-  [class*="ringg_ai-bubble"],
-  [class*="ringg_ai-message"],
-  [class*="ringg_ai-content"] { background: #0f172a !important; }
-  .ringg_ai-header, .ringg_ai-status, .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
-  .ringg_ai-input, .ringg_ai-input *, input[class*="ringg_ai"], textarea[class*="ringg_ai"] { color:#ffffff !important; }
-  .ringg_ai-input::placeholder,
-  input[class*="ringg_ai"]::placeholder,
-  textarea[class*="ringg_ai"]::placeholder { color:#cbd5e1 !important; opacity:1 !important; }
-</style>
-
-<!-- Keep our style last even if widget injects more -->
-<script>
-  (function keepRinggFixLast(){
-    const id='ringg-contrast-fix';
-    const moveLast=()=>{ const s=document.getElementById(id); if(s&&s.parentNode){ s.parentNode.appendChild(s); } };
-    new MutationObserver(moveLast).observe(document.documentElement,{childList:true,subtree:true});
-    moveLast();
-  })();
-</script>
 </body>
 </html>
-
