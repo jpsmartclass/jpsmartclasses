@@ -307,5 +307,42 @@
       sync();
     })();
   </script>
+  <!-- Ringg: precise, lightweight contrast fix -->
+<style id="ringg-contrast-fix">
+  /* Bubble wrappers (left = bot, right = user) */
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit {
+    /* Dark bubble so text is readable */
+    background: #0f172a !important;
+    border-color: #0f172a !important;
+    /* Kill any dimming applied via utilities */
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    /* Tailwind-style opacity vars some widgets use */
+    --tw-text-opacity: 1 !important;
+  }
+
+  /* Make all text inside the bubbles solid */
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-left .ringg_ai-w-fit *,
+  .ringg_ai-text-right .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  /* Header / status / timestamp */
+  .ringg_ai-header,
+  .ringg_ai-status,
+  .ringg_ai-timestamp {
+    color: #e5e7eb !important;
+    opacity: 1 !important;
+  }
+
+  /* Input + placeholder */
+  .ringg_ai-input, .ringg_ai-input * { color: #ffffff !important; }
+  .ringg_ai-input::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }
+</style>
 </body>
 </html>
