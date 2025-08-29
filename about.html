@@ -19,7 +19,7 @@
   <meta property="og:image:width" content="1000" />
   <meta property="og:image:height" content="1000" />
 
-  <!-- Favicon (optional) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png" />
 
   <style>
@@ -79,7 +79,7 @@
     }
     @media (max-width:768px){
       .brand-logo-img{height:36px}
-      .brand-text{display:none}              /* brand text hide on mobile (avoid overlap) */
+      .brand-text{display:none}
       header nav{
         display:none;flex-direction:column;background:rgba(11,16,32,.98);
         position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px;z-index:60
@@ -115,43 +115,21 @@
   }
   </script>
 </head>
-  <!-- Naina (Ringg.ai) -->
-<script>
-  function loadAgentsCdn(e,t){let n=document.createElement("link");n.rel="stylesheet",n.type="text/css",n.href=`https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${e}/dist/style.css`;var a=document.createElement("script");a.type="text/javascript",a.readyState?a.onreadystatechange=function(){"loaded"!==a.readyState&&"complete"!==a.readyState||(a.onreadystatechange=null,t())}:a.onload=function(){t()},a.src=`https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${e}/dist/dv-agent.es.js`,document.getElementsByTagName("head")[0].appendChild(n),document.getElementsByTagName("head")[0].appendChild(a)}
-</script>
-<script>
-  loadAgentsCdn("1.0.3", function () {
-    loadAgent({
-      agentId: "7a84fdb6-98ef-4b51-a018-d9874419473c",
-      xApiKey: "ba62abca-aa5c-40af-8caf-499ba1e0ec2e",
-      variables: {"callee_name":"CALLEE_NAME"},
-    });
-  });
-</script>
 <body>
 
   <!-- Header -->
   <header>
     <div class="container nav">
       <a class="brand" href="./index.html">
-        <img
-          src="logo.png"
-          srcset="logo.png 1x, logo@2x.png 2x"
-          alt="JP Smart Classes Logo"
-          class="brand-logo-img"
-          width="80" height="80"
-          decoding="async" loading="eager"
-        />
+        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80"/>
         <div class="brand-text">
           <div style="font-weight:800;line-height:1">JP Smart Classes</div>
           <div class="tiny">Grow Smart, Go Far</div>
         </div>
       </a>
 
-      <!-- Mobile menu button -->
       <button class="menu-btn" id="menuBtn">☰ Menu</button>
 
-      <!-- Collapsible links -->
       <nav id="navMenu">
         <a href="./index.html#home">Home</a>
         <a href="./about.html">About</a>
@@ -171,10 +149,8 @@
         <span class="pill">CBSE &amp; State Boards</span>
         <span class="pill">Live + Recorded</span>
       </div>
-
       <h1>Premium Online Coaching for KG–12 with <span style="color:#5ea1ff">AI-powered</span> progress</h1>
       <p>Live classes, 2D/3D digital content, worksheets, doubt solving, and detailed AI progress reports — all in one place.</p>
-
       <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">🎯 Book a FREE Demo</a>
         <a class="btn" style="background:var(--ok)" href="https://wa.me/917465917995" target="_blank" rel="noopener">WhatsApp Now</a>
@@ -193,21 +169,12 @@
     </div>
   </section>
 
-  <!-- Courses (sample anchor) -->
+  <!-- Courses -->
   <section id="courses" class="section">
     <div class="container grid grid-3">
-      <div class="card">
-        <h3>Primary (Classes 1–5)</h3>
-        <p>Concept-first lessons with activities and 2D animations.</p>
-      </div>
-      <div class="card">
-        <h3>Middle (Classes 6–8)</h3>
-        <p>Strong foundation with worksheets, quizzes, and projects.</p>
-      </div>
-      <div class="card">
-        <h3>Secondary (Classes 9–12)</h3>
-        <p>Board-oriented prep + doubt solving + revision planners.</p>
-      </div>
+      <div class="card"><h3>Primary (Classes 1–5)</h3><p>Concept-first lessons with activities and 2D animations.</p></div>
+      <div class="card"><h3>Middle (Classes 6–8)</h3><p>Strong foundation with worksheets, quizzes, and projects.</p></div>
+      <div class="card"><h3>Secondary (Classes 9–12)</h3><p>Board-oriented prep + doubt solving + revision planners.</p></div>
     </div>
   </section>
 
@@ -216,13 +183,7 @@
     <div class="container foot-grid">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <img
-            src="logo.png"
-            srcset="logo.png 1x, logo@2x.png 2x"
-            alt="JP Smart Classes Logo"
-            class="brand-logo-img"
-            width="80" height="80"
-          />
+          <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80"/>
           <div>
             <div style="font-weight:800;color:#fff">JP Smart Classes</div>
             <div class="tiny">Grow Smart, Go Far</div>
@@ -249,11 +210,9 @@
   <!-- Scripts -->
   <script>
     (function () {
-      // Footer year (safe)
       var y = document.getElementById('y');
       if (y) y.textContent = new Date().getFullYear();
 
-      // Mobile menu toggle
       var menuBtn = document.getElementById('menuBtn');
       var navMenu = document.getElementById('navMenu');
       if (!menuBtn || !navMenu) return;
@@ -262,12 +221,35 @@
         navMenu.classList.toggle('show');
       });
 
-      // Ensure correct state on resize
       var mq = window.matchMedia('(min-width:769px)');
       function sync(){ mq.matches ? navMenu.classList.add('show') : navMenu.classList.remove('show'); }
       if (mq.addEventListener) mq.addEventListener('change', sync); else mq.addListener(sync);
       sync();
     })();
   </script>
+
+  <!-- Bot widget -->
+  <script>
+    function loadAgentsCdn(v, onready){
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = `https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${v}/dist/style.css`;
+      const s = document.createElement("script");
+      s.src = `https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${v}/dist/dv-agent.es.js`;
+      s.onload = onready;
+      document.head.appendChild(link);
+      document.head.appendChild(s);
+    }
+  </script>
+  <script>
+    loadAgentsCdn("1.0.3", function () {
+      loadAgent({
+        agentId: "7a84fdb6-98ef-4b51-a018-d9874419473c",
+        xApiKey: "ba62abca-aa5c-40af-8caf-499ba1e0ec2e",
+        variables: {"callee_name":"CALLEE_NAME"}
+      });
+    });
+  </script>
+
 </body>
 </html>
