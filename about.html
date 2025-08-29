@@ -338,6 +338,43 @@
   .ringg_ai-input, .ringg_ai-input * { color: #ffffff !important; }
   .ringg_ai-input::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }
 </style>
+...your page content...
+
+<!-- Bot scripts -->
+<script>/* loadAgentsCdn(...) */</script>
+<script>/* loadAgent({...}) */</script>
+
+<!-- 👇 Greeting replace code YAHAN paste karein (</body> se just pehle) -->
+<script>
+(function(){
+  // NEW professional greeting
+  const NEW_GREETING =
+    "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
+
+  // Replace first bot message when it appears
+  const tryReplace = () => {
+    // first left-side (bot) message paragraph
+    const p = document.querySelector('.ringg_ai-text-left p');
+    if (!p) return false;
+
+    // default greeting ko detect karke overwrite
+    const txt = p.textContent.trim().toLowerCase();
+    if (txt.includes("hello, this is naina") || txt.includes("namaste, may i please know")) {
+      p.textContent = NEW_GREETING;
+      return true;
+    }
+    return false;
+  };
+
+  if (!tryReplace()) {
+    const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
+    mo.observe(document.body, { childList:true, subtree:true });
+  }
+})();
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
