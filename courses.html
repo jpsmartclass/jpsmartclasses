@@ -21,31 +21,26 @@
     .brand{display:flex;gap:10px;align-items:center;color:#fff}
     .brand .title{line-height:1}
     .brand b{display:block}
-
-    /* crisp logo */
     .brand-logo-img{height:40px;width:auto;border-radius:8px;object-fit:contain}
     @media (max-width:768px){ .brand-logo-img{height:36px} }
 
-    /* links */
     nav a{color:#fff;opacity:.95;padding:8px 10px;border-radius:10px}
     nav a:hover{background:rgba(255,255,255,.06)}
 
-    /* buttons */
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent}
     .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
     .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
     .btn-outline{background:transparent;border:2px solid #fff;color:#fff}
 
-    /* hamburger button */
     .menu-btn{
       display:inline-block;background:transparent;border:2px solid #fff;color:#fff;
       font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer
     }
 
-    /* --------- mobile nav --------- */
+    /* Mobile nav */
     @media (max-width:768px){
       .brand-text{display:block}
-      .brand-text .tiny{display:none}   /* mobile पर tagline off */
+      .brand-text .tiny{display:none}
       header nav{
         display:none;flex-direction:column;background:rgba(11,16,32,.98);
         position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px;z-index:60
@@ -73,16 +68,13 @@
     .card h3{margin:0 0 6px}
     .tag{display:inline-block;padding:4px 8px;border:1px solid rgba(255,255,255,.15);border-radius:999px;font-size:12px;color:var(--muted);margin-bottom:6px}
 
-    /* full-width rows */
     .course-row{background:linear-gradient(180deg,#121933,#0f152f);border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:18px}
     .row-badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#0f2a24;color:#c6f7e2;border:1px solid rgba(166,243,208,.25);font-size:12px;margin-bottom:8px}
     .row-title{font-size:22px;font-weight:800;margin:6px 0}
     .row-points{list-style:none;padding:0;margin:0}
     .row-points li{margin:8px 0;color:#cfd7ee}
 
-    /* mini */
     .mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
-
     footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:var(--muted)}
 
     /* responsive grids */
@@ -93,40 +85,58 @@
     @media (max-width: 640px){
       .cards,.mini{grid-template-columns:1fr}
       .hero h1{font-size:32px}
-    } /* ✅ closing brace fixed */
-
-    /* ===== RINGG CHAT VISIBILITY FIX (global, media के बाहर) ===== */
-
-    /* 1) किसी भी accidental transparency को हटाएँ */
-    [class*="ringg_ai-"],
-    [class*="ringg_ai-"] * {
-      opacity: 1 !important;
-      filter: none !important;
     }
 
-    /* 2) टेक्स्ट को solid white करें (dark theme) */
-    [class*="ringg_ai-"] p,
-    [class*="ringg_ai-"] span,
-    [class*="ringg_ai-"] li,
-    [class*="ringg_ai-"] div {
-      color: #ffffff !important;
+    /* ===== Ringg chat visibility fix: dark composer + white text ===== */
+    /* Bubbles (bot + user) */
+    .ringg_ai-text-left .ringg_ai-w-fit,
+    .ringg_ai-text-right .ringg_ai-w-fit{
+      background:#0f172a !important;
+      border-color:#0f172a !important;
+      opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
+    }
+    .ringg_ai-text-left .ringg_ai-w-fit, .ringg_ai-text-left .ringg_ai-w-fit *,
+    .ringg_ai-text-right .ringg_ai-w-fit, .ringg_ai-text-right .ringg_ai-w-fit *{
+      color:#ffffff !important; opacity:1 !important;
     }
 
-    /* 3) (optional) reply bubble को subtle dark दें */
-    [class*="ringg_ai-"] [class*="message"],
-    [class*="ringg_ai-"] .message {
-      background: rgba(255,255,255,0.07) !important;
-      border: 1px solid rgba(255,255,255,0.16) !important;
-      border-radius: 12px !important;
+    /* Composer (typing area) DARK */
+    [class*="ringg_ai"] .ringg_ai-composer,
+    [class*="ringg_ai"] [class*="bg-white"],
+    [class*="ringg_ai"] [class*="bg-gray-50"],
+    [class*="ringg_ai"] [class*="bg-muted"]{
+      background:#0f172a !important;
+      border-color:#0f172a !important;
     }
 
-    /* 4) (optional) किसी dimming overlay को हटा दें */
-    .ringg_ai-overlay,
-    .ringg_ai-call-overlay,
-    [class*="ringg_ai-"][class*="overlay"] {
-      display: none !important;
-      opacity: 0 !important;
+    /* Inputs / text inside composer -> WHITE */
+    [class*="ringg_ai"] [role="textbox"],
+    [class*="ringg_ai"] [contenteditable="true"],
+    [class*="ringg_ai"] textarea,
+    [class*="ringg_ai"] input[type="text"],
+    [class*="ringg_ai"] input[type="search"],
+    [class*="ringg_ai"] input{
+      color:#ffffff !important;
+      -webkit-text-fill-color:#ffffff !important;
+      caret-color:#ffffff !important;
+      background:transparent !important;
+      text-shadow:none !important;
+      opacity:1 !important;
     }
+
+    /* Override Tailwind utility that dims text */
+    [class*="ringg_ai"] .ringg_ai-text-foreground,
+    [class*="ringg_ai"] .file\:ringg_ai-text-foreground{ color:#ffffff !important; }
+
+    /* Placeholder */
+    [class*="ringg_ai"] ::placeholder{ color:#cbd5e1 !important; opacity:1 !important; }
+
+    /* Kill any opacity utilities inside composer */
+    [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"],
+    [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"]{ opacity:1 !important; }
+
+    /* Send icon white */
+    .ringg_ai-send, .ringg_ai-send *{ color:#ffffff !important; fill:#ffffff !important; }
   </style>
 </head>
 <body>
@@ -149,10 +159,8 @@
         </div>
       </a>
 
-      <!-- Mobile menu button -->
       <button class="menu-btn" id="menuBtn">☰ Menu</button>
 
-      <!-- Collapsible links -->
       <nav id="navMenu">
         <a href="./index.html#home">Home</a>
         <a href="./about.html">About</a>
@@ -264,17 +272,15 @@
     </div>
   </footer>
 
-  <!-- Naina (Ringg.ai) — single include only -->
+  <!-- Ringg / Naina widget (single include) -->
   <script>
     function loadAgentsCdn(v, cb){
       const link=document.createElement("link");
       link.rel="stylesheet";
-      link.type="text/css";
       link.href=`https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${v}/dist/style.css`;
 
       const s=document.createElement("script");
-      s.type="text/javascript";
-      s.onload=function(){ cb(); };
+      s.onload=function(){ cb && cb(); };
       s.src=`https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${v}/dist/dv-agent.es.js`;
 
       document.head.appendChild(link);
@@ -290,11 +296,10 @@
     });
   </script>
 
-  <!-- JS: year + mobile menu toggle -->
+  <!-- Year + mobile nav -->
   <script>
     (function () {
       var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-
       var menuBtn=document.getElementById('menuBtn');
       var navMenu=document.getElementById('navMenu');
       if(!menuBtn || !navMenu) return;
@@ -307,80 +312,30 @@
       sync();
     })();
   </script>
-  <!-- Ringg: precise, lightweight contrast fix -->
-<style id="ringg-contrast-fix">
-  /* Bubble wrappers (left = bot, right = user) */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit {
-    /* Dark bubble so text is readable */
-    background: #0f172a !important;
-    border-color: #0f172a !important;
-    /* Kill any dimming applied via utilities */
-    opacity: 1 !important;
-    filter: none !important;
-    mix-blend-mode: normal !important;
-    /* Tailwind-style opacity vars some widgets use */
-    --tw-text-opacity: 1 !important;
-  }
 
-  /* Make all text inside the bubbles solid */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-left .ringg_ai-w-fit *,
-  .ringg_ai-text-right .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit * {
-    color: #ffffff !important;
-    opacity: 1 !important;
-  }
+  <!-- Replace default bot greeting -->
+  <script>
+  (function(){
+    const NEW_GREETING =
+      "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
 
-  /* Header / status / timestamp */
-  .ringg_ai-header,
-  .ringg_ai-status,
-  .ringg_ai-timestamp {
-    color: #e5e7eb !important;
-    opacity: 1 !important;
-  }
+    const tryReplace = () => {
+      const p = document.querySelector('.ringg_ai-text-left p');
+      if (!p) return false;
+      const txt = p.textContent.trim().toLowerCase();
+      if (txt.includes("hello, this is naina") || txt.includes("namaste, may i please know")) {
+        p.textContent = NEW_GREETING;
+        return true;
+      }
+      return false;
+    };
 
-  /* Input + placeholder */
-  .ringg_ai-input, .ringg_ai-input * { color: #ffffff !important; }
-  .ringg_ai-input::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }
-</style>
-  ...your page content...
-
-<!-- Bot scripts -->
-<script>/* loadAgentsCdn(...) */</script>
-<script>/* loadAgent({...}) */</script>
-
-<!-- 👇 Greeting replace code YAHAN paste karein (</body> se just pehle) -->
-<script>
-(function(){
-  // NEW professional greeting
-  const NEW_GREETING =
-    "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
-
-  // Replace first bot message when it appears
-  const tryReplace = () => {
-    // first left-side (bot) message paragraph
-    const p = document.querySelector('.ringg_ai-text-left p');
-    if (!p) return false;
-
-    // default greeting ko detect karke overwrite
-    const txt = p.textContent.trim().toLowerCase();
-    if (txt.includes("hello, this is naina") || txt.includes("namaste, may i please know")) {
-      p.textContent = NEW_GREETING;
-      return true;
+    if (!tryReplace()) {
+      const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
+      mo.observe(document.body, { childList:true, subtree:true });
     }
-    return false;
-  };
-
-  if (!tryReplace()) {
-    const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
-    mo.observe(document.body, { childList:true, subtree:true });
-  }
-})();
-</script>
-
-</body>
-</html>
+  })();
+  </script>
 
 </body>
 </html>
