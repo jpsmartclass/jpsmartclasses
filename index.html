@@ -370,7 +370,52 @@
     }
   })();
   </script>
+<!-- Force-fix Ringg composer colors at runtime (paste just ABOVE </body>) -->
+<script>
+(function(){
+  function scrubClasses(el){
+    if (!el || !el.classList) return;
+    // remove utility classes that make text light
+    [...el.classList].forEach(c=>{
+      if (/^ringg_ai-text-(gray|muted)/.test(c) || /^ringg_ai-opacity-/.test(c)) el.classList.remove(c);
+    });
+  }
+
+  function styleInput(inp){
+    if (!inp || inp.__jpsc_fixed) return;
+    try{
+      scrubClasses(inp);
+      // make typed text clearly visible
+      inp.style.setProperty('color', '#ffffff', 'important');
+      inp.style.setProperty('-webkit-text-fill-color', '#ffffff', 'important');
+      inp.style.setProperty('caret-color', '#ffffff', 'important');
+      inp.style.setProperty('background', 'transparent', 'important');
+
+      // darken the composer background too
+      var wrap = inp.closest('.ringg_ai-composer');
+      if (wrap){
+        scrubClasses(wrap);
+        wrap.style.setProperty('background', '#0f172a', 'important');
+        wrap.style.setProperty('border-color', '#0f172a', 'important');
+      }
+      inp.__jpsc_fixed = true;
+    }catch(e){}
+  }
+
+  function scan(){
+    document.querySelectorAll(
+      '.ringg_ai-composer textarea, .ringg_ai-composer input, .ringg_ai-composer [contenteditable="true"], .ringg_ai-composer [role="textbox"]'
+    ).forEach(styleInput);
+  }
+
+  // initial run + watch for widget updates
+  scan();
+  const mo = new MutationObserver(scan);
+  mo.observe(document.body, {subtree:true, childList:true, attributes:true});
+})();
+</script>
 
 </body>
 </html>
+
 
