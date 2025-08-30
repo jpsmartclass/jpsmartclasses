@@ -335,6 +335,28 @@
 [class*="ringg_ai"] [contenteditable="true"] {
   color:#0b1020 !important;
 }
+/* Stronger target: exact Ringg <input>  */
+[class*="ringg_ai"] input,
+input[class*="ringg_ai-"] {
+  color:#0b1020 !important;
+  -webkit-text-fill-color:#0b1020 !important;
+  opacity:1 !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+  text-shadow:none !important;
+}
+
+/* Utility class ko override: text-foreground ko forced black karo */
+[class*="ringg_ai"] .ringg_ai-text-foreground,
+[class*="ringg_ai"] .file\:ringg_ai-text-foreground { /* some builds prefix with file: */
+  color:#0b1020 !important;
+}
+
+/* Placeholder ko readable rakho */
+[class*="ringg_ai"] ::placeholder {
+  color:#6b7280 !important;
+  opacity:1 !important;
+}
 
   /* Placeholder */
   [class*="ringg_ai"] textarea::placeholder,
@@ -424,6 +446,7 @@
 
 </body>
 </html>
+
 
 
 
