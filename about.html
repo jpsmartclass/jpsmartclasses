@@ -84,7 +84,7 @@
         display:block;
         font-size:14px;
         line-height:1.1;
-        max-width:calc(100vw - 200px); /* room for Menu button */
+        max-width:calc(100vw - 200px);
         white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
       }
       .brand-text .tiny{display:none}
@@ -261,37 +261,11 @@
     });
   </script>
 
-  <!-- Ringg: precise, lightweight contrast fix -->
-  <style id="ringg-contrast-fix">
-    .ringg_ai-text-left .ringg_ai-w-fit,
-    .ringg_ai-text-right .ringg_ai-w-fit {
-      background: #0f172a !important;
-      border-color: #0f172a !important;
-      opacity: 1 !important;
-      filter: none !important;
-      mix-blend-mode: normal !important;
-      --tw-text-opacity: 1 !important;
-    }
-    .ringg_ai-text-left .ringg_ai-w-fit,
-    .ringg_ai-text-left .ringg_ai-w-fit *,
-    .ringg_ai-text-right .ringg_ai-w-fit,
-    .ringg_ai-text-right .ringg_ai-w-fit * {
-      color: #ffffff !important;
-      opacity: 1 !important;
-    }
-    .ringg_ai-header,
-    .ringg_ai-status,
-    .ringg_ai-timestamp { color: #e5e7eb !important; opacity: 1 !important; }
-    .ringg_ai-input, .ringg_ai-input * { color: #ffffff !important; }
-    .ringg_ai-input::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }
-  </style>
-
-  <!-- Greeting replace code (before </body>) -->
+  <!-- Replace default bot greeting -->
   <script>
   (function(){
     const NEW_GREETING =
       "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
-
     const tryReplace = () => {
       const p = document.querySelector('.ringg_ai-text-left p');
       if (!p) return false;
@@ -302,96 +276,97 @@
       }
       return false;
     };
-
     if (!tryReplace()) {
       const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
       mo.observe(document.body, { childList:true, subtree:true });
     }
   })();
   </script>
-<!-- Ringg input fix: white input + black text -->
-<style id="ringg-contrast-fix">
-  /* Bubbles readable */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit { background:#0f172a !important; border-color:#0f172a !important; }
-  .ringg_ai-text-left .ringg_ai-w-fit, .ringg_ai-text-left .ringg_ai-w-fit *,
-  .ringg_ai-text-right .ringg_ai-w-fit, .ringg_ai-text-right .ringg_ai-w-fit * { color:#ffffff !important; opacity:1 !important; }
 
-  /* Composer (typing area) background */
-  [class*="ringg_ai"] .ringg_ai-composer,
-  [class*="ringg_ai"] .ringg_ai-input,
-  [class*="ringg_ai"] .ringg_ai-typebar,
-  [class*="ringg_ai"] .ringg_ai-bg-white,
-  [class*="ringg_ai"] .ringg_ai-bg-gray-50,
-  [class*="ringg_ai"] .ringg_ai-bg-muted { background:#ffffff !important; border-color:#e5e7eb !important; }
+  <!-- Ringg input fix: white input + black text (SINGLE style block) -->
+  <style id="ringg-contrast-fix">
+    /* Bubbles readable */
+    .ringg_ai-text-left .ringg_ai-w-fit,
+    .ringg_ai-text-right .ringg_ai-w-fit { background:#0f172a !important; border-color:#0f172a !important; }
+    .ringg_ai-text-left .ringg_ai-w-fit, .ringg_ai-text-left .ringg_ai-w-fit *,
+    .ringg_ai-text-right .ringg_ai-w-fit, .ringg_ai-text-right .ringg_ai-w-fit * { color:#ffffff !important; opacity:1 !important; }
 
-  /* Text inside the textbox -> BLACK */
-  [class*="ringg_ai"] [role="textbox"],
-  [class*="ringg_ai"] [contenteditable="true"],
-  [class*="ringg_ai"] textarea,
-  [class*="ringg_ai"] input[type="text"],
-  [class*="ringg_ai"] input[type="search"] {
-    color:#0b1020 !important; -webkit-text-fill-color:#0b1020 !important; caret-color:#0b1020 !important;
-    background:transparent !important; opacity:1 !important; text-shadow:none !important;
-  }
+    /* Composer (typing area) background */
+    [class*="ringg_ai"] .ringg_ai-composer,
+    [class*="ringg_ai"] .ringg_ai-input,
+    [class*="ringg_ai"] .ringg_ai-typebar,
+    [class*="ringg_ai"] .ringg_ai-bg-white,
+    [class*="ringg_ai"] .ringg_ai-bg-gray-50,
+    [class*="ringg_ai"] .ringg_ai-bg-muted { background:#ffffff !important; border-color:#e5e7eb !important; }
 
-  /* Stronger target (exact <input>) + override utility class text-foreground */
-  [class*="ringg_ai"] input, input[class*="ringg_ai-"] { color:#0b1020 !important; -webkit-text-fill-color:#0b1020 !important; opacity:1 !important; }
-  [class*="ringg_ai"] .ringg_ai-text-foreground,
-  [class*="ringg_ai"] .file\:ringg_ai-text-foreground { color:#0b1020 !important; }
+    /* Text inside the textbox -> BLACK */
+    [class*="ringg_ai"] [role="textbox"],
+    [class*="ringg_ai"] [contenteditable="true"],
+    [class*="ringg_ai"] textarea,
+    [class*="ringg_ai"] input[type="text"],
+    [class*="ringg_ai"] input[type="search"] {
+      color:#0b1020 !important; -webkit-text-fill-color:#0b1020 !important; caret-color:#0b1020 !important;
+      background:transparent !important; opacity:1 !important; text-shadow:none !important;
+    }
 
-  /* Placeholder readable */
-  [class*="ringg_ai"] ::placeholder { color:#6b7280 !important; opacity:1 !important; }
+    /* Stronger target (exact <input>) + override utility class text-foreground */
+    [class*="ringg_ai"] input, input[class*="ringg_ai-"] { color:#0b1020 !important; -webkit-text-fill-color:#0b1020 !important; opacity:1 !important; }
+    [class*="ringg_ai"] .ringg_ai-text-foreground,
+    [class*="ringg_ai"] .file\:ringg_ai-text-foreground { color:#0b1020 !important; }
 
-  /* Don’t allow dimming inside composer */
-  [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"],
-  [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"] { opacity:1 !important; }
+    /* Placeholder readable */
+    [class*="ringg_ai"] ::placeholder { color:#6b7280 !important; opacity:1 !important; }
 
-  /* Send icon visible on white */
-  .ringg_ai-send, .ringg_ai-send * { color:#0b1020 !important; fill:#0b1020 !important; }
-</style>
-<!-- Force BLACK text + WHITE input at runtime -->
-<script>
-(function(){
-  function scrubClasses(el){
-    if (!el || !el.classList) return;
-    [...el.classList].forEach(c=>{
-      if ((/^|:)opacity-/.test(c) || /^ringg_ai-opacity-/.test(c) || /(text-(gray|muted|foreground))$/.test(c)) {
-        el.classList.remove(c);
-      }
-    });
-  }
-  function styleInput(inp){
-    if (!inp || inp.__fixed) return;
-    try{
-      scrubClasses(inp);
-      inp.style.setProperty('color', '#0b1020', 'important');
-      inp.style.setProperty('-webkit-text-fill-color', '#0b1020', 'important');
-      inp.style.setProperty('caret-color', '#0b1020', 'important');
-      inp.style.setProperty('background', 'transparent', 'important');
+    /* Don’t allow dimming inside composer */
+    [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"],
+    [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"] { opacity:1 !important; }
 
-      const wrap = inp.closest('.ringg_ai-composer') || inp.closest('[class*="ringg_ai"]');
-      if (wrap){
-        scrubClasses(wrap);
-        wrap.style.setProperty('background', '#ffffff', 'important');
-        wrap.style.setProperty('border-color', '#e5e7eb', 'important');
-      }
-      document.querySelectorAll('.ringg_ai-send, .ringg_ai-send *').forEach(el=>{
-        el.style.setProperty('color', '#0b1020', 'important');
-        el.style.setProperty('fill',  '#0b1020', 'important');
+    /* Send icon visible on white */
+    .ringg_ai-send, .ringg_ai-send * { color:#0b1020 !important; fill:#0b1020 !important; }
+  </style>
+
+  <!-- Force BLACK text + WHITE input at runtime -->
+  <script>
+  (function(){
+    function scrubClasses(el){
+      if (!el || !el.classList) return;
+      [...el.classList].forEach(c=>{
+        if ((/^|:)opacity-/.test(c) || /^ringg_ai-opacity-/.test(c) || /(text-(gray|muted|foreground))$/.test(c)) {
+          el.classList.remove(c);
+        }
       });
-      inp.__fixed = true;
-    }catch(e){}
-  }
-  function scan(){
-    document.querySelectorAll(
-      '[class*="ringg_ai"] [role="textbox"], [class*="ringg_ai"] [contenteditable="true"], [class*="ringg_ai"] textarea, [class*="ringg_ai"] input[type="text"], [class*="ringg_ai"] input[type="search"]'
-    ).forEach(styleInput);
-  }
-  scan();
-  new MutationObserver(scan).observe(document.body, {subtree:true, childList:true, attributes:true});
-})();
-</script>
+    }
+    function styleInput(inp){
+      if (!inp || inp.__fixed) return;
+      try{
+        scrubClasses(inp);
+        inp.style.setProperty('color', '#0b1020', 'important');
+        inp.style.setProperty('-webkit-text-fill-color', '#0b1020', 'important');
+        inp.style.setProperty('caret-color', '#0b1020', 'important');
+        inp.style.setProperty('background', 'transparent', 'important');
+
+        const wrap = inp.closest('.ringg_ai-composer') || inp.closest('[class*="ringg_ai"]');
+        if (wrap){
+          scrubClasses(wrap);
+          wrap.style.setProperty('background', '#ffffff', 'important');
+          wrap.style.setProperty('border-color', '#e5e7eb', 'important');
+        }
+        document.querySelectorAll('.ringg_ai-send, .ringg_ai-send *').forEach(el=>{
+          el.style.setProperty('color', '#0b1020', 'important');
+          el.style.setProperty('fill',  '#0b1020', 'important');
+        });
+        inp.__fixed = true;
+      }catch(e){}
+    }
+    function scan(){
+      document.querySelectorAll(
+        '[class*="ringg_ai"] [role="textbox"], [class*="ringg_ai"] [contenteditable="true"], [class*="ringg_ai"] textarea, [class*="ringg_ai"] input[type="text"], [class*="ringg_ai"] input[type="search"]'
+      ).forEach(styleInput);
+    }
+    scan();
+    new MutationObserver(scan).observe(document.body, {subtree:true, childList:true, attributes:true});
+  })();
+  </script>
 
 </body>
 </html>
