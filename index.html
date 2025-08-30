@@ -330,6 +330,11 @@
     background:transparent !important;
     opacity:1 !important; text-shadow:none !important;
   }
+/* Fallback: any textbox inside Ringg */
+[class*="ringg_ai"] [role="textbox"],
+[class*="ringg_ai"] [contenteditable="true"] {
+  color:#0b1020 !important;
+}
 
   /* Placeholder */
   [class*="ringg_ai"] textarea::placeholder,
@@ -419,6 +424,7 @@
 
 </body>
 </html>
+
 
 
 
