@@ -368,13 +368,13 @@
   })();
   </script>
 <!-- Force-fix Ringg composer colors at runtime (paste just ABOVE </body>) -->
+<!-- Force BLACK text + WHITE input for Ringg composer -->
 <script>
 (function(){
   function scrubClasses(el){
     if (!el || !el.classList) return;
-    // remove utility classes that make text light
     [...el.classList].forEach(c=>{
-      if (/^ringg_ai-text-(gray|muted)/.test(c) || /^ringg_ai-opacity-/.test(c)) el.classList.remove(c);
+      if (/text-(gray|muted)/.test(c) || /^ringg_ai-opacity-/.test(c)) el.classList.remove(c);
     });
   }
 
@@ -382,38 +382,44 @@
     if (!inp || inp.__jpsc_fixed) return;
     try{
       scrubClasses(inp);
-      // make typed text clearly visible
-      inp.style.setProperty('color', '#ffffff', 'important');
-      inp.style.setProperty('-webkit-text-fill-color', '#ffffff', 'important');
-      inp.style.setProperty('caret-color', '#ffffff', 'important');
+      /* BLACK text + caret */
+      inp.style.setProperty('color', '#0b1020', 'important');
+      inp.style.setProperty('-webkit-text-fill-color', '#0b1020', 'important');
+      inp.style.setProperty('caret-color', '#0b1020', 'important');
       inp.style.setProperty('background', 'transparent', 'important');
 
-      // darken the composer background too
-      var wrap = inp.closest('.ringg_ai-composer');
+      /* WHITE composer background */
+      var wrap = inp.closest('.ringg_ai-composer') || inp.closest('[class*="ringg_ai"]');
       if (wrap){
         scrubClasses(wrap);
-        wrap.style.setProperty('background', '#0f172a', 'important');
-        wrap.style.setProperty('border-color', '#0f172a', 'important');
+        wrap.style.setProperty('background', '#ffffff', 'important');
+        wrap.style.setProperty('border-color', '#e5e7eb', 'important');
       }
+
+      /* Send icon dark so it’s visible on white */
+      document.querySelectorAll('.ringg_ai-send, .ringg_ai-send *').forEach(el=>{
+        el.style.setProperty('color', '#0b1020', 'important');
+        el.style.setProperty('fill',  '#0b1020', 'important');
+      });
+
       inp.__jpsc_fixed = true;
     }catch(e){}
   }
 
   function scan(){
     document.querySelectorAll(
-      '.ringg_ai-composer textarea, .ringg_ai-composer input, .ringg_ai-composer [contenteditable="true"], .ringg_ai-composer [role="textbox"]'
+      '.ringg_ai-composer textarea, .ringg_ai-composer input, .ringg_ai-composer [contenteditable="true"], .ringg_ai-composer [role="textbox"], [class*="ringg_ai"] input[type="text"], [class*="ringg_ai"] input[type="search"]'
     ).forEach(styleInput);
   }
 
-  // initial run + watch for widget updates
   scan();
-  const mo = new MutationObserver(scan);
-  mo.observe(document.body, {subtree:true, childList:true, attributes:true});
+  new MutationObserver(scan).observe(document.body, {subtree:true, childList:true, attributes:true});
 })();
 </script>
 
 </body>
 </html>
+
 
 
 
