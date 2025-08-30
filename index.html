@@ -372,8 +372,58 @@
   }
 })();
 </script>
+  <!-- Ringg contrast fix (strong) — paste this just ABOVE </body> -->
+<style id="ringg-contrast-fix">
+  /* Bot + user bubbles dark so text is readable */
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit {
+    background:#0f172a !important;
+    border-color:#0f172a !important;
+    opacity:1 !important;
+    filter:none !important;
+    mix-blend-mode:normal !important;
+  }
+  /* Make all text solid white inside bubbles */
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-left .ringg_ai-w-fit *,
+  .ringg_ai-text-right .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit * {
+    color:#ffffff !important;
+    opacity:1 !important;
+  }
+
+  /* Header / status / timestamps */
+  .ringg_ai-header,
+  .ringg_ai-status,
+  .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
+
+  /* Typing box (composer) — text + placeholder + bg */
+  .ringg_ai-input,
+  .ringg_ai-input *,
+  .ringg_ai-textarea,
+  .ringg_ai-textarea *,
+  .ringg_ai-composer,
+  .ringg_ai-composer *,
+  .ringg_ai-composer textarea,
+  .ringg_ai-composer input {
+    color:#ffffff !important;
+    background:#0f172a !important;
+    border-color:#0f172a !important;
+  }
+  .ringg_ai-input::placeholder,
+  .ringg_ai-textarea::placeholder,
+  .ringg_ai-composer ::placeholder {
+    color:#cbd5e1 !important; opacity:1 !important;
+  }
+
+  /* Send button icon */
+  .ringg_ai-send,
+  .ringg_ai-send * { color:#ffffff !important; fill:#ffffff !important; }
+</style>
+
 </body>
 </html>
 
 </body>
 </html>
+
