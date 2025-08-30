@@ -20,10 +20,11 @@
     /* header */
     header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
     .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:center}
+    .brand{display:flex;gap:10px;align-items:center;min-width:0}
     .brand img{height:40px;width:40px;border-radius:8px}
-    .brand .title{line-height:1}
-    .brand b{display:block}
+    .title{line-height:1;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(100vw - 220px)}
+    .title b{display:block}
+    .tagline{display:block;color:#a0aec0;font-size:12px}
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{color:#fff;opacity:.9;padding:8px 10px;border-radius:10px}
     nav a:hover{background:rgba(255,255,255,.06)}
@@ -66,19 +67,17 @@
       .contact-grid{grid-template-columns:1fr}
     }
     @media (max-width:820px){
-      .brand-text{display:none !important;}
+      /* keep brand title visible; only hide the tagline to save space */
+      .tagline{display:none !important;}
       header nav{display:none !important;}
       header nav.show{display:flex !important; flex-direction:column;}
       #menuBtn{display:inline-block !important;}
     }
 
-    /* 👇 Fix for Ringg AI faded text */
+    /* Fix faint Ringg text in some themes */
     .ringg_ai-prose p,
     .ringg_ai-prose-sm p,
-    .ringg_ai-text-sm p {
-      color:#fff !important;
-      opacity:1 !important;
-    }
+    .ringg_ai-text-sm p { color:#fff !important; opacity:1 !important; }
   </style>
 </head>
 <body>
@@ -86,19 +85,15 @@
   <header>
     <div class="container nav">
       <a class="brand" href="./">
-        <img
-          src="logo.png"
-          srcset="logo.png 1x, logo@2x.png 2x"
-          alt="JP Smart Classes Logo"
-          class="brand-logo-img"
-          width="80" height="80"
-          decoding="async" loading="eager"
-        />
-        <span class="title"><b>JP Smart Classes</b><span style="display:block;color:#a0aec0;font-size:12px">Grow Smart, Go Far</span></span>
+        <img src="logo.png" alt="JP Smart Classes Logo" width="80" height="80" decoding="async" loading="eager" />
+        <span class="title">
+          <b>JP Smart Classes</b>
+          <span class="tagline">Grow Smart, Go Far</span>
+        </span>
       </a>
       <nav id="navMenu">
         <ul>
-          <li><a href="about.html">About</a></li> <!-- fixed extra '<' -->
+          <li><a href="about.html">About</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="courses.html">Courses</a></li>
           <li><a href="#fees">Fees</a></li>
@@ -267,7 +262,6 @@
         menuBtn.addEventListener('click', function () {
           navMenu.classList.toggle('show');
         });
-
         // Resize sync
         var mq = window.matchMedia('(min-width:769px)');
         function sync(){ mq.matches ? navMenu.classList.add('show') : navMenu.classList.remove('show'); }
@@ -277,7 +271,7 @@
     })();
   </script>
 
-  <!-- Bot widget (moved to bottom, one copy only) -->
+  <!-- Bot widget -->
   <script>
     function loadAgentsCdn(v, onready){
       const link = document.createElement("link");
@@ -289,10 +283,6 @@
       document.head.appendChild(link);
       document.head.appendChild(s);
     }
-  </script>
-  <script>
-    // If you want to hide the bot on #contact, wrap this call with:
-    // if (!location.hash.includes('contact')) { ... }
     loadAgentsCdn("1.0.3", function () {
       loadAgent({
         agentId: "7a84fdb6-98ef-4b51-a018-d9874419473c",
@@ -301,129 +291,74 @@
       });
     });
   </script>
-  <!-- Ringg: precise, lightweight contrast fix -->
-<style id="ringg-contrast-fix">
-  /* Bubble wrappers (left = bot, right = user) */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit {
-    /* Dark bubble so text is readable */
-    background: #0f172a !important;
-    border-color: #0f172a !important;
-    /* Kill any dimming applied via utilities */
-    opacity: 1 !important;
-    filter: none !important;
-    mix-blend-mode: normal !important;
-    /* Tailwind-style opacity vars some widgets use */
-    --tw-text-opacity: 1 !important;
-  }
 
-  /* Make all text inside the bubbles solid */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-left .ringg_ai-w-fit *,
-  .ringg_ai-text-right .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit * {
-    color: #ffffff !important;
-    opacity: 1 !important;
-  }
-
-  /* Header / status / timestamp */
-  .ringg_ai-header,
-  .ringg_ai-status,
-  .ringg_ai-timestamp {
-    color: #e5e7eb !important;
-    opacity: 1 !important;
-  }
-
-  /* Input + placeholder */
-  .ringg_ai-input, .ringg_ai-input * { color: #ffffff !important; }
-  .ringg_ai-input::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }
-</style>
-...your page content...
-
-<!-- Bot scripts -->
-<script>/* loadAgentsCdn(...) */</script>
-<script>/* loadAgent({...}) */</script>
-
-<!-- 👇 Greeting replace code YAHAN paste karein (</body> se just pehle) -->
-<script>
-(function(){
-  // NEW professional greeting
-  const NEW_GREETING =
-    "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
-
-  // Replace first bot message when it appears
-  const tryReplace = () => {
-    // first left-side (bot) message paragraph
-    const p = document.querySelector('.ringg_ai-text-left p');
-    if (!p) return false;
-
-    // default greeting ko detect karke overwrite
-    const txt = p.textContent.trim().toLowerCase();
-    if (txt.includes("hello, this is naina") || txt.includes("namaste, may i please know")) {
-      p.textContent = NEW_GREETING;
-      return true;
+  <!-- Ringg contrast fix (strong) -->
+  <style id="ringg-contrast-fix">
+    /* Bot + user bubbles: dark background */
+    .ringg_ai-text-left .ringg_ai-w-fit,
+    .ringg_ai-text-right .ringg_ai-w-fit {
+      background:#0f172a !important;
+      border-color:#0f172a !important;
+      opacity:1 !important;
+      filter:none !important;
+      mix-blend-mode:normal !important;
     }
-    return false;
-  };
+    /* Text color inside bubbles */
+    .ringg_ai-text-left .ringg_ai-w-fit,
+    .ringg_ai-text-left .ringg_ai-w-fit *,
+    .ringg_ai-text-right .ringg_ai-w-fit,
+    .ringg_ai-text-right .ringg_ai-w-fit * {
+      color:#ffffff !important;
+      opacity:1 !important;
+    }
+    /* Header / status / timestamp */
+    .ringg_ai-header,
+    .ringg_ai-status,
+    .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
+    /* Typing box (composer) */
+    .ringg_ai-input,
+    .ringg_ai-input *,
+    .ringg_ai-textarea,
+    .ringg_ai-textarea *,
+    .ringg_ai-composer,
+    .ringg_ai-composer *,
+    .ringg_ai-composer textarea,
+    .ringg_ai-composer input {
+      color:#ffffff !important;
+      background:#0f172a !important;
+      border-color:#0f172a !important;
+    }
+    .ringg_ai-input::placeholder,
+    .ringg_ai-textarea::placeholder,
+    .ringg_ai-composer ::placeholder {
+      color:#cbd5e1 !important; opacity:1 !important;
+    }
+    /* Send button icon */
+    .ringg_ai-send,
+    .ringg_ai-send * { color:#ffffff !important; fill:#ffffff !important; }
+  </style>
 
-  if (!tryReplace()) {
-    const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
-    mo.observe(document.body, { childList:true, subtree:true });
-  }
-})();
-</script>
-  <!-- Ringg contrast fix (strong) — paste this just ABOVE </body> -->
-<style id="ringg-contrast-fix">
-  /* Bot + user bubbles dark so text is readable */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit {
-    background:#0f172a !important;
-    border-color:#0f172a !important;
-    opacity:1 !important;
-    filter:none !important;
-    mix-blend-mode:normal !important;
-  }
-  /* Make all text solid white inside bubbles */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-left .ringg_ai-w-fit *,
-  .ringg_ai-text-right .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit * {
-    color:#ffffff !important;
-    opacity:1 !important;
-  }
-
-  /* Header / status / timestamps */
-  .ringg_ai-header,
-  .ringg_ai-status,
-  .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
-
-  /* Typing box (composer) — text + placeholder + bg */
-  .ringg_ai-input,
-  .ringg_ai-input *,
-  .ringg_ai-textarea,
-  .ringg_ai-textarea *,
-  .ringg_ai-composer,
-  .ringg_ai-composer *,
-  .ringg_ai-composer textarea,
-  .ringg_ai-composer input {
-    color:#ffffff !important;
-    background:#0f172a !important;
-    border-color:#0f172a !important;
-  }
-  .ringg_ai-input::placeholder,
-  .ringg_ai-textarea::placeholder,
-  .ringg_ai-composer ::placeholder {
-    color:#cbd5e1 !important; opacity:1 !important;
-  }
-
-  /* Send button icon */
-  .ringg_ai-send,
-  .ringg_ai-send * { color:#ffffff !important; fill:#ffffff !important; }
-</style>
-
-</body>
-</html>
+  <!-- Replace default bot greeting -->
+  <script>
+  (function(){
+    const NEW_GREETING =
+      "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
+    const tryReplace = () => {
+      const p = document.querySelector('.ringg_ai-text-left p');
+      if (!p) return false;
+      const txt = p.textContent.trim().toLowerCase();
+      if (txt.includes("hello, this is naina") || txt.includes("namaste, may i please know")) {
+        p.textContent = NEW_GREETING;
+        return true;
+      }
+      return false;
+    };
+    if (!tryReplace()) {
+      const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
+      mo.observe(document.body, { childList:true, subtree:true });
+    }
+  })();
+  </script>
 
 </body>
 </html>
-
