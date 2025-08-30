@@ -293,50 +293,61 @@
   </script>
 
   <!-- Ringg contrast fix (strong) -->
-  <style id="ringg-contrast-fix">
-    /* Bot + user bubbles: dark background */
-    .ringg_ai-text-left .ringg_ai-w-fit,
-    .ringg_ai-text-right .ringg_ai-w-fit {
-      background:#0f172a !important;
-      border-color:#0f172a !important;
-      opacity:1 !important;
-      filter:none !important;
-      mix-blend-mode:normal !important;
-    }
-    /* Text color inside bubbles */
-    .ringg_ai-text-left .ringg_ai-w-fit,
-    .ringg_ai-text-left .ringg_ai-w-fit *,
-    .ringg_ai-text-right .ringg_ai-w-fit,
-    .ringg_ai-text-right .ringg_ai-w-fit * {
-      color:#ffffff !important;
-      opacity:1 !important;
-    }
-    /* Header / status / timestamp */
-    .ringg_ai-header,
-    .ringg_ai-status,
-    .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
-    /* Typing box (composer) */
-    .ringg_ai-input,
-    .ringg_ai-input *,
-    .ringg_ai-textarea,
-    .ringg_ai-textarea *,
-    .ringg_ai-composer,
-    .ringg_ai-composer *,
-    .ringg_ai-composer textarea,
-    .ringg_ai-composer input {
-      color:#ffffff !important;
-      background:#0f172a !important;
-      border-color:#0f172a !important;
-    }
-    .ringg_ai-input::placeholder,
-    .ringg_ai-textarea::placeholder,
-    .ringg_ai-composer ::placeholder {
-      color:#cbd5e1 !important; opacity:1 !important;
-    }
-    /* Send button icon */
-    .ringg_ai-send,
-    .ringg_ai-send * { color:#ffffff !important; fill:#ffffff !important; }
-  </style>
+<!-- Ringg contrast fix (max strength) -->
+<style id="ringg-contrast-fix">
+  /* Message bubbles (both sides) */
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit {
+    background:#0f172a !important;
+    border-color:#0f172a !important;
+    opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
+  }
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-left .ringg_ai-w-fit *,
+  .ringg_ai-text-right .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit * { color:#ffffff !important; opacity:1 !important; }
+
+  /* Composer wrapper */
+  .ringg_ai-composer,
+  .ringg_ai-composer .ringg_ai-bg-white,
+  .ringg_ai-composer .ringg_ai-bg-gray-50,
+  .ringg_ai-composer .ringg_ai-bg-muted {
+    background:#0f172a !important;
+    border-color:#0f172a !important;
+  }
+
+  /* Actual input (textarea / input / contenteditable / role="textbox") */
+  .ringg_ai-composer textarea,
+  .ringg_ai-composer input,
+  .ringg_ai-composer [contenteditable="true"],
+  .ringg_ai-composer [role="textbox"] {
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+    caret-color:#ffffff !important;
+    opacity:1 !important;
+    text-shadow:none !important;
+    background:transparent !important;
+  }
+  /* Placeholders */
+  .ringg_ai-composer textarea::placeholder,
+  .ringg_ai-composer input::placeholder { color:#cbd5e1 !important; opacity:1 !important; }
+  .ringg_ai-composer [contenteditable="true"]:empty:before {
+    content: attr(data-placeholder);
+    color:#cbd5e1 !important; opacity:1 !important;
+  }
+
+  /* Kill any dimming utilities */
+  .ringg_ai-composer [class*="opacity-"],
+  .ringg_ai-composer [style*="opacity"] { opacity:1 !important; }
+  .ringg_ai-composer [class*="text-gray"],
+  .ringg_ai-composer [class*="text-muted"] { color:#ffffff !important; }
+
+  /* Header / status / timestamp */
+  .ringg_ai-header, .ringg_ai-status, .ringg_ai-timestamp { color:#e5e7eb !important; opacity:1 !important; }
+
+  /* Send button */
+  .ringg_ai-send, .ringg_ai-send * { color:#ffffff !important; fill:#ffffff !important; }
+</style>
 
   <!-- Replace default bot greeting -->
   <script>
@@ -362,3 +373,4 @@
 
 </body>
 </html>
+
