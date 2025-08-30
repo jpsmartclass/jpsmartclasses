@@ -43,7 +43,7 @@
     /* Header / Navbar */
     header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
-    .brand{display:flex;align-items:center;gap:12px;color:#fff}
+    .brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:0}
     .brand-logo-img{height:40px;width:auto;border-radius:8px;object-fit:contain}
     .brand-text{display:block}
     .nav a{color:#fff;opacity:.95;margin-left:18px}
@@ -72,14 +72,24 @@
     .foot-grid{display:grid;gap:18px;padding:28px 0}
     .tiny{font-size:13px;color:#90a4c7}
 
-    /* Responsive navbar */
+    /* Responsive navbar + brand on mobile */
     .menu-btn{
       display:inline-block;background:transparent;border:2px solid #fff;color:#fff;
       font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer
     }
     @media (max-width:768px){
-      .brand-logo-img{height:36px}
-      .brand-text{display:none}
+      .brand-logo-img{height:32px}
+      /* keep brand text visible, hide tagline to save space */
+      .brand-text{
+        display:block;
+        font-size:14px;
+        line-height:1.1;
+        max-width:calc(100vw - 200px); /* room for Menu button */
+        white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      }
+      .brand-text .tiny{display:none}
+      .menu-btn{flex-shrink:0}
+
       header nav{
         display:none;flex-direction:column;background:rgba(11,16,32,.98);
         position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px;z-index:60
@@ -228,7 +238,7 @@
     })();
   </script>
 
-  <!-- Bot widget -->
+  <!-- Bot widget (Ringg / Desivocal) -->
   <script>
     function loadAgentsCdn(v, onready){
       const link = document.createElement("link");
@@ -250,82 +260,55 @@
       });
     });
   </script>
-<!-- Ringg: precise, lightweight contrast fix -->
-<style id="ringg-contrast-fix">
-  /* Bubble wrappers (left = bot, right = user) */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit {
-    /* Dark bubble so text is readable */
-    background: #0f172a !important;
-    border-color: #0f172a !important;
-    /* Kill any dimming applied via utilities */
-    opacity: 1 !important;
-    filter: none !important;
-    mix-blend-mode: normal !important;
-    /* Tailwind-style opacity vars some widgets use */
-    --tw-text-opacity: 1 !important;
-  }
 
-  /* Make all text inside the bubbles solid */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-left .ringg_ai-w-fit *,
-  .ringg_ai-text-right .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit * {
-    color: #ffffff !important;
-    opacity: 1 !important;
-  }
-
-  /* Header / status / timestamp */
-  .ringg_ai-header,
-  .ringg_ai-status,
-  .ringg_ai-timestamp {
-    color: #e5e7eb !important;
-    opacity: 1 !important;
-  }
-
-  /* Input + placeholder */
-  .ringg_ai-input, .ringg_ai-input * { color: #ffffff !important; }
-  .ringg_ai-input::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }
-</style>
-...your page content...
-
-<!-- Bot scripts -->
-<script>/* loadAgentsCdn(...) */</script>
-<script>/* loadAgent({...}) */</script>
-
-<!-- 👇 Greeting replace code YAHAN paste karein (</body> se just pehle) -->
-<script>
-(function(){
-  // NEW professional greeting
-  const NEW_GREETING =
-    "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
-
-  // Replace first bot message when it appears
-  const tryReplace = () => {
-    // first left-side (bot) message paragraph
-    const p = document.querySelector('.ringg_ai-text-left p');
-    if (!p) return false;
-
-    // default greeting ko detect karke overwrite
-    const txt = p.textContent.trim().toLowerCase();
-    if (txt.includes("hello, this is naina") || txt.includes("namaste, may i please know")) {
-      p.textContent = NEW_GREETING;
-      return true;
+  <!-- Ringg: precise, lightweight contrast fix -->
+  <style id="ringg-contrast-fix">
+    .ringg_ai-text-left .ringg_ai-w-fit,
+    .ringg_ai-text-right .ringg_ai-w-fit {
+      background: #0f172a !important;
+      border-color: #0f172a !important;
+      opacity: 1 !important;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+      --tw-text-opacity: 1 !important;
     }
-    return false;
-  };
+    .ringg_ai-text-left .ringg_ai-w-fit,
+    .ringg_ai-text-left .ringg_ai-w-fit *,
+    .ringg_ai-text-right .ringg_ai-w-fit,
+    .ringg_ai-text-right .ringg_ai-w-fit * {
+      color: #ffffff !important;
+      opacity: 1 !important;
+    }
+    .ringg_ai-header,
+    .ringg_ai-status,
+    .ringg_ai-timestamp { color: #e5e7eb !important; opacity: 1 !important; }
+    .ringg_ai-input, .ringg_ai-input * { color: #ffffff !important; }
+    .ringg_ai-input::placeholder { color: #cbd5e1 !important; opacity: 1 !important; }
+  </style>
 
-  if (!tryReplace()) {
-    const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
-    mo.observe(document.body, { childList:true, subtree:true });
-  }
-})();
-</script>
+  <!-- Greeting replace code (before </body>) -->
+  <script>
+  (function(){
+    const NEW_GREETING =
+      "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
+
+    const tryReplace = () => {
+      const p = document.querySelector('.ringg_ai-text-left p');
+      if (!p) return false;
+      const txt = p.textContent.trim().toLowerCase();
+      if (txt.includes("hello, this is naina") || txt.includes("namaste, may i please know")) {
+        p.textContent = NEW_GREETING;
+        return true;
+      }
+      return false;
+    };
+
+    if (!tryReplace()) {
+      const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
+      mo.observe(document.body, { childList:true, subtree:true });
+    }
+  })();
+  </script>
 
 </body>
 </html>
-
-</body>
-</html>
-
-
