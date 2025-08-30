@@ -31,6 +31,47 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent}
     .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
     .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
+/* Safe-area + container padding (mobile notch fix) */
+header{ padding-top: env(safe-area-inset-top); }
+.container{
+  padding-left:  max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+/* Mobile drawer nav */
+@media (max-width:768px){
+  .tagline{ display:none !important; }           /* brand name rahe, tagline hide */
+  #menuBtn{ display:inline-block; }              /* hamburger visible */
+
+  header nav{
+    display:none;
+    position:fixed;
+    right:12px;
+    top:calc(64px + env(safe-area-inset-top));
+    width:min(88vw, 320px);
+    background:rgba(11,16,32,.98);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:12px;
+    z-index:60;
+    flex-direction:column;
+    box-shadow:0 12px 28px rgba(0,0,0,.4);
+  }
+  header nav.show{ display:flex; }
+  header nav a{ margin:8px 0; }
+}
+
+/* Desktop: nav always visible, menuBtn hide */
+@media (min-width:769px){
+  #menuBtn{ display:none; }
+  header nav{
+    display:flex !important;
+    position:static;
+    background:transparent;
+    width:auto;
+    padding:0;
+  }
+}
 
     /* hero */
     .hero{padding:56px 0 40px;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -65,13 +106,6 @@
       h1{font-size:32px}
       .cards{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:1fr}
-    }
-    @media (max-width:820px){
-      /* keep brand title visible; only hide the tagline to save space */
-      .tagline{display:none !important;}
-      header nav{display:none !important;}
-      header nav.show{display:flex !important; flex-direction:column;}
-      #menuBtn{display:inline-block !important;}
     }
 
     /* Fix faint Ringg text in some themes */
@@ -446,6 +480,7 @@ input[class*="ringg_ai-"] {
 
 </body>
 </html>
+
 
 
 
