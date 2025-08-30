@@ -87,57 +87,58 @@
       .hero h1{font-size:32px}
     }
 
-    /* ===== Ringg chat visibility fix: dark composer + white text ===== */
-    /* Bubbles (bot + user) */
-    .ringg_ai-text-left .ringg_ai-w-fit,
-    .ringg_ai-text-right .ringg_ai-w-fit{
-      background:#0f172a !important;
-      border-color:#0f172a !important;
-      opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
-    }
-    .ringg_ai-text-left .ringg_ai-w-fit, .ringg_ai-text-left .ringg_ai-w-fit *,
-    .ringg_ai-text-right .ringg_ai-w-fit, .ringg_ai-text-right .ringg_ai-w-fit *{
-      color:#ffffff !important; opacity:1 !important;
-    }
+   <style id="ringg-contrast-fix">
+  /* kill any fading/dimming */
+  [class*="ringg_ai"], [class*="ringg_ai"] *{
+    opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
+    --tw-text-opacity:1 !important;
+  }
 
-    /* Composer (typing area) DARK */
-    [class*="ringg_ai"] .ringg_ai-composer,
-    [class*="ringg_ai"] [class*="bg-white"],
-    [class*="ringg_ai"] [class*="bg-gray-50"],
-    [class*="ringg_ai"] [class*="bg-muted"]{
-      background:#0f172a !important;
-      border-color:#0f172a !important;
-    }
+  /* bubbles: dark + white text */
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit{
+    background:#0f172a !important; border-color:#0f172a !important;
+  }
+  .ringg_ai-text-left .ringg_ai-w-fit, .ringg_ai-text-left .ringg_ai-w-fit *,
+  .ringg_ai-text-right .ringg_ai-w-fit, .ringg_ai-text-right .ringg_ai-w-fit *{
+    color:#ffffff !important;
+  }
 
-    /* Inputs / text inside composer -> WHITE */
-    [class*="ringg_ai"] [role="textbox"],
-    [class*="ringg_ai"] [contenteditable="true"],
-    [class*="ringg_ai"] textarea,
-    [class*="ringg_ai"] input[type="text"],
-    [class*="ringg_ai"] input[type="search"],
-    [class*="ringg_ai"] input{
-      color:#ffffff !important;
-      -webkit-text-fill-color:#ffffff !important;
-      caret-color:#ffffff !important;
-      background:transparent !important;
-      text-shadow:none !important;
-      opacity:1 !important;
-    }
+  /* composer (typing area) = WHITE */
+  [class*="ringg_ai"] .ringg_ai-composer,
+  [class*="ringg_ai"] [class*="bg-white"],
+  [class*="ringg_ai"] [class*="bg-gray-50"],
+  [class*="ringg_ai"] [class*="bg-muted"]{
+    background:#ffffff !important; border-color:#e5e7eb !important;
+  }
 
-    /* Override Tailwind utility that dims text */
-    [class*="ringg_ai"] .ringg_ai-text-foreground,
-    [class*="ringg_ai"] .file\:ringg_ai-text-foreground{ color:#ffffff !important; }
+  /* INPUT text = BLACK */
+  [class*="ringg_ai"] [role="textbox"],
+  [class*="ringg_ai"] [contenteditable="true"],
+  [class*="ringg_ai"] textarea,
+  [class*="ringg_ai"] input,
+  [class*="ringg_ai"] input[type="text"],
+  [class*="ringg_ai"] input[type="search"]{
+    color:#0b1020 !important;
+    -webkit-text-fill-color:#0b1020 !important;
+    caret-color:#0b1020 !important;
+    background:transparent !important;
+    text-shadow:none !important;
+    opacity:1 !important;
+  }
 
-    /* Placeholder */
-    [class*="ringg_ai"] ::placeholder{ color:#cbd5e1 !important; opacity:1 !important; }
+  /* jo utility grey कर रही थी */
+  [class*="ringg_ai"] .ringg_ai-text-foreground,
+  [class*="ringg_ai"] .file\:ringg_ai-text-foreground{
+    color:#0b1020 !important; --tw-text-opacity:1 !important;
+  }
 
-    /* Kill any opacity utilities inside composer */
-    [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"],
-    [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"]{ opacity:1 !important; }
+  /* placeholder */
+  [class*="ringg_ai"] ::placeholder{ color:#6b7280 !important; opacity:1 !important; }
 
-    /* Send icon white */
-    .ringg_ai-send, .ringg_ai-send *{ color:#ffffff !important; fill:#ffffff !important; }
-  </style>
+  /* send icon dark on white */
+  .ringg_ai-send, .ringg_ai-send *{ color:#0b1020 !important; fill:#0b1020 !important; }
+</style>
 </head>
 <body>
 
