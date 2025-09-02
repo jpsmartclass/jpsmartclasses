@@ -3,29 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JP Smart Classes — Premium Online Coaching for KG–12</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Premium online coaching for KG–12 with live + recorded classes, 2D/3D digital content, worksheets, doubt solving, and detailed AI progress reports — all in one place." />
-  <link rel="canonical" href="https://jpsmartclass.github.io/jpsmartclasses/index.html" />
+  <!-- Primary SEO (About-specific) -->
+  <title>About JP Smart Classes | Online KG–12 Coaching in India</title>
+  <meta name="description" content="JP Smart Classes is a premium online coaching platform for KG–12 students in India. Live + recorded classes, 2D/3D content, worksheets, doubt solving, and AI progress reports." />
+  <link rel="canonical" href="https://jpsmartclass.github.io/jpsmartclasses/about.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b1020" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="JP Smart Classes — Premium Online Coaching for KG–12" />
-  <meta property="og:description" content="Live + recorded classes, 2D/3D digital content, worksheets, doubt solving, and detailed AI progress reports — all in one place." />
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jpsmartclass.github.io/jpsmartclasses/index.html" />
   <meta property="og:site_name" content="JP Smart Classes" />
-  <meta property="og:image" content="https://jpsmartclass.github.io/jpsmartclasses/logo.png" />
-  <meta property="og:image:width" content="1000" />
-  <meta property="og:image:height" content="1000" />
+  <meta property="og:title" content="About JP Smart Classes | Online KG–12 Coaching in India" />
+  <meta property="og:description" content="Live + recorded classes, 2D/3D content, worksheets, AI reports & doubt solving." />
+  <meta property="og:url" content="https://jpsmartclass.github.io/jpsmartclasses/about.html" />
+  <meta property="og:image" content="https://jpsmartclass.github.io/jpsmartclasses/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="JP Smart Classes – KG–12 Coaching | Live + Recorded, 2D/3D, AI reports" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About JP Smart Classes | Online KG–12 Coaching in India" />
+  <meta name="twitter:description" content="Live + recorded classes, 2D/3D content, worksheets, AI reports & doubt solving." />
+  <meta name="twitter:image" content="https://jpsmartclass.github.io/jpsmartclasses/og-image.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png" />
 
+  <!-- Styles (kept, minimal tidy) -->
   <style>
     :root { --brand:#0b5fff; --dark:#0b1020; --muted:#677489; --bg:#0b1020; --ok:#27AE60; --accent:#FFD93B; --card:#111827; --chip:#1f2937; }
-    *{box-sizing:border-box}
-    html,body{margin:0}
+    *{box-sizing:border-box} html,body{margin:0}
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
       color:#e6ecf7;background:#0b1020;line-height:1.6;-webkit-text-size-adjust:100%
@@ -33,14 +41,12 @@
     img,video,svg,canvas{max-width:100%;height:auto;display:block}
     a{color:var(--brand);text-decoration:none}
 
-    /* Layout */
     .container{max-width:1100px;margin:0 auto;padding:24px}
     .section{padding:36px 0}
     .grid{display:grid;gap:18px}
     .grid-2{grid-template-columns:1fr}
     .grid-3{grid-template-columns:1fr}
 
-    /* Header / Navbar */
     header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
     .brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:0}
@@ -49,60 +55,29 @@
     .nav a{color:#fff;opacity:.95;margin-left:18px}
     .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--brand);color:#fff;font-weight:600;box-shadow:0 6px 20px rgba(11,95,255,.25)}
     .btn-outline{background:transparent;border:2px solid #fff}
-
-    /* Badges/Chips */
     .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;background:#152033;border:1px solid rgba(255,255,255,.08);color:#c8d2e6;border-radius:999px;font-weight:600;font-size:12px}
-
-    /* Hero */
-    .hero{padding:56px 0 28px 0;color:#fff;background:linear-gradient(180deg, #0b1020 0%, #0b1020 60%, #0e1530 100%)}
+    .hero{padding:56px 0 28px;color:#fff;background:linear-gradient(180deg,#0b1020 0%,#0b1020 60%,#0e1530 100%)}
     .hero h1{font-size:40px;line-height:1.15;margin:8px 0 12px}
     .hero p{color:#cbd5e1;max-width:760px}
     .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-
-    /* Cards */
     .card{background:#111827;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px;color:#e5e7eb;box-shadow:0 6px 24px rgba(0,0,0,.15)}
     .card h3,.card h4{margin:0 0 8px;color:#fff}
-
-    /* Features grid buttons */
     .feature{background:#0f172a;border:1px solid rgba(255,255,255,.06);padding:16px;border-radius:16px}
-
-    /* Footer */
     footer{margin-top:48px;background:#0b1020;color:#c9d3e7}
     footer a{color:#fff}
     .foot-grid{display:grid;gap:18px;padding:28px 0}
     .tiny{font-size:13px;color:#90a4c7}
 
-    /* Responsive navbar + brand on mobile */
-    .menu-btn{
-      display:inline-block;background:transparent;border:2px solid #fff;color:#fff;
-      font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer
-    }
+    .menu-btn{display:inline-block;background:transparent;border:2px solid #fff;color:#fff;font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer}
     @media (max-width:768px){
       .brand-logo-img{height:32px}
-      /* keep brand text visible, hide tagline to save space */
-      .brand-text{
-        display:block;
-        font-size:14px;
-        line-height:1.1;
-        max-width:calc(100vw - 200px);
-        white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-      }
+      .brand-text{display:block;font-size:14px;line-height:1.1;max-width:calc(100vw - 200px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
       .brand-text .tiny{display:none}
       .menu-btn{flex-shrink:0}
-
-      header nav{
-        display:none;flex-direction:column;background:rgba(11,16,32,.98);
-        position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px;z-index:60
-      }
-      header nav.show{display:flex}
-      header nav a{margin:10px 0}
+      header nav{display:none;flex-direction:column;background:rgba(11,16,32,.98);position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px;z-index:60}
+      header nav.show{display:flex} header nav a{margin:10px 0}
     }
-    @media (min-width:769px){
-      .menu-btn{display:none}
-      header nav{display:flex !important;position:static;background:transparent;width:auto;padding:0}
-    }
-
-    /* Larger screens */
+    @media (min-width:769px){ .menu-btn{display:none} header nav{display:flex !important;position:static;background:transparent;width:auto;padding:0} }
     @media (min-width:768px){
       .grid-2{grid-template-columns:repeat(2,1fr)}
       .grid-3{grid-template-columns:repeat(3,1fr)}
@@ -111,17 +86,35 @@
     }
   </style>
 
-  <!-- Schema.org -->
+  <!-- Schema.org: AboutPage + Breadcrumbs + Organization -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "JP Smart Classes",
-    "url": "https://jpsmartclass.github.io/jpsmartclasses/",
-    "logo": "https://jpsmartclass.github.io/jpsmartclasses/logo.png",
-    "sameAs": ["https://jpsmartclass.github.io/jpsmartclasses/"],
-    "address": {"@type":"PostalAddress","streetAddress":"Hno. 143 Shiv Sadan","addressLocality":"Gwalior","postalCode":"474003","addressCountry":"IN"},
-    "contactPoint": {"@type":"ContactPoint","telephone":"+91-74659-17995","contactType":"customer service","areaServed":"IN","availableLanguage":["en","hi"]}
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"AboutPage",
+        "name":"About JP Smart Classes",
+        "url":"https://jpsmartclass.github.io/jpsmartclasses/about.html",
+        "description":"Premium online coaching for KG–12 with live + recorded classes, 2D/3D content, worksheets, AI reports and doubt solving.",
+        "isPartOf":{"@type":"WebSite","name":"JP Smart Classes","url":"https://jpsmartclass.github.io/jpsmartclasses/"},
+        "primaryImageOfPage":{"@type":"ImageObject","url":"https://jpsmartclass.github.io/jpsmartclasses/og-image.jpg"}
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://jpsmartclass.github.io/jpsmartclasses/"},
+          {"@type":"ListItem","position":2,"name":"About","item":"https://jpsmartclass.github.io/jpsmartclasses/about.html"}
+        ]
+      },
+      {
+        "@type":"Organization",
+        "name":"JP Smart Classes",
+        "url":"https://jpsmartclass.github.io/jpsmartclasses/",
+        "logo":"https://jpsmartclass.github.io/jpsmartclasses/logo.png",
+        "address":{"@type":"PostalAddress","streetAddress":"Hno. 143, Shiv Sadan","addressLocality":"Gwalior","postalCode":"474003","addressCountry":"IN"},
+        "contactPoint":{"@type":"ContactPoint","telephone":"+91-74659-17995","contactType":"customer service","areaServed":"IN","availableLanguage":["en","hi"]}
+      }
+    ]
   }
   </script>
 </head>
@@ -131,7 +124,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="./index.html">
-        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80"/>
+        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" loading="eager" />
         <div class="brand-text">
           <div style="font-weight:800;line-height:1">JP Smart Classes</div>
           <div class="tiny">Grow Smart, Go Far</div>
@@ -142,50 +135,62 @@
 
       <nav id="navMenu">
         <a href="./index.html#home">Home</a>
-        <a href="./about.html">About</a>
+        <a href="./about.html" aria-current="page">About</a>
         <a href="./index.html#courses">Courses</a>
         <a href="./payments.html">Pay</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header"
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?utm_source=website&utm_medium=nav&utm_campaign=about"
            class="btn btn-outline" target="_blank" rel="noopener">Book Free Demo</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
+  <!-- About (unique H1 for this page) -->
+  <section class="hero">
     <div class="container">
       <div class="chips">
-        <span class="pill">K–12</span>
-        <span class="pill">CBSE &amp; State Boards</span>
+        <span class="pill">About</span>
+        <span class="pill">KG–12</span>
         <span class="pill">Live + Recorded</span>
       </div>
-      <h1>Premium Online Coaching for KG–12 with <span style="color:#5ea1ff">AI-powered</span> progress</h1>
-      <p>Live classes, 2D/3D digital content, worksheets, doubt solving, and detailed AI progress reports — all in one place.</p>
+      <h1>About JP Smart Classes</h1>
+      <p>We are an online-first institute helping KG–12 students learn better with <strong>live + recorded classes</strong>, engaging <strong>2D/3D content</strong>, printable <strong>worksheets</strong>, <strong>AI progress reports</strong>, and fast <strong>doubt solving</strong>. Parents get clear visibility of accuracy, speed and improvement.</p>
       <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">🎯 Book a FREE Demo</a>
-        <a class="btn" style="background:var(--ok)" href="https://wa.me/917465917995" target="_blank" rel="noopener">WhatsApp Now</a>
-        <a class="btn" style="background:#101826;border:1px solid rgba(255,255,255,.12)" href="#courses">Explore Courses</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?utm_source=website&utm_medium=cta&utm_campaign=about" target="_blank" rel="noopener">🎯 Book a FREE Demo</a>
+        <a class="btn" style="background:var(--ok)" href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20I%20want%20a%20free%20demo&utm_source=website&utm_medium=whatsapp&utm_campaign=about" target="_blank" rel="noopener">WhatsApp Now</a>
+        <a class="btn" style="background:#101826;border:1px solid rgba(255,255,255,.12)" href="index.html#courses">See Courses (KG–12)</a>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="section">
-    <div class="container grid grid-2">
-      <div class="feature">🕒 <strong>One-week free access</strong><br/>Try our live + recorded classes with no risk.</div>
-      <div class="feature">🏆 <strong>Olympiad &amp; NTSE foundation</strong><br/>Optional add-on for competitive prep.</div>
-      <div class="feature">📊 <strong>Parent progress dashboard</strong><br/>Track learning with AI-based insights.</div>
-      <div class="feature">🌐 <strong>Anywhere, anytime learning</strong><br/>Works on phone, tablet, and PC.</div>
-    </div>
-  </section>
+  <!-- Why / What / How -->
+  <main class="container section">
+    <h2>Our Mission</h2>
+    <p class="tiny" style="font-size:15px;color:#cbd5e1">Make quality learning affordable and accessible across India, especially Tier-2/3 cities, with a data-driven, caring teaching experience.</p>
 
-  <!-- Courses -->
-  <section id="courses" class="section">
-    <div class="container grid grid-3">
-      <div class="card"><h3>Primary (Classes 1–5)</h3><p>Concept-first lessons with activities and 2D animations.</p></div>
-      <div class="card"><h3>Middle (Classes 6–8)</h3><p>Strong foundation with worksheets, quizzes, and projects.</p></div>
-      <div class="card"><h3>Secondary (Classes 9–12)</h3><p>Board-oriented prep + doubt solving + revision planners.</p></div>
-    </div>
+    <h2 style="margin-top:28px">What We Offer</h2>
+    <ul class="tiny" style="font-size:15px;color:#cbd5e1">
+      <li>Live interactive classes + recordings for revision</li>
+      <li>Premium 2D/3D animated modules aligned to CBSE &amp; State Boards</li>
+      <li>Worksheets, assignments, and weekly reports</li>
+      <li>24×7 doubt support + parent dashboard</li>
+      <li>Olympiad &amp; NTSE foundation from early grades</li>
+    </ul>
+
+    <h2 style="margin-top:28px">How We Teach</h2>
+    <ol class="tiny" style="font-size:15px;color:#cbd5e1">
+      <li><strong>Free Demo:</strong> 30–45 min trial to understand the child’s level.</li>
+      <li><strong>Personalized Plan:</strong> Batch size &amp; timetable based on class and goal.</li>
+      <li><strong>Learning Cycle:</strong> Concept → Practice → Doubt solving → AI progress.</li>
+      <li><strong>Parent Updates:</strong> Weekly summary on WhatsApp/email.</li>
+    </ol>
+
+    <h2 style="margin-top:28px">Service Areas</h2>
+    <p class="tiny" style="font-size:15px;color:#cbd5e1">Pan-India online. Frequently requested from: Gwalior, Guna, Mathura, Agra, Indore, Bhopal, Nagpur.</p>
+  </main>
+
+  <!-- (Optional) Illustrative image -->
+  <section class="container section">
+    <img src="pics.png" alt="JP Smart Classes online class preview" loading="lazy" width="1200" height="700">
   </section>
 
   <!-- Footer -->
@@ -193,7 +198,7 @@
     <div class="container foot-grid">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80"/>
+          <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" loading="lazy"/>
           <div>
             <div style="font-weight:800;color:#fff">JP Smart Classes</div>
             <div class="tiny">Grow Smart, Go Far</div>
@@ -204,9 +209,9 @@
       <div>
         <div style="font-weight:700;margin-bottom:8px">Quick Links</div>
         <div class="tiny"><a href="./index.html#home">Home</a></div>
-        <div class="tiny"><a href="./about.html">About</a></div>
+        <div class="tiny"><a href="./about.html" aria-current="page">About</a></div>
         <div class="tiny"><a href="./index.html#courses">Courses</a></div>
-        <div class="tiny"><a href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Free Demo</a></div>
+        <div class="tiny"><a href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?utm_source=website&utm_medium=footer&utm_campaign=about" target="_blank" rel="noopener">Free Demo</a></div>
       </div>
       <div>
         <div style="font-weight:700;margin-bottom:8px">Contact</div>
@@ -222,15 +227,10 @@
     (function () {
       var y = document.getElementById('y');
       if (y) y.textContent = new Date().getFullYear();
-
       var menuBtn = document.getElementById('menuBtn');
       var navMenu = document.getElementById('navMenu');
       if (!menuBtn || !navMenu) return;
-
-      menuBtn.addEventListener('click', function () {
-        navMenu.classList.toggle('show');
-      });
-
+      menuBtn.addEventListener('click', function () { navMenu.classList.toggle('show'); });
       var mq = window.matchMedia('(min-width:769px)');
       function sync(){ mq.matches ? navMenu.classList.add('show') : navMenu.classList.remove('show'); }
       if (mq.addEventListener) mq.addEventListener('change', sync); else mq.addListener(sync);
@@ -283,78 +283,48 @@
   })();
   </script>
 
-  <!-- Ringg input fix: white input + black text (SINGLE style block) -->
+  <!-- Ringg input contrast fix -->
   <style id="ringg-contrast-fix">
-    /* Bubbles readable */
     .ringg_ai-text-left .ringg_ai-w-fit,
     .ringg_ai-text-right .ringg_ai-w-fit { background:#0f172a !important; border-color:#0f172a !important; }
     .ringg_ai-text-left .ringg_ai-w-fit, .ringg_ai-text-left .ringg_ai-w-fit *,
     .ringg_ai-text-right .ringg_ai-w-fit, .ringg_ai-text-right .ringg_ai-w-fit * { color:#ffffff !important; opacity:1 !important; }
-
-    /* Composer (typing area) background */
     [class*="ringg_ai"] .ringg_ai-composer,
     [class*="ringg_ai"] .ringg_ai-input,
     [class*="ringg_ai"] .ringg_ai-typebar,
     [class*="ringg_ai"] .ringg_ai-bg-white,
     [class*="ringg_ai"] .ringg_ai-bg-gray-50,
     [class*="ringg_ai"] .ringg_ai-bg-muted { background:#ffffff !important; border-color:#e5e7eb !important; }
-
-    /* Text inside the textbox -> BLACK */
-    [class*="ringg_ai"] [role="textbox"],
-    [class*="ringg_ai"] [contenteditable="true"],
-    [class*="ringg_ai"] textarea,
-    [class*="ringg_ai"] input[type="text"],
-    [class*="ringg_ai"] input[type="search"] {
+    [class*="ringg_ai"] [role="textbox"], [class*="ringg_ai"] [contenteditable="true"],
+    [class*="ringg_ai"] textarea, [class*="ringg_ai"] input[type="text"], [class*="ringg_ai"] input[type="search"] {
       color:#0b1020 !important; -webkit-text-fill-color:#0b1020 !important; caret-color:#0b1020 !important;
       background:transparent !important; opacity:1 !important; text-shadow:none !important;
     }
-
-    /* Stronger target (exact <input>) + override utility class text-foreground */
     [class*="ringg_ai"] input, input[class*="ringg_ai-"] { color:#0b1020 !important; -webkit-text-fill-color:#0b1020 !important; opacity:1 !important; }
-    [class*="ringg_ai"] .ringg_ai-text-foreground,
-    [class*="ringg_ai"] .file\:ringg_ai-text-foreground { color:#0b1020 !important; }
-
-    /* Placeholder readable */
+    [class*="ringg_ai"] .ringg_ai-text-foreground, [class*="ringg_ai"] .file\:ringg_ai-text-foreground { color:#0b1020 !important; }
     [class*="ringg_ai"] ::placeholder { color:#6b7280 !important; opacity:1 !important; }
-
-    /* Don’t allow dimming inside composer */
-    [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"],
-    [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"] { opacity:1 !important; }
-
-    /* Send icon visible on white */
+    [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"], [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"] { opacity:1 !important; }
     .ringg_ai-send, .ringg_ai-send * { color:#0b1020 !important; fill:#0b1020 !important; }
   </style>
-
-  <!-- Force BLACK text + WHITE input at runtime -->
   <script>
   (function(){
     function scrubClasses(el){
       if (!el || !el.classList) return;
       [...el.classList].forEach(c=>{
-        if ((/^|:)opacity-/.test(c) || /^ringg_ai-opacity-/.test(c) || /(text-(gray|muted|foreground))$/.test(c)) {
-          el.classList.remove(c);
-        }
+        if ((/^|:)opacity-/.test(c) || /^ringg_ai-opacity-/.test(c) || /(text-(gray|muted|foreground))$/.test(c)) el.classList.remove(c);
       });
     }
     function styleInput(inp){
       if (!inp || inp.__fixed) return;
       try{
         scrubClasses(inp);
-        inp.style.setProperty('color', '#0b1020', 'important');
-        inp.style.setProperty('-webkit-text-fill-color', '#0b1020', 'important');
-        inp.style.setProperty('caret-color', '#0b1020', 'important');
-        inp.style.setProperty('background', 'transparent', 'important');
-
+        inp.style.setProperty('color','#0b1020','important');
+        inp.style.setProperty('-webkit-text-fill-color','#0b1020','important');
+        inp.style.setProperty('caret-color','#0b1020','important');
+        inp.style.setProperty('background','transparent','important');
         const wrap = inp.closest('.ringg_ai-composer') || inp.closest('[class*="ringg_ai"]');
-        if (wrap){
-          scrubClasses(wrap);
-          wrap.style.setProperty('background', '#ffffff', 'important');
-          wrap.style.setProperty('border-color', '#e5e7eb', 'important');
-        }
-        document.querySelectorAll('.ringg_ai-send, .ringg_ai-send *').forEach(el=>{
-          el.style.setProperty('color', '#0b1020', 'important');
-          el.style.setProperty('fill',  '#0b1020', 'important');
-        });
+        if (wrap){ scrubClasses(wrap); wrap.style.setProperty('background','#ffffff','important'); wrap.style.setProperty('border-color','#e5e7eb','important'); }
+        document.querySelectorAll('.ringg_ai-send, .ringg_ai-send *').forEach(el=>{ el.style.setProperty('color','#0b1020','important'); el.style.setProperty('fill','#0b1020','important'); });
         inp.__fixed = true;
       }catch(e){}
     }
@@ -364,7 +334,7 @@
       ).forEach(styleInput);
     }
     scan();
-    new MutationObserver(scan).observe(document.body, {subtree:true, childList:true, attributes:true});
+    new MutationObserver(scan).observe(document.body,{subtree:true,childList:true,attributes:true});
   })();
   </script>
 
