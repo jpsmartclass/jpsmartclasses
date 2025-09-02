@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://jpsmartclass.github.io/jpsmartclasses/</loc>
-    <lastmod>2025-08-26</lastmod>
+    <lastmod>2025-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- About Page -->
   <url>
     <loc>https://jpsmartclass.github.io/jpsmartclasses/about.html</loc>
-    <lastmod>2025-08-26</lastmod>
+    <lastmod>2025-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,17 +20,19 @@
   <!-- Courses Page -->
   <url>
     <loc>https://jpsmartclass.github.io/jpsmartclasses/courses.html</loc>
-    <lastmod>2025-08-26</lastmod>
+    <lastmod>2025-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Contact Page -->
+  <!-- Add this ONLY if payments.html is indexable (Option B) -->
+  <!--
   <url>
-    <loc>https://jpsmartclass.github.io/jpsmartclasses/contact.html</loc>
-    <lastmod>2025-08-26</lastmod>
+    <loc>https://jpsmartclass.github.io/jpsmartclasses/payments.html</loc>
+    <lastmod>2025-09-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
+  -->
 
 </urlset>
