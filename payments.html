@@ -3,178 +3,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pay Fees | JP Smart Classes</title>
-  <meta name="description" content="Pay JP Smart Classes fees securely via Razorpay or by scanning the UPI QR code." />
+  <title>Pay | JP Smart Classes</title>
+  <meta name="robots" content="noindex, nofollow, max-image-preview:none" />
+  <link rel="canonical" href="https://jpsmartclass.github.io/jpsmartclasses/payments.html" />
+  <meta name="theme-color" content="#0b1020" />
   <link rel="icon" href="logo.png" />
-
   <style>
-    :root{ --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28) }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020 0%,#0b1020 40%,#0f172a 100%);color:#e7eaf3;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;scroll-behavior:smooth}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1100px;margin-inline:auto;padding:0 16px}
-
-    /* ---------- Header / Navbar ---------- */
-    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{height:64px;display:flex;align-items:center;justify-content:space-between;position:relative}
-    .brand{display:flex;gap:10px;align-items:center;color:#fff}
-    .brand-logo-img{height:40px;width:auto;border-radius:8px;object-fit:contain}
-    @media (max-width:768px){ .brand-logo-img{height:36px} }
-
-    nav a{color:#fff;opacity:.95;padding:8px 10px;border-radius:10px}
-    nav a:hover{background:rgba(255,255,255,.06)}
-
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent;cursor:pointer}
-    .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
-    .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
-    .btn.light{background:transparent;border:2px solid #fff;color:#fff}
-
-    .menu-btn{display:inline-block;background:transparent;border:2px solid #fff;color:#fff;font-size:18px;padding:6px 12px;border-radius:8px;cursor:pointer}
-
-    /* Mobile menu */
-    @media (max-width:768px){
-      .brand-text{display:block}
-      .brand-text .tiny{display:none}
-      header nav{
-        display:none;flex-direction:column;background:rgba(11,16,32,.98);
-        position:absolute;right:16px;top:64px;width:230px;padding:12px;border-radius:10px;z-index:60
-      }
-      header nav.show{display:flex}
-      header nav a{margin:10px 0}
-    }
-    @media (min-width:769px){
-      .menu-btn{display:none}
-      header nav{display:flex !important;position:static;background:transparent;width:auto;padding:0}
-    }
-
-    /* ---------- Page ---------- */
-    .hero{padding:48px 0 24px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .hero h1{font-size:40px;margin:0 0 8px}
-    .sub{color:var(--muted);margin:0}
-
-    section{padding:36px 0}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
-
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
-    .muted{color:var(--muted)}
-
-    .qr-wrap{background:#0e152d;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px}
-    .qr-img{max-width:420px;margin:0 auto;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.35)}
-
-    .list{margin:0;padding-left:18px;color:#cfd7ee}
-    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:var(--muted)}
+    body{margin:0;background:#0b1020;color:#e6ecf7;font-family:system-ui,Segoe UI,Inter,Roboto,Arial,sans-serif}
+    .container{max-width:960px;margin:0 auto;padding:24px}
+    .card{background:#111827;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px}
+    .btn{display:inline-block;background:#0b5fff;color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none}
+    .btn.wa{background:#27AE60}
+    a{color:#fff}
+    h1{margin:8px 0 12px}
   </style>
 </head>
 <body>
+  <main class="container">
+    <h1>Pay JP Smart Classes</h1>
+    <p>Choose a payment option below. If unsure, message us on WhatsApp.</p>
 
-  <!-- Header -->
-  <header>
-    <div class="container nav">
-      <a class="brand" href="./index.html">
-        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" loading="eager" decoding="async" />
-        <div class="brand-text">
-          <div style="font-weight:800;line-height:1">JP Smart Classes</div>
-          <div class="tiny">Grow Smart, Go Far</div>
-        </div>
-      </a>
+    <div class="card" style="display:grid;gap:12px">
+      <!-- Replace the href with your live gateway links -->
+      <a class="btn"
+         href="https://your-gateway.example/pay?plan=monthly&utm_source=website&utm_medium=button&utm_campaign=payments"
+         target="_blank" rel="noopener">Pay Monthly</a>
 
-      <button class="menu-btn" id="menuBtn">☰ Menu</button>
+      <a class="btn"
+         href="https://your-gateway.example/pay?plan=quarterly&utm_source=website&utm_medium=button&utm_campaign=payments"
+         target="_blank" rel="noopener">Pay Quarterly</a>
 
-      <nav id="navMenu">
-        <a href="./index.html#home">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./courses.html">Courses</a>
-        <a href="./payments.html">Pay</a>
-        <a class="btn light" href="https://rzp.io/rzp/sgh72H1" target="_blank" rel="noopener">Pay via Razorpay</a>
-      </nav>
+      <a class="btn"
+         href="https://your-gateway.example/pay?plan=yearly&utm_source=website&utm_medium=button&utm_campaign=payments"
+         target="_blank" rel="noopener">Pay Yearly</a>
+
+      <a class="btn wa"
+         href="https://wa.me/917465917995?text=Please%20share%20fees%20and%20payment%20link&utm_source=website&utm_medium=whatsapp&utm_campaign=payments"
+         target="_blank" rel="noopener">WhatsApp Fees</a>
     </div>
-  </header>
 
-  <!-- Hero -->
-  <main class="hero">
-    <div class="container">
-      <h1>Pay Fees Securely</h1>
-      <p class="sub">Use Razorpay link or scan the UPI QR to pay from any app (GPay / PhonePe / Paytm).</p>
-    </div>
+    <p style="opacity:.8;margin-top:16px;font-size:14px">
+      Need help? Email <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a>
+    </p>
   </main>
-
-  <!-- Payment Options -->
-  <section>
-    <div class="container grid">
-
-      <!-- Left: QR -->
-      <div class="card">
-        <h2 style="margin-top:0">Scan & Pay (UPI QR)</h2>
-        <p class="muted">Open any UPI app and scan this QR. Add your <b>Student Name & Class</b> in notes.</p>
-        <div class="qr-wrap" style="margin-top:12px">
-          <!-- Upload your file as 'razorpay-qr.jpg' (or change the src) -->
-          <img src="razorpay-qr.jpg" alt="Razorpay UPI QR – JP Smart Classes" class="qr-img">
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px
-          <a class="btn primary" href="https://rzp.io/rzp/sgh72H1" target="_blank" rel="noopener">
-  Pay Now via Razorpay
-</a>
-          <a class="btn primary" href="https://rzp.io/rzp/sgh72H1" target="_blank" rel="noopener">Pay via Razorpay</a>
-          <!-- Optional: WhatsApp after payment -->
-          <a class="btn whatsapp" href="https://wa.me/917465917995?text=Hello%20JP%20Smart%20Classes%2C%20I%20have%20paid%20the%20fees.%20Name%3A%20_____%2C%20Class%3A%20_____%2C%20Transaction%20ID%3A%20_____" target="_blank" rel="noopener">Send Payment Details on WhatsApp</a>
-        </div>
-      </div>
-
-      <!-- Right: Details / Notes -->
-      <div class="card">
-        <h2 style="margin-top:0">Payment Details</h2>
-        <ul class="list">
-          <li>Recommended: click <b>Pay via Razorpay</b> for cards, UPI, wallets, NetBanking.</li>
-          <li>If using QR, ensure receiver shows <b>Manav Prajapati</b> / JP Smart Classes.</li>
-          <li>In payment <b>notes</b>, mention Student Name, Class, and Phone Number.</li>
-          <li>After payment, share the receipt on WhatsApp for quick confirmation.</li>
-        </ul>
-
-        <div class="card" style="margin-top:16px">
-          <h3 style="margin-top:0">Need Help?</h3>
-          <p class="muted" style="margin:6px 0 0">Call/WhatsApp: <a href="tel:+917465917995">+91 74659 17995</a> • <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a></p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FAQ (optional) -->
-  <section>
-    <div class="container">
-      <div class="card">
-        <h2 style="margin-top:0">FAQs</h2>
-        <p class="muted">Q: Razorpay link काम नहीं कर रहा? — A: पेज refresh करें या अलग ब्राउज़र/UPI ऐप ट्राय करें।  
-        Q: गलत amount हो गया? — A: तुरंत WhatsApp पर receipt भेजकर बताएं, हम resolve करेंगे।</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <span>© <span id="y"></span> JP Smart Classes</span>
-      <span class="muted">Secure payments powered by Razorpay</span>
-    </div>
-  </footer>
-
-  <!-- JS: year + mobile menu toggle -->
-  <script>
-    (function () {
-      var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-
-      var menuBtn=document.getElementById('menuBtn');
-      var navMenu=document.getElementById('navMenu');
-      if(menuBtn && navMenu){
-        menuBtn.addEventListener('click', function(){ navMenu.classList.toggle('show'); });
-        var mq=window.matchMedia('(min-width:769px)');
-        function sync(){ mq.matches ? navMenu.classList.add('show') : navMenu.classList.remove('show'); }
-        if(mq.addEventListener) mq.addEventListener('change',sync); else mq.addListener(sync);
-        sync();
-      }
-    })();
-  </script>
 </body>
 </html>
