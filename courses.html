@@ -6,7 +6,7 @@
 
   <!-- Primary SEO (Courses-specific) -->
   <title>Courses (KG–12) | JP Smart Classes – CBSE & State Boards</title>
-  <meta name="description" content="Courses for Classes 1–12: live + recorded lessons, 2D/3D content, worksheets, doubt solving & AI progress. CBSE & State Boards with Olympiad/NTSE foundation." />
+  <meta name="description" content="Online courses for Classes 1–12 with live + recorded lessons, 2D/3D content, worksheets, doubt solving, and AI progress reports. CBSE & State Boards." />
   <link rel="canonical" href="https://jpsmartclass.github.io/jpsmartclasses/courses.html" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#0b1020" />
@@ -21,11 +21,16 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="JP Smart Classes – KG–12 Coaching | Live + Recorded, 2D/3D, AI reports" />
+  <meta property="og:locale" content="en_IN" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Courses (KG–12) | JP Smart Classes – CBSE & State Boards" />
   <meta name="twitter:description" content="Live + recorded classes with 2D/3D content, worksheets, doubt solving & AI progress. Courses for Classes 1–12." />
   <meta name="twitter:image" content="https://jpsmartclass.github.io/jpsmartclasses/og-image.jpg" />
+
+  <!-- Hreflang (single-language site) -->
+  <link rel="alternate" href="https://jpsmartclass.github.io/jpsmartclasses/courses.html" hreflang="en-IN" />
+  <link rel="alternate" href="https://jpsmartclass.github.io/jpsmartclasses/courses.html" hreflang="x-default" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png" />
@@ -53,7 +58,7 @@
     .grid{display:grid;gap:18px}
     .grid-3{grid-template-columns:1fr}
     .card{background:#111827;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px;color:#e5e7eb}
-    .card h3{margin:0 0 8px;color:#fff}
+    .card h2{margin:0 0 8px;color:#fff;font-size:1.25rem}
     .meta{color:#98a6c4;font-size:13px}
     .list{margin:10px 0 0 18px;color:#cbd5e1}
     .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#0f172a;border:1px solid rgba(255,255,255,.08);font-size:12px;color:#c8d2e6;margin-right:6px}
@@ -72,7 +77,7 @@
     @media (min-width:768px){ .grid-3{grid-template-columns:repeat(3,1fr)} .hero h1{font-size:48px} .foot-grid{grid-template-columns:2fr 1fr 1fr} }
   </style>
 
-  <!-- Schema.org: Breadcrumbs + Course ItemList -->
+  <!-- Schema.org: Breadcrumbs + Course ItemList (kept minimal; no extra types added) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -117,16 +122,16 @@
   <!-- Header -->
   <header>
     <div class="container nav">
-      <a class="brand" href="./index.html">
-        <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" loading="eager" />
+      <a class="brand" href="./index.html" aria-label="JP Smart Classes Home">
+        <img src="logo.png" alt="JP Smart Classes logo" class="brand-logo-img" width="80" height="80" loading="eager" />
         <div class="brand-text">
           <div style="font-weight:800;line-height:1">JP Smart Classes</div>
           <div class="tiny">Grow Smart, Go Far</div>
         </div>
       </a>
 
-      <button class="menu-btn" id="menuBtn">☰ Menu</button>
-      <nav id="navMenu">
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">☰ Menu</button>
+      <nav id="navMenu" aria-label="Primary Navigation">
         <a href="./index.html#home">Home</a>
         <a href="./about.html">About</a>
         <a href="./courses.html" aria-current="page">Courses</a>
@@ -137,7 +142,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="courses-hero">
     <div class="container">
       <div class="chips">
         <span class="pill">Courses</span>
@@ -147,17 +152,17 @@
       <h1>Courses (KG–12)</h1>
       <p>Choose the right plan for your child. All courses include live + recorded classes, 2D/3D content, worksheets, doubt solving, and AI progress reports.</p>
       <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?utm_source=website&utm_medium=cta&utm_campaign=courses" target="_blank" rel="noopener">🎯 Book a FREE Demo</a>
-        <a class="btn" style="background:var(--ok)" href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20share%20course%20options&utm_source=website&utm_medium=whatsapp&utm_campaign=courses" target="_blank" rel="noopener">WhatsApp Now</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?utm_source=website&utm_medium=cta&utm_campaign=courses" target="_blank" rel="noopener" title="Book a FREE demo for Classes KG–12">🎯 Book a FREE Demo</a>
+        <a class="btn" style="background:var(--ok)" href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20share%20course%20options&utm_source=website&utm_medium=whatsapp&utm_campaign=courses" target="_blank" rel="noopener" title="Chat on WhatsApp">WhatsApp Now</a>
       </div>
     </div>
   </section>
 
   <!-- Course groups -->
   <main class="container" style="padding:36px 0">
-    <div class="grid grid-3">
+    <div class="grid grid-3" aria-label="Course categories">
       <div class="card">
-        <h3>Primary (Classes 1–5)</h3>
+        <h2>Primary (Classes 1–5)</h2>
         <div class="meta">English • Math • EVS • Hindi</div>
         <ul class="list">
           <li>Concept-first lessons with 2D animations</li>
@@ -170,7 +175,7 @@
       </div>
 
       <div class="card">
-        <h3>Middle (Classes 6–8)</h3>
+        <h2>Middle (Classes 6–8)</h2>
         <div class="meta">Math • Science • English • SST • Hindi</div>
         <ul class="list">
           <li>Worksheets, quizzes & projects</li>
@@ -183,7 +188,7 @@
       </div>
 
       <div class="card">
-        <h3>Secondary (Classes 9–12)</h3>
+        <h2>Secondary (Classes 9–12)</h2>
         <div class="meta">Physics • Chemistry • Math • Biology • English • Accounts/Eco</div>
         <ul class="list">
           <li>Board-focused prep + revision planners</li>
@@ -197,28 +202,28 @@
     </div>
 
     <!-- CTA strip -->
-    <div class="card" style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+    <div class="card" style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between" aria-label="Counselor CTA">
       <div><strong>Not sure which batch fits?</strong> Get a quick call with our counselor.</div>
       <div>
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?utm_source=website&utm_medium=cta&utm_campaign=courses_mid" target="_blank" rel="noopener">Get a Callback</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?utm_source=website&utm_medium=cta&utm_campaign=courses_mid" target="_blank" rel="noopener" title="Get a callback">Get a Callback</a>
       </div>
     </div>
   </main>
 
   <!-- FAQs (courses-specific) -->
-  <section class="container" style="padding-bottom:36px">
+  <section class="container" style="padding-bottom:36px" aria-label="Course FAQs">
     <div class="grid">
       <div class="card">
-        <h3>How are batches formed?</h3>
+        <h2>How are batches formed?</h2>
         <p class="meta">By class, board and target pace (1:1 or small/standard batch).</p>
       </div>
       <div class="card">
-        <h3>Will I get recordings?</h3>
+        <h2>Will I get recordings?</h2>
         <p class="meta">Yes. All live classes are available for revision as recordings.</p>
       </div>
       <div class="card">
-        <h3>Do you cover Olympiad/NTSE?</h3>
-        <p class="meta">Yes, as an add-on track—foundation from early grades.</p>
+        <h2>Do you cover Olympiad/NTSE?</h2>
+        <p class="meta">Yes, as an add-on track — foundation from early grades.</p>
       </div>
     </div>
   </section>
@@ -228,7 +233,7 @@
     <div class="container foot-grid">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-          <img src="logo.png" alt="JP Smart Classes Logo" class="brand-logo-img" width="80" height="80" loading="lazy"/>
+          <img src="logo.png" alt="JP Smart Classes logo" class="brand-logo-img" width="80" height="80" loading="lazy"/>
           <div>
             <div style="font-weight:800;color:#fff">JP Smart Classes</div>
             <div class="tiny">Grow Smart, Go Far</div>
