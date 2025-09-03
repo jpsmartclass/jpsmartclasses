@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://jpsmartclass.github.io/jpsmartclasses/</loc>
-    <lastmod>2025-09-02</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,27 +12,49 @@
   <!-- About Page -->
   <url>
     <loc>https://jpsmartclass.github.io/jpsmartclasses/about.html</loc>
-    <lastmod>2025-09-02</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Courses Page -->
+  <!-- Courses Overview -->
   <url>
     <loc>https://jpsmartclass.github.io/jpsmartclasses/courses.html</loc>
-    <lastmod>2025-09-02</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
-  <!-- Add this ONLY if payments.html is indexable (Option B) -->
-  <!--
+  <!-- Primary Courses Detail -->
+  <url>
+    <loc>https://jpsmartclass.github.io/jpsmartclasses/primary.html</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Middle Courses Detail -->
+  <url>
+    <loc>https://jpsmartclass.github.io/jpsmartclasses/middle.html</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Secondary Courses Detail -->
+  <url>
+    <loc>https://jpsmartclass.github.io/jpsmartclasses/secondary.html</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Payments Page (only if you want indexable) -->
   <url>
     <loc>https://jpsmartclass.github.io/jpsmartclasses/payments.html</loc>
-    <lastmod>2025-09-02</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  -->
 
 </urlset>
