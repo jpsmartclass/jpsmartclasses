@@ -8,6 +8,11 @@
   <link rel="icon" href="logo.png" />
 
   <style>
+    html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
     :root{
       --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28);
     }
@@ -127,6 +132,33 @@ header{ padding-top: env(safe-area-inset-top); }
     .ringg_ai-prose p,
     .ringg_ai-prose-sm p,
     .ringg_ai-text-sm p { color:#fff !important; opacity:1 !important; }
+    /* ==== FORCE MOBILE FIX OVERRIDES (paste at very end of <style>) ==== */
+
+/* 1) iOS/Android text auto-shrink off */
+html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+
+/* 2) Heading size को मजबूती से लागू करो */
+.hero h1{
+  font-size: clamp(30px, 8vw, 46px) !important;  /* bigger floor + !important */
+  line-height: 1.15 !important;
+}
+
+/* 3) Mobile drawer: links vertical + full width */
+@media (max-width:768px){
+  header nav ul{ flex-direction: column !important; gap: 6px !important; width:100% !important; }
+  header nav li{ width:100% !important; }
+}
+
+/* 4) Hamburger button visible/tappable */
+#menuBtn{
+  font-size:20px; line-height:1;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);
+}
+#menuBtn:active{ transform:scale(.98); }
+
   </style>
 </head>
 <body>
