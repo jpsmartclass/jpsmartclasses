@@ -3,78 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
- <title>JP Smart Classes | K–12 Coaching & Digital Learning</title>
-  <!-- Primary SEO -->
+  <title>JP Smart Classes | K–12 Coaching & Digital Learning</title>
   <meta name="description" content="K–12 coaching with live + recorded classes, premium digital content, worksheets, AI progress reports, and doubt-solving. Book a FREE demo now!" />
-  <link rel="canonical" href="https://jpsmartclass.github.io/jpsmartclasses/" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="theme-color" content="#0b1020" />
+  <link rel="icon" href="logo.png" />
 
-  <!-- Social (Open Graph / Twitter) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="JP Smart Classes" />
-  <meta property="og:title" content="JP Smart Classes | KG–12 Coaching (CBSE & State Boards)" />
-  <meta property="og:description" content="Live + recorded classes, 2D/3D content, worksheets, AI reports & doubt solving." />
-  <meta property="og:url" content="https://jpsmartclass.github.io/jpsmartclasses/" />
-  <meta property="og:image" content="https://jpsmartclass.github.io/jpsmartclasses/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="JP Smart Classes | KG–12 Coaching (CBSE & State Boards)" />
-  <meta name="twitter:description" content="Live + recorded classes, 2D/3D content, worksheets, AI reports & doubt solving." />
-  <meta name="twitter:image" content="https://jpsmartclass.github.io/jpsmartclasses/og-image.jpg" />
-
-  <!-- Favicons -->
-  <link rel="icon" href="logo.png" type="image/png" />
-  <link rel="apple-touch-icon" href="logo@2x.png" />
-
-  <!-- Performance hints -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "JP Smart Classes",
-        "url": "https://jpsmartclass.github.io/jpsmartclasses/",
-        "logo": "https://jpsmartclass.github.io/jpsmartclasses/logo@2x.png",
-        "sameAs": []
-      },
-      {
-        "@type": "EducationalOrganization",
-        "name": "JP Smart Classes",
-        "url": "https://jpsmartclass.github.io/jpsmartclasses/",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Hno. 143, Shiv Sadan",
-          "addressLocality": "Gwalior",
-          "postalCode": "474003",
-          "addressCountry": "IN"
-        },
-        "telephone": "+91-7465917995",
-        "areaServed": "IN",
-        "foundingDate": "2023"
-      },
-      {
-        "@type": "WebSite",
-        "name": "JP Smart Classes",
-        "url": "https://jpsmartclass.github.io/jpsmartclasses/",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://jpsmartclass.github.io/jpsmartclasses/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Styles (kept from your version) -->
   <style>
     :root{
       --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28);
@@ -99,47 +31,47 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent}
     .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
     .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
-    /* Safe-area + container padding (mobile notch fix) */
-    header{ padding-top: env(safe-area-inset-top); }
-    .container{
-      padding-left:  max(16px, env(safe-area-inset-left));
-      padding-right: max(16px, env(safe-area-inset-right));
-    }
+/* Safe-area + container padding (mobile notch fix) */
+header{ padding-top: env(safe-area-inset-top); }
+.container{
+  padding-left:  max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
 
-    /* Mobile drawer nav */
-    @media (max-width:768px){
-      .tagline{ display:none !important; }
-      #menuBtn{ display:inline-block; }
+/* Mobile drawer nav */
+@media (max-width:768px){
+  .tagline{ display:none !important; }           /* brand name rahe, tagline hide */
+  #menuBtn{ display:inline-block; }              /* hamburger visible */
 
-      header nav{
-        display:none;
-        position:fixed;
-        right:12px;
-        top:calc(64px + env(safe-area-inset-top));
-        width:min(88vw, 320px);
-        background:rgba(11,16,32,.98);
-        border:1px solid rgba(255,255,255,.12);
-        border-radius:12px;
-        padding:12px;
-        z-index:60;
-        flex-direction:column;
-        box-shadow:0 12px 28px rgba(0,0,0,.4);
-      }
-      header nav.show{ display:flex; }
-      header nav a{ margin:8px 0; }
-    }
+  header nav{
+    display:none;
+    position:fixed;
+    right:12px;
+    top:calc(64px + env(safe-area-inset-top));
+    width:min(88vw, 320px);
+    background:rgba(11,16,32,.98);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:12px;
+    z-index:60;
+    flex-direction:column;
+    box-shadow:0 12px 28px rgba(0,0,0,.4);
+  }
+  header nav.show{ display:flex; }
+  header nav a{ margin:8px 0; }
+}
 
-    /* Desktop: nav always visible, menuBtn hide */
-    @media (min-width:769px){
-      #menuBtn{ display:none; }
-      header nav{
-        display:flex !important;
-        position:static;
-        background:transparent;
-        width:auto;
-        padding:0;
-      }
-    }
+/* Desktop: nav always visible, menuBtn hide */
+@media (min-width:769px){
+  #menuBtn{ display:none; }
+  header nav{
+    display:flex !important;
+    position:static;
+    background:transparent;
+    width:auto;
+    padding:0;
+  }
+}
 
     /* hero */
     .hero{padding:56px 0 40px;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -395,73 +327,86 @@
   </script>
 
   <!-- Ringg contrast fix (strong) -->
-  <!-- Ringg contrast fix (max strength) -->
-  <!-- Ringg contrast fix (black text in input) -->
-  <style id="ringg-contrast-fix">
-    .ringg_ai-text-left .ringg_ai-w-fit,
-    .ringg_ai-text-right .ringg_ai-w-fit {
-      background:#0f172a !important;
-      border-color:#0f172a !important;
-      opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
-    }
-    .ringg_ai-text-left .ringg_ai-w-fit,
-    .ringg_ai-text-left .ringg_ai-w-fit *,
-    .ringg_ai-text-right .ringg_ai-w-fit,
-    .ringg_ai-text-right .ringg_ai-w-fit * { color:#ffffff !important; opacity:1 !important; }
+<!-- Ringg contrast fix (max strength) -->
+<!-- Ringg contrast fix (black text in input) -->
+<style id="ringg-contrast-fix">
+  /* Bubbles (bot + user) dark hi rahenge for readability */
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit {
+    background:#0f172a !important;
+    border-color:#0f172a !important;
+    opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
+  }
+  .ringg_ai-text-left .ringg_ai-w-fit,
+  .ringg_ai-text-left .ringg_ai-w-fit *,
+  .ringg_ai-text-right .ringg_ai-w-fit,
+  .ringg_ai-text-right .ringg_ai-w-fit * { color:#ffffff !important; opacity:1 !important; }
 
-    [class*="ringg_ai"] .ringg_ai-composer,
-    [class*="ringg_ai"] .ringg_ai-input,
-    [class*="ringg_ai"] .ringg_ai-typebar,
-    [class*="ringg_ai"] .ringg_ai-bg-white,
-    [class*="ringg_ai"] .ringg_ai-bg-gray-50,
-    [class*="ringg_ai"] .ringg_ai-bg-muted {
-      background:#ffffff !important;
-      border-color:#e5e7eb !important;
-    }
+  /* INPUT/COMPOSER: white bg + BLACK text */
+  [class*="ringg_ai"] .ringg_ai-composer,
+  [class*="ringg_ai"] .ringg_ai-input,
+  [class*="ringg_ai"] .ringg_ai-typebar,
+  [class*="ringg_ai"] .ringg_ai-bg-white,
+  [class*="ringg_ai"] .ringg_ai-bg-gray-50,
+  [class*="ringg_ai"] .ringg_ai-bg-muted {
+    background:#ffffff !important;
+    border-color:#e5e7eb !important;
+  }
 
-    [class*="ringg_ai"] [role="textbox"],
-    [class*="ringg_ai"] [contenteditable="true"],
-    [class*="ringg_ai"] textarea,
-    [class*="ringg_ai"] input[type="text"],
-    [class*="ringg_ai"] input[type="search"] {
-      color:#0b1020 !important;
-      -webkit-text-fill-color:#0b1020 !important;
-      caret-color:#0b1020 !important;
-      background:transparent !important;
-      opacity:1 !important; text-shadow:none !important;
-    }
-    [class*="ringg_ai"] [role="textbox"],
-    [class*="ringg_ai"] [contenteditable="true"] {
-      color:#0b1020 !important;
-    }
-    [class*="ringg_ai"] input,
-    input[class*="ringg_ai-"] {
-      color:#0b1020 !important;
-      -webkit-text-fill-color:#0b1020 !important;
-      opacity:1 !important;
-      filter:none !important;
-      mix-blend-mode:normal !important;
-      text-shadow:none !important;
-    }
-    [class*="ringg_ai"] .ringg_ai-text-foreground,
-    [class*="ringg_ai"] .file\:ringg_ai-text-foreground {
-      color:#0b1020 !important;
-    }
-    [class*="ringg_ai"] ::placeholder {
-      color:#6b7280 !important;
-      opacity:1 !important;
-    }
-    [class*="ringg_ai"] textarea::placeholder,
-    [class*="ringg_ai"] input::placeholder { color:#6b7280 !important; opacity:1 !important; }
-    [class*="ringg_ai"] [contenteditable="true"]:empty:before {
-      content: attr(data-placeholder);
-      color:#6b7280 !important; opacity:1 !important;
-    }
-    [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"],
-    [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"] { opacity:1 !important; }
-    .ringg_ai-send, .ringg_ai-send * { color:#0b1020 !important; fill:#0b1020 !important; }
-  </style>
+  [class*="ringg_ai"] [role="textbox"],
+  [class*="ringg_ai"] [contenteditable="true"],
+  [class*="ringg_ai"] textarea,
+  [class*="ringg_ai"] input[type="text"],
+  [class*="ringg_ai"] input[type="search"] {
+    color:#0b1020 !important;                  /* BLACK-ish text */
+    -webkit-text-fill-color:#0b1020 !important;
+    caret-color:#0b1020 !important;
+    background:transparent !important;
+    opacity:1 !important; text-shadow:none !important;
+  }
+/* Fallback: any textbox inside Ringg */
+[class*="ringg_ai"] [role="textbox"],
+[class*="ringg_ai"] [contenteditable="true"] {
+  color:#0b1020 !important;
+}
+/* Stronger target: exact Ringg <input>  */
+[class*="ringg_ai"] input,
+input[class*="ringg_ai-"] {
+  color:#0b1020 !important;
+  -webkit-text-fill-color:#0b1020 !important;
+  opacity:1 !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+  text-shadow:none !important;
+}
 
+/* Utility class ko override: text-foreground ko forced black karo */
+[class*="ringg_ai"] .ringg_ai-text-foreground,
+[class*="ringg_ai"] .file\:ringg_ai-text-foreground { /* some builds prefix with file: */
+  color:#0b1020 !important;
+}
+
+/* Placeholder ko readable rakho */
+[class*="ringg_ai"] ::placeholder {
+  color:#6b7280 !important;
+  opacity:1 !important;
+}
+
+  /* Placeholder */
+  [class*="ringg_ai"] textarea::placeholder,
+  [class*="ringg_ai"] input::placeholder { color:#6b7280 !important; opacity:1 !important; }
+  [class*="ringg_ai"] [contenteditable="true"]:empty:before {
+    content: attr(data-placeholder);
+    color:#6b7280 !important; opacity:1 !important;
+  }
+
+  /* Remove any dimming */
+  [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"],
+  [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"] { opacity:1 !important; }
+
+  /* Send button icon visible on white */
+  .ringg_ai-send, .ringg_ai-send * { color:#0b1020 !important; fill:#0b1020 !important; }
+</style>
   <!-- Replace default bot greeting -->
   <script>
   (function(){
@@ -483,54 +428,66 @@
     }
   })();
   </script>
+<!-- Force-fix Ringg composer colors at runtime (paste just ABOVE </body>) -->
+<!-- Force BLACK text + WHITE input for Ringg composer -->
+<script>
+(function(){
+  function scrubClasses(el){
+    if (!el || !el.classList) return;
+    [...el.classList].forEach(c=>{
+      if (/text-(gray|muted)/.test(c) || /^ringg_ai-opacity-/.test(c)) el.classList.remove(c);
+    });
+  }
 
-  <!-- Force-fix Ringg composer colors at runtime (paste just ABOVE </body>) -->
-  <!-- Force BLACK text + WHITE input for Ringg composer -->
-  <script>
-  (function(){
-    function scrubClasses(el){
-      if (!el || !el.classList) return;
-      [...el.classList].forEach(c=>{
-        if (/text-(gray|muted)/.test(c) || /^ringg_ai-opacity-/.test(c)) el.classList.remove(c);
+  function styleInput(inp){
+    if (!inp || inp.__jpsc_fixed) return;
+    try{
+      scrubClasses(inp);
+      /* BLACK text + caret */
+      inp.style.setProperty('color', '#0b1020', 'important');
+      inp.style.setProperty('-webkit-text-fill-color', '#0b1020', 'important');
+      inp.style.setProperty('caret-color', '#0b1020', 'important');
+      inp.style.setProperty('background', 'transparent', 'important');
+
+      /* WHITE composer background */
+      var wrap = inp.closest('.ringg_ai-composer') || inp.closest('[class*="ringg_ai"]');
+      if (wrap){
+        scrubClasses(wrap);
+        wrap.style.setProperty('background', '#ffffff', 'important');
+        wrap.style.setProperty('border-color', '#e5e7eb', 'important');
+      }
+
+      /* Send icon dark so it’s visible on white */
+      document.querySelectorAll('.ringg_ai-send, .ringg_ai-send *').forEach(el=>{
+        el.style.setProperty('color', '#0b1020', 'important');
+        el.style.setProperty('fill',  '#0b1020', 'important');
       });
-    }
 
-    function styleInput(inp){
-      if (!inp || inp.__jpsc_fixed) return;
-      try{
-        scrubClasses(inp);
-        inp.style.setProperty('color', '#0b1020', 'important');
-        inp.style.setProperty('-webkit-text-fill-color', '#0b1020', 'important');
-        inp.style.setProperty('caret-color', '#0b1020', 'important');
-        inp.style.setProperty('background', 'transparent', 'important');
+      inp.__jpsc_fixed = true;
+    }catch(e){}
+  }
 
-        var wrap = inp.closest('.ringg_ai-composer') || inp.closest('[class*="ringg_ai"]');
-        if (wrap){
-          scrubClasses(wrap);
-          wrap.style.setProperty('background', '#ffffff', 'important');
-          wrap.style.setProperty('border-color', '#e5e7eb', 'important');
-        }
+  function scan(){
+    document.querySelectorAll(
+      '.ringg_ai-composer textarea, .ringg_ai-composer input, .ringg_ai-composer [contenteditable="true"], .ringg_ai-composer [role="textbox"], [class*="ringg_ai"] input[type="text"], [class*="ringg_ai"] input[type="search"]'
+    ).forEach(styleInput);
+  }
 
-        document.querySelectorAll('.ringg_ai-send, .ringg_ai-send *').forEach(el=>{
-          el.style.setProperty('color', '#0b1020', 'important');
-          el.style.setProperty('fill',  '#0b1020', 'important');
-        });
-
-        inp.__jpsc_fixed = true;
-      }catch(e){}
-    }
-
-    function scan(){
-      document.querySelectorAll(
-        '.ringg_ai-composer textarea, .ringg_ai-composer input, .ringg_ai-composer [contenteditable="true"], .ringg_ai-composer [role="textbox"], [class*="ringg_ai"] input[type="text"], [class*="ringg_ai"] input[type="search"]'
-      ).forEach(styleInput);
-    }
-
-    scan();
-    new MutationObserver(scan).observe(document.body, {subtree:true, childList:true, attributes:true});
-  })();
-  </script>
+  scan();
+  new MutationObserver(scan).observe(document.body, {subtree:true, childList:true, attributes:true});
+})();
+</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
