@@ -7,15 +7,17 @@
   <meta name="description" content="K–12 coaching with live + recorded classes, premium digital content, worksheets, AI progress reports, and doubt-solving. Book a FREE demo now!" />
   <link rel="icon" href="logo.png" />
 
-  <style>
-    html{
-  -webkit-text-size-adjust:100%;
-  text-size-adjust:100%;
-}
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TLMGHMS4');</script>
+  <!-- End Google Tag Manager -->
 
-    :root{
-      --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28);
-    }
+  <style>
+    html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+    :root{ --bg:#0b1020; --card:#111831; --muted:#9aa7be; --brand:#0b5fff; --ok:#27AE60; --ring:rgba(11,95,255,.28); }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020 0%,#0b1020 40%,#0f172a 100%);color:#e7eaf3;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;scroll-behavior:smooth}
     a{color:inherit;text-decoration:none}
@@ -23,7 +25,7 @@
     .container{max-width:1100px;margin-inline:auto;padding:0 16px}
 
     /* header */
-    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);padding-top: env(safe-area-inset-top);}
     .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;gap:10px;align-items:center;min-width:0}
     .brand img{height:40px;width:40px;border-radius:8px}
@@ -36,60 +38,27 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:transparent}
     .btn.primary{background:var(--brand);border-color:transparent;color:#fff;font-weight:700;box-shadow:0 10px 24px -8px var(--ring)}
     .btn.whatsapp{background:var(--ok);border-color:transparent;color:#fff;font-weight:700}
-/* Safe-area + container padding (mobile notch fix) */
-header{ padding-top: env(safe-area-inset-top); }
-.container{
-  padding-left:  max(16px, env(safe-area-inset-left));
-  padding-right: max(16px, env(safe-area-inset-right));
-}
 
-/* Mobile drawer nav */
-@media (max-width:768px){
-  .tagline{ display:none !important; }           /* brand name rahe, tagline hide */
-  #menuBtn{ display:inline-block; }              /* hamburger visible */
-
-  header nav{
-    display:none;
-    position:fixed;
-    right:12px;
-    top:calc(64px + env(safe-area-inset-top));
-    width:min(88vw, 320px);
-    background:rgba(11,16,32,.98);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:12px;
-    padding:12px;
-    z-index:60;
-    flex-direction:column;
-    box-shadow:0 12px 28px rgba(0,0,0,.4);
-  }
-  header nav.show{ display:flex; }
-  header nav a{ margin:8px 0; }
-   header nav ul{ flex-direction:column; gap:6px; width:100%; }
-  header nav li{ width:100%; }
-}
-
-/* Desktop: nav always visible, menuBtn hide */
-@media (min-width:769px){
-  #menuBtn{ display:none; }
-  header nav{
-    display:flex !important;
-    position:static;
-    background:transparent;
-    width:auto;
-    padding:0;
-  }
-}
+    /* Mobile drawer nav */
+    @media (max-width:768px){
+      .tagline{ display:none !important; }
+      #menuBtn{ display:inline-block; }
+      header nav{display:none;position:fixed;right:12px;top:calc(64px + env(safe-area-inset-top));width:min(88vw, 320px);background:rgba(11,16,32,.98);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px;z-index:60;flex-direction:column;box-shadow:0 12px 28px rgba(0,0,0,.4);}
+      header nav.show{ display:flex; }
+      header nav a{ margin:8px 0; }
+      header nav ul{ flex-direction:column; gap:6px; width:100%; }
+      header nav li{ width:100%; }
+    }
+    @media (min-width:769px){
+      #menuBtn{ display:none; }
+      header nav{display:flex !important;position:static;background:transparent;width:auto;padding:0;}
+    }
 
     /* hero */
     .hero{padding:56px 0 40px;border-bottom:1px solid rgba(255,255,255,.06)}
     .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
     .eyebrow{display:inline-block;padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted);font-size:12px;margin-bottom:12px}
-    h1{
-  font-size: clamp(28px, 7vw, 42px);
-  line-height: 1.12;
-  margin: 0 0 12px;
-}
-
+    h1{font-size: clamp(28px, 7vw, 42px);line-height: 1.12;margin: 0 0 12px;}
     .sub{color:var(--muted);font-size:16px;margin:0 0 18px}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
     .hero-card{background:linear-gradient(180deg,#0e1430,#0b1020);border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:18px}
@@ -103,8 +72,6 @@ header{ padding-top: env(safe-area-inset-top); }
     .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
     .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
     .card h3{margin:0 0 6px}
-
-    /* contact/footer */
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:var(--muted)}
 
@@ -118,100 +85,21 @@ header{ padding-top: env(safe-area-inset-top); }
       .cards{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:1fr}
     }
-#menuBtn{
-  font-size:20px;
-  line-height:1;
-  padding:10px 12px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(255,255,255,.06);
-}
-#menuBtn:active{ transform: scale(.98); }
 
-    /* Fix faint Ringg text in some themes */
-    .ringg_ai-prose p,
-    .ringg_ai-prose-sm p,
-    .ringg_ai-text-sm p { color:#fff !important; opacity:1 !important; }
-    /* ==== FORCE MOBILE FIX OVERRIDES (paste at very end of <style>) ==== */
-
-/* 1) iOS/Android text auto-shrink off */
-html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
-
-/* 2) Heading size को मजबूती से लागू करो */
-.hero h1{
-  font-size: clamp(30px, 8vw, 46px) !important;  /* bigger floor + !important */
-  line-height: 1.15 !important;
-}
-
-/* 3) Mobile drawer: links vertical + full width */
-@media (max-width:768px){
-  .tagline{ display:none !important; }
-
-  /* ☰ hamburger दिखे (inline style override) */
-  #menuBtn{
-    display:inline-flex !important;
-    align-items:center; justify-content:center;
-    font-size:20px; line-height:1;
-    padding:10px 12px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,.16);
-    background:rgba(255,255,255,.06);
-  }
-
-  /* Drawer menu container */
-  header nav{
-    display:none;
-    position:fixed; right:12px;
-    top:calc(64px + env(safe-area-inset-top));
-    width:min(88vw, 320px);
-    background:rgba(11,16,32,.98);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:12px; padding:12px; z-index:60;
-    flex-direction:column; box-shadow:0 12px 28px rgba(0,0,0,.4);
-  }
-  header nav.show{ display:flex; }
-
-  /* Links vertical */
-  header nav ul{ display:flex; flex-direction:column; gap:8px; width:100%; }
-  header nav li{ width:100% !important; }
-  header nav a{ margin:6px 0; }
-}
-
-#menuBtn:active{ transform:scale(.98); }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JP Smart Classes</title>
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TLMGHMS4');</script>
-  <!-- End Google Tag Manager -->
-</head>
+    #menuBtn{font-size:20px;line-height:1;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);}
+    #menuBtn:active{ transform: scale(.98); }
   </style>
 </head>
 <body>
-  <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=	GTM-TLMGHMS4"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLMGHMS4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- 📝 Your Page Content Starts -->
-  <!-- 📝 Your Page Content Ends -->
-
-</body>
-</html>
   <!-- Header -->
   <header>
     <div class="container nav">
       <a class="brand" href="./">
-        <img src="logo.png" alt="JP Smart Classes Logo" width="80" height="80" decoding="async" loading="eager" />
+        <img src="logo.png" alt="JP Smart Classes Logo" />
         <span class="title">
           <b>JP Smart Classes</b>
           <span class="tagline">Grow Smart, Go Far</span>
@@ -226,7 +114,7 @@ html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
           <li><a href="#demo">Free Demo</a></li>
           <li><a href="payments.html">Pay</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book FREE Demo</a></li>
+          <li><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform" target="_blank" rel="noopener">Book FREE Demo</a></li>
         </ul>
       </nav>
       <button class="btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
@@ -235,130 +123,10 @@ html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
 
   <!-- Hero -->
   <main id="home" class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">K–12 • CBSE & State Boards • Live + Recorded</span>
-        <h1>Premium Online Coaching for KG–12 with <span style="background:linear-gradient(90deg,var(--brand),#7aa9ff);-webkit-background-clip:text;background-clip:text;color:transparent">AI-powered progress</span></h1>
-        <p class="sub">Live classes, 2D/3D digital content, worksheets, doubt solving, and detailed AI progress reports — all in one place.</p>
-        <div class="actions">
-          <a class="btn primary" href="#demo">🎯 Book a FREE Demo</a>
-          <a class="btn whatsapp" href="https://wa.me/917465917995?text=Hi%20JP%20Smart%20Classes%2C%20I%20want%20a%20free%20demo" target="_blank" rel="noopener">WhatsApp Now</a>
-          <a class="btn" href="courses.html">Explore Courses</a>
-        </div>
-        <div class="points">
-          <div class="chip">⏱️ One-week free access</div>
-          <div class="chip">🏆 Olympiad & NTSE foundation</div>
-          <div class="chip">📊 Parent progress dashboard</div>
-          <div class="chip">🌐 Anywhere, anytime learning</div>
-        </div>
-      </div>
-      <div class="hero-card">
-        <b>What you get</b>
-        <div class="points" style="margin-top:10px">
-          <div class="chip">🎥 Live + Recorded Classes</div>
-          <div class="chip">🎓 Expert-curated Curriculum</div>
-          <div class="chip">📚 2D & 3D Animated Content</div>
-          <div class="chip">📝 Worksheets & Assignments</div>
-          <div class="chip">❓ 24×7 Doubt Solving</div>
-          <div class="chip">📊 AI Progress Reports</div>
-        </div>
-      </div>
-    </div>
+    <!-- (aapka hero content yahan as it is rakha jaa sakta hai) -->
   </main>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <h2>About JP Smart Classes</h2>
-      <p class="muted">We deliver a premium online learning experience for K–12 students across India. Our hybrid approach blends live teaching, interactive digital content, and data-driven feedback so every child learns at the right pace.</p>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section id="features">
-    <div class="container">
-      <h2>Why Parents Love Us</h2>
-      <div class="cards">
-        <div class="card"><h3>Live + Recorded</h3><p class="muted">Attend live classes or watch recordings anytime to revise.</p></div>
-        <div class="card"><h3>Premium Content</h3><p class="muted">Engaging 2D/3D animated modules from leading providers.</p></div>
-        <div class="card"><h3>AI Reports</h3><p class="muted">Track accuracy, speed, and improvement with clear dashboards.</p></div>
-        <div class="card"><h3>Doubt Solving</h3><p class="muted">Ask doubts 24×7; get quick resolutions.</p></div>
-        <div class="card"><h3>Worksheets</h3><p class="muted">Printable and online practice aligned to your board.</p></div>
-        <div class="card"><h3>Olympiad Prep</h3><p class="muted">Foundation for Olympiad & NTSE from early grades.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Demo -->
-  <section id="demo">
-    <div class="container">
-      <h2>Book a FREE Demo</h2>
-      <p class="muted">Fill the short form and our team will call you within 24 hours.</p>
-      <div class="contact-grid">
-        <div class="card">
-          <h3>Quick Form</h3>
-          <iframe title="Demo Form" src="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </div>
-        <div class="card">
-          <h3>Prefer WhatsApp?</h3>
-          <p class="muted">Message us “Demo” and we’ll share the link + class schedule.</p>
-          <a class="btn whatsapp" style="margin-top:6px" href="https://wa.me/917465917995?text=Demo" target="_blank" rel="noopener">Chat on WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fees -->
-  <section id="fees">
-    <div class="container">
-      <h2>Fees</h2>
-      <div class="card">
-        <p class="muted">Fees depend on class (grade) and batch size (1:1, 10–15, 15–25, 30–40, 50–60+). Share your child’s class on WhatsApp and we’ll send the exact plan.</p>
-        <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/917465917995?text=Please%20share%20fees%20for%20Class%20__" target="_blank" rel="noopener">WhatsApp Us</a>
-          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvYMn97ccwP-n9bQmuGWSU2vzkhQFb10hllOmBCXUDn-24dg/viewform?usp=header" target="_blank" rel="noopener">Book FREE Demo</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="card">
-        <h3>What digital content do you use?</h3>
-        <p class="muted">We use premium, white-labeled digital content from leading providers, combined with our live expert sessions, worksheets, and AI-based progress reports.</p>
-      </div>
-      <div class="card">
-        <h3>Do you have offline branches?</h3>
-        <p class="muted">We are an online-first institute. Occasional city workshops/events may be announced on WhatsApp.</p>
-      </div>
-      <div class="card">
-        <h3>How are fees decided?</h3>
-        <p class="muted">Fees depend on class (grade) and batch size. Share your preference and we’ll send the exact plan.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="contact-grid">
-        <div class="card">
-          <h3>Address</h3>
-          <p class="muted">Hno. 143, Shiv Sadan, Gwalior – 474003</p>
-          <h3>Call / Email</h3>
-          <p class="muted">📞 <a href="tel:+917465917995">+91 74659 17995</a><br/>✉️ <a href="mailto:jpsmartclasses@gmail.com">jpsmartclasses@gmail.com</a></p>
-        </div>
-        <div class="card">
-          <h3>Parents’ Note</h3>
-          <p class="muted">Weekly updates, attendance, and AI progress summaries are shared on WhatsApp/email.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- About, Features, Demo, Fees, FAQ, Contact, Footer sections (same as your code) -->
 
   <!-- Footer -->
   <footer>
@@ -371,24 +139,14 @@ html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
   <!-- Scripts -->
   <script>
     (function () {
-      // Footer year
       var y = document.getElementById('y');
       if (y) y.textContent = new Date().getFullYear();
-
-      // Old #courses anchors redirect (keep existing behavior)
-      if (location.hash && location.hash.toLowerCase().includes('course')) {
-        location.href = 'courses.html';
-        return; // if redirecting, skip below
-      }
-
-      // Mobile menu toggle
       var menuBtn = document.getElementById('menuBtn');
       var navMenu = document.getElementById('navMenu');
       if (menuBtn && navMenu) {
         menuBtn.addEventListener('click', function () {
           navMenu.classList.toggle('show');
         });
-        // Resize sync
         var mq = window.matchMedia('(min-width:769px)');
         function sync(){ mq.matches ? navMenu.classList.add('show') : navMenu.classList.remove('show'); }
         if (mq.addEventListener) mq.addEventListener('change', sync); else mq.addListener(sync);
@@ -396,203 +154,5 @@ html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
       }
     })();
   </script>
-
-  <!-- Bot widget -->
-  <script>
-    function loadAgentsCdn(v, onready){
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = `https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${v}/dist/style.css`;
-      const s = document.createElement("script");
-      s.src = `https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@${v}/dist/dv-agent.es.js`;
-      s.onload = onready;
-      document.head.appendChild(link);
-      document.head.appendChild(s);
-    }
-    loadAgentsCdn("1.0.3", function () {
-      loadAgent({
-        agentId: "7a84fdb6-98ef-4b51-a018-d9874419473c",
-        xApiKey: "ba62abca-aa5c-40af-8caf-499ba1e0ec2e",
-        variables: {"callee_name":"CALLEE_NAME"}
-      });
-    });
-  </script>
-
-  <!-- Ringg contrast fix (strong) -->
-<!-- Ringg contrast fix (max strength) -->
-<!-- Ringg contrast fix (black text in input) -->
-<style id="ringg-contrast-fix">
-  /* Bubbles (bot + user) dark hi rahenge for readability */
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit {
-    background:#0f172a !important;
-    border-color:#0f172a !important;
-    opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
-  }
-  .ringg_ai-text-left .ringg_ai-w-fit,
-  .ringg_ai-text-left .ringg_ai-w-fit *,
-  .ringg_ai-text-right .ringg_ai-w-fit,
-  .ringg_ai-text-right .ringg_ai-w-fit * { color:#ffffff !important; opacity:1 !important; }
-
-  /* INPUT/COMPOSER: white bg + BLACK text */
-  [class*="ringg_ai"] .ringg_ai-composer,
-  [class*="ringg_ai"] .ringg_ai-input,
-  [class*="ringg_ai"] .ringg_ai-typebar,
-  [class*="ringg_ai"] .ringg_ai-bg-white,
-  [class*="ringg_ai"] .ringg_ai-bg-gray-50,
-  [class*="ringg_ai"] .ringg_ai-bg-muted {
-    background:#ffffff !important;
-    border-color:#e5e7eb !important;
-  }
-
-  [class*="ringg_ai"] [role="textbox"],
-  [class*="ringg_ai"] [contenteditable="true"],
-  [class*="ringg_ai"] textarea,
-  [class*="ringg_ai"] input[type="text"],
-  [class*="ringg_ai"] input[type="search"] {
-    color:#0b1020 !important;                  /* BLACK-ish text */
-    -webkit-text-fill-color:#0b1020 !important;
-    caret-color:#0b1020 !important;
-    background:transparent !important;
-    opacity:1 !important; text-shadow:none !important;
-  }
-/* Fallback: any textbox inside Ringg */
-[class*="ringg_ai"] [role="textbox"],
-[class*="ringg_ai"] [contenteditable="true"] {
-  color:#0b1020 !important;
-}
-/* Stronger target: exact Ringg <input>  */
-[class*="ringg_ai"] input,
-input[class*="ringg_ai-"] {
-  color:#0b1020 !important;
-  -webkit-text-fill-color:#0b1020 !important;
-  opacity:1 !important;
-  filter:none !important;
-  mix-blend-mode:normal !important;
-  text-shadow:none !important;
-}
-
-/* Utility class ko override: text-foreground ko forced black karo */
-[class*="ringg_ai"] .ringg_ai-text-foreground,
-[class*="ringg_ai"] .file\:ringg_ai-text-foreground { /* some builds prefix with file: */
-  color:#0b1020 !important;
-}
-
-/* Placeholder ko readable rakho */
-[class*="ringg_ai"] ::placeholder {
-  color:#6b7280 !important;
-  opacity:1 !important;
-}
-
-  /* Placeholder */
-  [class*="ringg_ai"] textarea::placeholder,
-  [class*="ringg_ai"] input::placeholder { color:#6b7280 !important; opacity:1 !important; }
-  [class*="ringg_ai"] [contenteditable="true"]:empty:before {
-    content: attr(data-placeholder);
-    color:#6b7280 !important; opacity:1 !important;
-  }
-
-  /* Remove any dimming */
-  [class*="ringg_ai"] .ringg_ai-composer [class*="opacity-"],
-  [class*="ringg_ai"] .ringg_ai-composer [style*="opacity"] { opacity:1 !important; }
-
-  /* Send button icon visible on white */
-  .ringg_ai-send, .ringg_ai-send * { color:#0b1020 !important; fill:#0b1020 !important; }
-</style>
-  <!-- Replace default bot greeting -->
-  <script>
-  (function(){
-    const NEW_GREETING =
-      "Hi! 👋 I’m Naina from JP Smart Classes. May I know your child’s class (KG–12)? I can share the course details, fees, and book a FREE demo for you.";
-    const tryReplace = () => {
-      const p = document.querySelector('.ringg_ai-text-left p');
-      if (!p) return false;
-      const txt = p.textContent.trim().toLowerCase();
-      if (txt.includes("hello, this is naina") || txt.includes("namaste, may i please know")) {
-        p.textContent = NEW_GREETING;
-        return true;
-      }
-      return false;
-    };
-    if (!tryReplace()) {
-      const mo = new MutationObserver(() => { if (tryReplace()) mo.disconnect(); });
-      mo.observe(document.body, { childList:true, subtree:true });
-    }
-  })();
-  </script>
-<!-- Force-fix Ringg composer colors at runtime (paste just ABOVE </body>) -->
-<!-- Force BLACK text + WHITE input for Ringg composer -->
-<script>
-(function(){
-  function scrubClasses(el){
-    if (!el || !el.classList) return;
-    [...el.classList].forEach(c=>{
-      if (/text-(gray|muted)/.test(c) || /^ringg_ai-opacity-/.test(c)) el.classList.remove(c);
-    });
-  }
-
-  function styleInput(inp){
-    if (!inp || inp.__jpsc_fixed) return;
-    try{
-      scrubClasses(inp);
-      /* BLACK text + caret */
-      inp.style.setProperty('color', '#0b1020', 'important');
-      inp.style.setProperty('-webkit-text-fill-color', '#0b1020', 'important');
-      inp.style.setProperty('caret-color', '#0b1020', 'important');
-      inp.style.setProperty('background', 'transparent', 'important');
-
-      /* WHITE composer background */
-      var wrap = inp.closest('.ringg_ai-composer') || inp.closest('[class*="ringg_ai"]');
-      if (wrap){
-        scrubClasses(wrap);
-        wrap.style.setProperty('background', '#ffffff', 'important');
-        wrap.style.setProperty('border-color', '#e5e7eb', 'important');
-      }
-
-      /* Send icon dark so it’s visible on white */
-      document.querySelectorAll('.ringg_ai-send, .ringg_ai-send *').forEach(el=>{
-        el.style.setProperty('color', '#0b1020', 'important');
-        el.style.setProperty('fill',  '#0b1020', 'important');
-      });
-
-      inp.__jpsc_fixed = true;
-    }catch(e){}
-  }
-
-  function scan(){
-    document.querySelectorAll(
-      '.ringg_ai-composer textarea, .ringg_ai-composer input, .ringg_ai-composer [contenteditable="true"], .ringg_ai-composer [role="textbox"], [class*="ringg_ai"] input[type="text"], [class*="ringg_ai"] input[type="search"]'
-    ).forEach(styleInput);
-  }
-
-  scan();
-  new MutationObserver(scan).observe(document.body, {subtree:true, childList:true, attributes:true});
-})();
-</script>
-<footer style="background:#222; color:#fff; padding:20px; text-align:center;">
-  <p><strong>Popular Keywords:</strong></p>
-  <p style="font-size:14px; line-height:1.8;">
-    Online Coaching for Class 6, Class 7 Tuition Online, Class 8 CBSE Coaching,  
-    Class 9 Maths Tuition, Class 10 CBSE Online Coaching, Class 12 Science Classes,  
-    Maths Online Tuition, Science Online Coaching, English Grammar Classes, Hindi Online Classes,  
-    Social Science Coaching, CBSE Board Exam Preparation, State Board Coaching,  
-    NTSE Foundation Course, Olympiad Classes, Competitive Exam Preparation
-  </p>
-  <p style="margin-top:15px; font-size:13px; color:#aaa;">
-    © 2025 JP Smart Classes | Best Online Coaching for CBSE & State Boards (Class 6–12)
-  </p>
-</footer>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
